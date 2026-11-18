@@ -1,0 +1,3666 @@
+{
+ "trees": {
+  "pei_jingheng": {
+   "start": "n_pei_1",
+   "nodes": {
+    "n_pei_1": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "你从午门进来，靴上还带着宫外的泥。这宫里十一天没停过雨，泥比人老实——它记得谁踩过哪条路。坐吧，别看那盏灯，灯芯是我让人剪短的，亮不起来。",
+     "choices": [
+      {
+       "text": "御史台让我来查林照月。",
+       "goto": "n_pei_2"
+      },
+      {
+       "text": "你的文书上没写死因。",
+       "goto": "n_pei_3"
+      },
+      {
+       "text": "先说，你为什么要查。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_2": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "文书是我讨来的。宫里的事，从来不是查出来的，是谈出来的。你先告诉我，你打算谈到哪一步——是谈到有人认罪，还是谈到有人闭嘴。",
+     "choices": [
+      {
+       "text": "谈到真的那个认罪。",
+       "goto": "n_pei_hub"
+      },
+      {
+       "text": "谈到你满意为止。",
+       "goto": "n_pei_2b"
+      }
+     ]
+    },
+    "n_pei_2b": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "聪明。宫里最不缺聪明人，缺的是活得久的。你这句话我记住了，往后你在宫里走动，我会让人少问你两句。",
+     "effects": [
+      "trust:pei_jingheng+8"
+     ],
+     "choices": [
+      {
+       "text": "那就说案子。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_3": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "死因写的是失足。雨夜，角楼，石阶滑。三样都对，样样都对，所以我不信。你要写折子，我可以给你一个更好看的说法；可我要的不是好看。",
+     "choices": [
+      {
+       "text": "哪里不对？",
+       "goto": "n_pei_7"
+      },
+      {
+       "text": "你自己上去看过？",
+       "goto": "n_pei_8"
+      }
+     ]
+    },
+    "n_pei_7": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "她在档案库做了六年，闭着眼都能走那道梯。滑倒的人手里会抓东西——栏杆、衣角、什么都能抓。她手心里是空的，干净得像洗过。",
+     "effects": [
+      "flag:1_briefed"
+     ],
+     "choices": [
+      {
+       "text": "还有呢。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_8": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "站了一炷香。雨把栏杆上的手印冲得太干净了——干净到不像雨干的活。这句话你听着就好，别写进任何地方。",
+     "choices": [
+      {
+       "text": "谁让你去看的。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_hub": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "问吧。我的时间不多，你的时间更少——这宫里的案子拖过十五天，就只剩一叠卷宗，卷宗里没有活人。",
+     "choices": [
+      {
+       "text": "她死前在查什么？",
+       "goto": "n_pei_14"
+      },
+      {
+       "text": "最后见她的人是谁？",
+       "goto": "n_pei_16"
+      },
+      {
+       "text": "这案子谁有动机？",
+       "goto": "n_pei_18"
+      },
+      {
+       "text": "你妹妹在尚仪局。",
+       "goto": "n_pei_20"
+      },
+      {
+       "text": "你说的这些，我都不信。",
+       "goto": "n_pei_25"
+      },
+      {
+       "text": "林照月是你让人去角楼的。",
+       "accuse": "pei_jingheng",
+       "goto": "n_pei_25"
+      },
+      {
+       "text": "怕的是什么，裴大人？",
+       "goto": "n_pei_22",
+       "if": [
+        "trust:pei_jingheng>=60"
+       ]
+      },
+      {
+       "text": "我在太和殿匾额后找到了东西。",
+       "goto": "n_pei_29",
+       "if": [
+        "has_clue:c3_plaque_hollow"
+       ]
+      },
+      {
+       "text": "先到这儿。",
+       "goto": "n_pei_end"
+      }
+     ]
+    },
+    "n_pei_14": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "旧档。她跟我说是复核码位，我没细问。下面人做事，问太细，事情就做不成了。你也一样，别问太细。",
+     "choices": [
+      {
+       "text": "码位是什么？",
+       "goto": "n_pei_15"
+      },
+      {
+       "text": "没细问，还是不想说？",
+       "goto": "n_pei_15b"
+      }
+     ]
+    },
+    "n_pei_15": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "账册每一册有自己的码。七册互证，是祖制。一册改了，另六册就对不上——所以宫里改账，从来不是改一个字，是改一整套。",
+     "choices": [
+      {
+       "text": "七册？",
+       "goto": "n_pei_15b"
+      }
+     ]
+    },
+    "n_pei_15b": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "你听得很仔细。她借过三册旧档，批文是我签的，还压在值房的抽屉里。我若真不想让你查，那三张批文早该烧了。",
+     "effects": [
+      "flag:1_pei_approved"
+     ],
+     "choices": [
+      {
+       "text": "你刚才说没细问。",
+       "goto": "n_pei_hub"
+      },
+      {
+       "text": "批文我去看。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_16": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "韩砚。禁军统领，那晚和她吵过。整座宫里都知道这件事，你不必费劲去挖——我直接给你，省你三天工夫。",
+     "choices": [
+      {
+       "text": "你怎么知道他们吵？",
+       "goto": "n_pei_17"
+      },
+      {
+       "text": "有人说不是他。",
+       "goto": "n_pei_17b",
+       "if": [
+        "has_clue:c2_patrol_fake"
+       ]
+      }
+     ]
+    },
+    "n_pei_17": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "值房的记录上写着。巡逻的人亥时经过角楼，听见争执，一男一女，声音压得很低。记录是死的，人是活的——可这两样这回对得上。",
+     "choices": [
+      {
+       "text": "记录是谁写的。",
+       "goto": "n_pei_18"
+      },
+      {
+       "text": "墨是新的吗。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_17b": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "记录是可以写的。写记录的人，也可以被写。你若拿这个来问我，我只能告诉你：宫里的纸，比宫里的人听话。",
+     "effects": [
+      "flag:1_pei_slip"
+     ],
+     "choices": [
+      {
+       "text": "那你写了几张。",
+       "goto": "n_pei_18"
+      }
+     ]
+    },
+    "n_pei_18": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "动机？一个死了父亲名声的人，和一个要翻他父亲旧账的人。韩崇山当年押运过一队封存文书，那批文书后来短了三车。你说，做儿子的怕不怕。",
+     "effects": [
+      "flag:1_blame_han"
+     ],
+     "choices": [
+      {
+       "text": "你怎么知道短了三车？",
+       "goto": "n_pei_19"
+      },
+      {
+       "text": "听起来你早查过了。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_19": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "档案上写的。三车文书，一本入库簿，两处画押对不上。这些事在档案库里躺了十五年，谁都能翻——包括她，也包括你。",
+     "effects": [
+      "trust:pei_jingheng+5"
+     ],
+     "choices": [
+      {
+       "text": "你翻过。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_20": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "景媛在尚仪局。她不管刑名，也不管档案，只管仪注和时辰。你问她做什么——她连我哪天回家都记不准。",
+     "choices": [
+      {
+       "text": "问她那晚谁不在值房。",
+       "goto": "n_pei_21"
+      },
+      {
+       "text": "随口问问。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_21": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "她若说了什么，你最好先拿给我看。尚仪局的女官嘴不严，说了不该说的，掉的是她的差事，不是你的。",
+     "effects": [
+      "flag:1_pei_warned"
+     ],
+     "choices": [
+      {
+       "text": "这是威胁？",
+       "goto": "n_pei_hub"
+      },
+      {
+       "text": "我记下了。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_22": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "他把茶盏放下，第一次正眼看你。十五年前，我父亲在内库做库使。丁卯年那场火之后，他把自己的名字从三册账上刮掉了。刮得很干净，干净到我二十岁才知道有这三册。",
+     "effects": [
+      "flag:1_pei_father_ledger",
+      "trust:pei_jingheng+10"
+     ],
+     "choices": [
+      {
+       "text": "所以你接这个案子，是为了他。",
+       "goto": "n_pei_23"
+      },
+      {
+       "text": "林照月查到的就是这个。",
+       "goto": "n_pei_24"
+      }
+     ]
+    },
+    "n_pei_23": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "我接手，是不想让第二个人的名字被刮掉。你信不信，随你。我在这宫里做了十二年监察使，刮名字的刀，我见过太多把。",
+     "effects": [
+      "trust:pei_jingheng+8"
+     ],
+     "choices": [
+      {
+       "text": "名字可以刮，账刮不掉。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_24": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "她查到的，比她告诉我的多。这是我最恨的一点——她防着我。她在档案库待了六年，学会的第一件事，就是别把纸给上司看。",
+     "choices": [
+      {
+       "text": "所以你也不知道她查到哪一步。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_25": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "不信是对的。这宫里的话，一半是给人听的，一半是给纸听的。你可以一个字都不信，只要你还肯替我把那七册找出来。",
+     "choices": [
+      {
+       "text": "你果然是要那七册。",
+       "goto": "n_pei_26"
+      },
+      {
+       "text": "我凭什么替你找。",
+       "goto": "n_pei_26b"
+      }
+     ]
+    },
+    "n_pei_26": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "我要的是结案。七册凑齐，账就成立；账一成立，谁的手在上面，谁的手就得断。你找的是杀人的那一双手，我找的是账上的那只手。",
+     "effects": [
+      "flag:1_pei_wants_codes"
+     ],
+     "choices": [
+      {
+       "text": "两双手不是一双。",
+       "goto": "n_pei_27"
+      }
+     ]
+    },
+    "n_pei_26b": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "凭你的文书是我的印。凭你走出东华门的时候，守门的兵会看一眼那张纸。这宫里没有凭空的调查员，只有拿着谁家印的人。",
+     "choices": [
+      {
+       "text": "你在提醒我，还是在威胁我。",
+       "goto": "n_pei_27"
+      }
+     ]
+    },
+    "n_pei_27": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "我在提醒你。这座宫里，死人从来不需要理由，只需要一场雨。三月初七那晚的雨，下了四个时辰，够埋三个人。",
+     "effects": [
+      "flag:1_pei_threat"
+     ],
+     "choices": [
+      {
+       "text": "那晚你在哪。",
+       "goto": "n_pei_28"
+      },
+      {
+       "text": "我会把这句写进折子。",
+       "goto": "n_pei_28b"
+      }
+     ]
+    },
+    "n_pei_28": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "在东华门。守门的兵认得我的伞——黑的，伞骨断过一根，用铜丝缠着。午门的顾昀记性最好，你去问他，那晚出宫的令牌一共几枚。",
+     "choices": [
+      {
+       "text": "伞可以借人。",
+       "goto": "n_pei_28b"
+      },
+      {
+       "text": "我会去问。",
+       "goto": "n_pei_end"
+      }
+     ]
+    },
+    "n_pei_28b": {
+     "who": "pei_jingheng",
+     "audio": "cold",
+     "text": "折子出不了东华门。你信不信？御史台收折子的那位，去年冬天在我这儿喝过酒。你写，我等着看你怎么写。",
+     "effects": [
+      "flag:1_pei_threat"
+     ],
+     "choices": [
+      {
+       "text": "那我当面说。",
+       "goto": "n_pei_end"
+      }
+     ]
+    },
+    "n_pei_29": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "他伸手，又收回去。……你找到了。第几码？别急着答，先想想你手里那张纸值几条命——她的，你的，还有站在你后面那些人的。",
+     "choices": [
+      {
+       "text": "你早知道有码。",
+       "goto": "n_pei_30"
+      },
+      {
+       "text": "先说你为什么急。",
+       "goto": "n_pei_30b"
+      }
+     ]
+    },
+    "n_pei_30": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "我知道有七册账。我不知道它们在哪。十五年，我翻遍了这宫里能翻的墙，你比我快——这不奇怪，你没有家要顾。",
+     "effects": [
+      "flag:1_pei_wants_codes"
+     ],
+     "choices": [
+      {
+       "text": "把你知道的说完。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_30b": {
+     "who": "pei_jingheng",
+     "audio": "low",
+     "text": "急？我十一天没睡。你把东西给我，我保你在这宫里走得动、问得出口。你不给，我也拦不住你——只是你每走一步，都会有人先到。",
+     "effects": [
+      "flag:1_pei_wants_codes"
+     ],
+     "choices": [
+      {
+       "text": "我先自己拿着。",
+       "goto": "n_pei_hub"
+      }
+     ]
+    },
+    "n_pei_end": {
+     "who": "pei_jingheng",
+     "audio": "calm",
+     "text": "去吧。雨要下了，别在角楼站太久——那地方的风，专往人背后钻。有话说，随时来；没话说，也别去问不该问的人。",
+     "effects": [
+      "trust:pei_jingheng+5"
+     ]
+    }
+   }
+  },
+  "han_yan": {
+   "start": "n_han_1",
+   "nodes": {
+    "n_han_1": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "站住。角楼往北封了，要看死人，去义庄看。这宫里一天死一个人，禁军就得一天封一处，我没工夫陪御史台的人散步。",
+     "choices": [
+      {
+       "text": "我不是来看死人的。",
+       "goto": "n_han_2"
+      },
+      {
+       "text": "封条是你签的？",
+       "goto": "n_han_3"
+      },
+      {
+       "text": "你手背上有伤。",
+       "goto": "n_han_4"
+      }
+     ]
+    },
+    "n_han_2": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "那你是来问活的。问活的更麻烦——活人会说话，说的话还得有人信。你想问谁，先说清楚你信不信我。",
+     "choices": [
+      {
+       "text": "我先听你说。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_3": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "是我。雨水泡了三天，脚印都泡烂了，不封，等着谁来踩？你们查案的，最爱说‘现场’两个字，可现场是禁军保下来的。",
+     "choices": [
+      {
+       "text": "保下来，还是收拾干净。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_4": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "蹭的。楼梯石角，湿天滑手——你要是想在这上面做文章，趁早换一处。禁军身上有伤，不算新闻。",
+     "choices": [
+      {
+       "text": "你盯它做什么。",
+       "goto": "n_han_4b"
+      },
+      {
+       "text": "哪道楼梯。",
+       "goto": "n_han_4b"
+      }
+     ]
+    },
+    "n_han_4b": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "他把手背翻过去，藏到身后。角楼的。我上去过一次，就一次。你要问为什么上去，我说是巡夜，你也不会信。",
+     "choices": [
+      {
+       "text": "那就说巡夜。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_hub": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "问。我戌时还要巡东长街，误了点，明早值房的册子上就会少一笔。这宫里最要紧的不是人命，是册子。",
+     "choices": [
+      {
+       "text": "你和林照月吵什么？",
+       "goto": "n_han_11"
+      },
+      {
+       "text": "有人说你威胁过她。",
+       "goto": "n_han_13"
+      },
+      {
+       "text": "那晚你在哪？",
+       "goto": "n_han_15"
+      },
+      {
+       "text": "你父亲是韩崇山。",
+       "goto": "n_han_17"
+      },
+      {
+       "text": "人是你杀的。",
+       "accuse": "han_yan",
+       "goto": "n_han_20"
+      },
+      {
+       "text": "你改过一次巡逻记录。",
+       "goto": "n_han_22",
+       "if": [
+        "trust:han_yan>=60"
+       ]
+      },
+      {
+       "text": "东长街的石础里，我找到了第二码。",
+       "goto": "n_han_24",
+       "if": [
+        "has_clue:c4_code2"
+       ]
+      },
+      {
+       "text": "值房那本记录，墨是新的。",
+       "goto": "n_han_21",
+       "if": [
+        "has_clue:c2_ink_two"
+       ]
+      },
+      {
+       "text": "先这样。",
+       "goto": "n_han_end"
+      }
+     ]
+    },
+    "n_han_11": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "公事。她拿一张抄件来问我，说押运车队的数对不上。三车，她说少了三车。我当时只觉得她在找事——一个档案官，管到禁军的车队上去了。",
+     "choices": [
+      {
+       "text": "什么数对不上？",
+       "goto": "n_han_12"
+      },
+      {
+       "text": "你怎么回的？",
+       "goto": "n_han_12b"
+      }
+     ]
+    },
+    "n_han_12": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "十五年前的数。抄件会错，人会记错，笔会抖。我跟她说：你要拿这个去翻案，先去把这十五年活着的人一个个问一遍。",
+     "choices": [
+      {
+       "text": "你在拦她。",
+       "goto": "n_han_12b"
+      }
+     ]
+    },
+    "n_han_12b": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "我让她别再查。就这一句。她当时笑了一下，说‘韩统领，你怕的不是我查，是你父亲的名字’。这句话比刀子快。",
+     "choices": [
+      {
+       "text": "所以你威胁了她。",
+       "goto": "n_han_12c"
+      },
+      {
+       "text": "你确实怕。",
+       "goto": "n_han_12c"
+      }
+     ]
+    },
+    "n_han_12c": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "我怕的是她拿着一张不知道谁写的纸，把我父亲的名字贴到墙上。他死了七年，坟头的草我每年自己割。你要我看着他再被人骂一次？",
+     "effects": [
+      "trust:han_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "所以你吵了。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_13": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "谁说的。御史台的人，还是监察司的人？这两个衙门说的话，一个要脸，一个要命。你先告诉我是哪个，我再决定怎么答。",
+     "choices": [
+      {
+       "text": "监察司。",
+       "goto": "n_han_14"
+      },
+      {
+       "text": "你先答。",
+       "goto": "n_han_14b"
+      }
+     ]
+    },
+    "n_han_14": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "裴景衡。他巴不得我在这案子里——我这把刀，他早就想收回去了。他跟你说的每一句关于我的话，你都可以先记一半，剩下那一半，来问我。",
+     "effects": [
+      "trust:han_yan+5",
+      "flag:1_han_doubt_pei"
+     ],
+     "choices": [
+      {
+       "text": "他为什么要收你的刀。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_14b": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "我威胁她，就不会让她走着回值房。她转身的时候，我不在。这句你记着——我这辈子说过很多混账话，这一句最干净。",
+     "choices": [
+      {
+       "text": "谁能证。",
+       "goto": "n_han_15"
+      }
+     ]
+    },
+    "n_han_15": {
+     "who": "han_yan",
+     "audio": "calm",
+     "text": "戌时二刻回值房，和副将郑锷对了一夜的巡册。三更出去看过一次雨，一刻钟就回来了。值房的门是朝南开的那间，门口有块断石。",
+     "choices": [
+      {
+       "text": "谁能证？",
+       "goto": "n_han_16"
+      },
+      {
+       "text": "值房的记录呢？",
+       "goto": "n_han_16b"
+      }
+     ]
+    },
+    "n_han_16": {
+     "who": "han_yan",
+     "audio": "calm",
+     "text": "郑锷。他不撒谎，也不会替我撒谎——这人性子硬得像城墙砖，我跟他共事九年，没听他说过一句软话。你去问他，他说的一定跟我一样。",
+     "effects": [
+      "flag:2_han_alibi",
+      "trust:han_yan+6"
+     ],
+     "choices": [
+      {
+       "text": "我会去。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_16b": {
+     "who": "han_yan",
+     "audio": "calm",
+     "text": "记录在值房墙上挂着，编号连着，一天不缺。那册子是书吏写的，我只画押——你要是想从册子上找我的错，得先问问书吏那晚喝了多少酒。",
+     "effects": [
+      "flag:2_han_record"
+     ],
+     "choices": [
+      {
+       "text": "书吏是谁。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_17": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "你提他做什么。他押运过封存文书，那是差事，不是罪。宫里十五年，谁没替上头扛过几个箱子？扛箱子的人，最后都成了箱子里的东西。",
+     "choices": [
+      {
+       "text": "三车文书少了。",
+       "goto": "n_han_18"
+      },
+      {
+       "text": "丁卯年那场火。",
+       "goto": "n_han_18b"
+      }
+     ]
+    },
+    "n_han_18": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "谁告诉你的。他抓住桌沿，指节压得发白。少三车这件事，是我父亲自己报上去的——折子递到内官监，压了三个月，回来的批文只有四个字：不必再问。",
+     "effects": [
+      "flag:2_han_father_reported",
+      "trust:han_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "批文还在吗。",
+       "goto": "n_han_hub"
+      },
+      {
+       "text": "不必再问。这四个字很贵。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_18b": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "丁卯年我九岁。只记得那年冬天家里的炭特别少，母亲把炭盆挪到我床边，自己说不冷。后来我才知道，那年冬天宫里烧了很多东西。",
+     "choices": [
+      {
+       "text": "烧的是纸。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_20": {
+     "who": "han_yan",
+     "audio": "angry",
+     "text": "他站起来，椅子在砖上刮出一声长响。我推她？她站在角楼边上，我在三步之外，雨大到看不清她的脸。你告诉我，三步之外，我怎么推。",
+     "choices": [
+      {
+       "text": "巡逻记录写着你在场。",
+       "goto": "n_han_21"
+      },
+      {
+       "text": "你手背的伤。",
+       "goto": "n_han_21b"
+      }
+     ]
+    },
+    "n_han_21": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "……记录。他沉默了很久，久到雨声都听得见。他伸手：给我看。那份记录上的字，不是我的字。我画押从不画在那一栏，我画在左下角——这一张画在右上。",
+     "effects": [
+      "flag:2_han_record_doubt",
+      "trust:han_yan+10"
+     ],
+     "choices": [
+      {
+       "text": "谁能在值房挂一张假记录。",
+       "goto": "n_han_hub"
+      },
+      {
+       "text": "你画押的习惯，谁知道。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_21b": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "石角蹭的。你要验，去找太医，验完了回来告诉我，一道擦伤能不能把人从三层楼上送下去。你们读书人，最会把小事说成大罪。",
+     "choices": [
+      {
+       "text": "小事？",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_22": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "他很久没说话。去年秋天，我父亲的名字出现在一册旧账的抄本上。我改了一次巡夜的时辰，把那一页从‘当值’改成‘病假’。改一次，和改十次，是一样的罪。",
+     "effects": [
+      "flag:2_han_forged_once",
+      "trust:han_yan+12"
+     ],
+     "choices": [
+      {
+       "text": "那晚的记录不是你改的。",
+       "goto": "n_han_23"
+      },
+      {
+       "text": "你为什么现在说。",
+       "goto": "n_han_23b"
+      }
+     ]
+    },
+    "n_han_23": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "对。所以改那一张的人，知道我会被认成凶手——他连我改过记录这件事都算进去了。这宫里知道我改过记录的，不超过三个人。",
+     "effects": [
+      "flag:2_han_frame_theory",
+      "trust:han_yan+10"
+     ],
+     "choices": [
+      {
+       "text": "哪三个。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_23b": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "因为你在查。总得有个人先说实话——我这辈子说过太多混账话，再不补一句真的，往后就没机会了。你别让我死在一张别人写的记录上。",
+     "effects": [
+      "trust:han_yan+10"
+     ],
+     "choices": [
+      {
+       "text": "把那一页找出来。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_24": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "他把那张纸翻过来，看背面，手指在纸角停了很久。……押运的编号。这一笔是我父亲的。他写‘三’的时候，最后一横总是往上挑。",
+     "effects": [
+      "flag:3_han_code_link",
+      "trust:han_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "他在替谁记账？",
+       "goto": "n_han_25"
+      },
+      {
+       "text": "别碰它。",
+       "goto": "n_han_25b"
+      }
+     ]
+    },
+    "n_han_25": {
+     "who": "han_yan",
+     "audio": "low",
+     "text": "替一个还活着的人。他抬头看你，眼里有火，也有怕。我父亲替人扛了十五年，扛到死。你说这账要是翻出来，第一个被翻的是谁？不是主使，是押车的。",
+     "choices": [
+      {
+       "text": "所以你宁愿它烂在墙里。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_25b": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "在宫里，纸比人活得久。你把这张收了，别让第二个人看见——不是为我，是为那张纸上还留着我父亲的手印。",
+     "choices": [
+      {
+       "text": "手印不是罪证。",
+       "goto": "n_han_hub"
+      }
+     ]
+    },
+    "n_han_end": {
+     "who": "han_yan",
+     "audio": "cold",
+     "text": "雨停了就去找郑锷，他在东长街尽头那间值房。他会告诉你我那一夜在哪。别让我死在一张别人写的记录上——这话我只说一次。",
+     "effects": [
+      "trust:han_yan+5"
+     ]
+    }
+   }
+  },
+  "shen_heling": {
+   "start": "n_shen_1",
+   "nodes": {
+    "n_shen_1": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "你就是那个从宫外来的。坐。茶是旧的，水是新的——宫里待客，讲究这个。旧茶叶经得起滚水，人也是。",
+     "choices": [
+      {
+       "text": "我想问丁卯年的事。",
+       "goto": "n_shen_2"
+      },
+      {
+       "text": "我想问林照月。",
+       "goto": "n_shen_3"
+      },
+      {
+       "text": "我不喝茶。",
+       "goto": "n_shen_1b"
+      }
+     ]
+    },
+    "n_shen_1b": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "不喝的人，多半是怕苦。宫里苦的东西多，不差这一盏。你从午门走到这儿，鞋都湿了，坐下说两句，也不算亏。",
+     "choices": [
+      {
+       "text": "那就说两句。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_2": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "丁卯年。你算过没有，丁卯到如今，多少年了？十五年。十五年里，这宫里换了三任掌印、四任院判、七个禁军统领。你要问哪一任的丁卯年？",
+     "choices": [
+      {
+       "text": "我问那场火。",
+       "goto": "n_shen_2c"
+      },
+      {
+       "text": "我问那七册账。",
+       "goto": "n_shen_13"
+      }
+     ]
+    },
+    "n_shen_2c": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "火是常事。木头的宫，一年不烧两回，算天照应。烧了再修，修了再烧，银子从户部出，工匠从顺天府来——你要查火，得先学会看工部的报销。",
+     "choices": [
+      {
+       "text": "那一场烧死了人。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_3": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "她替我抄过三年经。手很稳，字很小，抄《法华》的时候连一个墨点都没有。死了一个抄经的人，你要我怎么说？说可惜？说这宫里每天都可惜？",
+     "choices": [
+      {
+       "text": "你知道她在查账。",
+       "goto": "n_shen_4"
+      },
+      {
+       "text": "她死前中了毒。",
+       "goto": "n_shen_4b",
+       "if": [
+        "has_clue:c5_poison_tongue"
+       ]
+      }
+     ]
+    },
+    "n_shen_4": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "查账是她的差事。差事做得好的人，往往死得早——这不是我说的，是这宫里的规矩说的。我只是听得多了，记住了。",
+     "effects": [
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "规矩是谁定的。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_4b": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "他把茶盖扣回去，声音很轻。太医院的话，你信几分？院判换了三任，脉案烧过两回。你要拿脉案说话，先得证明那几张纸是真的。",
+     "effects": [
+      "flag:5_shen_deflect_med"
+     ],
+     "choices": [
+      {
+       "text": "你在教我怎么查案。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_hub": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "你还有话。说吧——我这一日，只有这一盏茶的工夫是留给外人的。茶凉之前，你问得完。",
+     "choices": [
+      {
+       "text": "内库的月例银走哪条线？",
+       "goto": "n_shen_11"
+      },
+      {
+       "text": "宫里有几个人知道七码？",
+       "goto": "n_shen_13"
+      },
+      {
+       "text": "崔慎是你的人。",
+       "goto": "n_shen_15"
+      },
+      {
+       "text": "十五年前那三个书吏呢？",
+       "goto": "n_shen_17"
+      },
+      {
+       "text": "丁卯年的账是你做的。",
+       "accuse": "shen_heling",
+       "goto": "n_shen_24"
+      },
+      {
+       "text": "沈公公，你在怕什么？",
+       "goto": "n_shen_22",
+       "if": [
+        "trust:shen_heling>=60"
+       ]
+      },
+      {
+       "text": "太和殿匾额后头，我找到了第一码。",
+       "goto": "n_shen_20",
+       "if": [
+        "has_clue:c3_code1"
+       ]
+      },
+      {
+       "text": "茶凉了。",
+       "goto": "n_shen_end"
+      }
+     ]
+    },
+    "n_shen_11": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "月例银走内库，走户部，走内务府。三条线，四十年没变过。这三条线上有多少人吃饭，你算不出来——连我都算不出来，我只管签字。",
+     "choices": [
+      {
+       "text": "有一条线不在账上。",
+       "goto": "n_shen_12"
+      },
+      {
+       "text": "四十年？",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_12": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "不在账上的线，叫私账。宫里每个人都有私账，你往后也会有。私账不是罪，私账是活路——你要是连这个都不懂，查不完这个案子。",
+     "choices": [
+      {
+       "text": "私账上写谁的名字。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_13": {
+     "who": "shen_heling",
+     "audio": "sharp",
+     "text": "七码。他第一次停住，手指在盏沿上按住不动。这个词，你从哪儿听来的？宫里说‘码位’的人多，说‘七码’的人，十五年里不超过五个。",
+     "choices": [
+      {
+       "text": "档案里。",
+       "goto": "n_shen_14"
+      },
+      {
+       "text": "你好像很在意这个词。",
+       "goto": "n_shen_14b"
+      }
+     ]
+    },
+    "n_shen_14": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "档案里没有这个词。档案里只有码位、册号、入库月日。你要是真从档案里读出来的，那你读的不是字，是别人藏在字缝里的东西。",
+     "effects": [
+      "flag:6_shen_slip",
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "你怎么知道档案里没有。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_14b": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "我在意的是说话的人。宫里说话不花钱，死人才花钱。你这句话说给谁听过？说给我听，算你运气；说给内官监别的人听，你今晚就得搬家。",
+     "choices": [
+      {
+       "text": "我只说给你听。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_15": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "崔慎替我管笔札。笔札是最容易出错的东西——字写错了能改，话说错了改不了。他这个人，手比我快，嘴比我慢，我用的就是这两样。",
+     "choices": [
+      {
+       "text": "他威胁过一个宫女。",
+       "goto": "n_shen_16"
+      },
+      {
+       "text": "他换走了什么？",
+       "goto": "n_shen_16b"
+      }
+     ]
+    },
+    "n_shen_16": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "底下人做事，我不管手法。我只管他们别把事做到我眼前。做到我眼前的事，我就得管；管了，就得有人掉脑袋。你说，我该不该看得那么清？",
+     "choices": [
+      {
+       "text": "所以你宁可看不清。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_16b": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "换？你说得像是我在夜里翻别人的柜子。这宫里丢东西，从来不是有人偷，是有人记错了地方。你要指一个少监偷东西，得先有一张他签过字的单子。",
+     "choices": [
+      {
+       "text": "单子会有的。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_17": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "三个书吏，记的是失踪。失踪的卷宗在咸安宫的地窖里，封条是内官监的。你想看，我可以给你一把钥匙——只是那地窖十五年没开过，里头的气味不好闻。",
+     "effects": [
+      "flag:6_shen_cellar",
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "地窖封了十五年。",
+       "goto": "n_shen_18"
+      },
+      {
+       "text": "你怎么知道卷宗在地窖。",
+       "goto": "n_shen_18b"
+      }
+     ]
+    },
+    "n_shen_18": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "封了的东西，才不会被翻乱。这宫里最怕的不是火，是有人翻。火只烧一处，翻的人能把十五年的东西一次全翻出来。",
+     "choices": [
+      {
+       "text": "所以你先烧了一次。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_18b": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "因为是我封的。他吹了吹茶，热气散开。封一扇门，也算罪？那我这辈子封过的门，够你写三本折子。",
+     "effects": [
+      "flag:6_shen_sealed",
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "门后头有什么。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_20": {
+     "who": "shen_heling",
+     "audio": "sharp",
+     "text": "他伸手要那张纸，手停在半空，又慢慢收回袖里。……给我。你要什么，开个价。这宫里没有不能换的东西，只有还没开价的。",
+     "choices": [
+      {
+       "text": "你先说这是什么。",
+       "goto": "n_shen_21"
+      },
+      {
+       "text": "你要它做什么。",
+       "goto": "n_shen_21b"
+      }
+     ]
+    },
+    "n_shen_21": {
+     "who": "shen_heling",
+     "audio": "low",
+     "text": "七册互证。少一册，账就不成立；多一册在别人手里，账就要重算。重算的账，会算出很多人——包括一些你不想算进去的人。",
+     "effects": [
+      "flag:6_shen_code_admit",
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "比如谁。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_21b": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "烧掉。或者锁起来。或者交给一个快死的人——死人手里的东西，最干净。你手里那张纸，现在已经不干净了。",
+     "choices": [
+      {
+       "text": "纸干净，人才脏。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_22": {
+     "who": "shen_heling",
+     "audio": "low",
+     "text": "他把帘子拉开一线，看外面的雨。丁卯年那场火，烧掉的不只是纸。烧掉的是‘不必再问’这四个字。如今又有人开始问了——问的人，一年比一年年轻。",
+     "effects": [
+      "flag:6_shen_fear",
+      "trust:shen_heling+8"
+     ],
+     "choices": [
+      {
+       "text": "所以你让人下了毒。",
+       "goto": "n_shen_23"
+      },
+      {
+       "text": "你在说你自己。",
+       "goto": "n_shen_23b"
+      }
+     ]
+    },
+    "n_shen_23": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "下毒是内官监的手法，不是我的。我杀人不用毒——毒要三个月，太慢，也太脏。慢的东西留给有耐心的人，我这把年纪，没有耐心了。",
+     "effects": [
+      "flag:6_shen_poison_deny"
+     ],
+     "choices": [
+      {
+       "text": "那用什么。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_23b": {
+     "who": "shen_heling",
+     "audio": "low",
+     "text": "我说的是这座宫。宫比我老，也比我狠。我只是它使了四十年的一只手——手老了，宫还在。你要是真想查，别查手，查宫。",
+     "choices": [
+      {
+       "text": "宫不会签字。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_24": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "他笑了，笑得很慢，笑到咳嗽。账是我做的。宫里所有的账都是我做的——这一句，你敢写进折子吗？写了，明早弹压你的人不是我，是户部。",
+     "choices": [
+      {
+       "text": "我敢。",
+       "goto": "n_shen_25"
+      },
+      {
+       "text": "你在试探我。",
+       "goto": "n_shen_25b"
+      }
+     ]
+    },
+    "n_shen_25": {
+     "who": "shen_heling",
+     "audio": "cold",
+     "text": "那你写。写完记得抄一份给我，我喜欢看年轻人的字——字里有没有骨头，一眼就看得出来。你这一手字，骨头还不够硬。",
+     "effects": [
+      "flag:6_shen_threat"
+     ],
+     "choices": [
+      {
+       "text": "骨头会硬的。",
+       "goto": "n_shen_end"
+      }
+     ]
+    },
+    "n_shen_25b": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "我在教你。宫里认字的人多，认账的人少。认账的人里，敢在账上落名字的，这些年我只见过一个——她死在角楼下了。",
+     "effects": [
+      "flag:6_shen_linzhaoyue",
+      "trust:shen_heling+5"
+     ],
+     "choices": [
+      {
+       "text": "你认识她到什么地步。",
+       "goto": "n_shen_hub"
+      }
+     ]
+    },
+    "n_shen_end": {
+     "who": "shen_heling",
+     "audio": "slow",
+     "text": "去吧。茶凉了就别喝了，凉茶伤胃。往后要进来，先让崔慎递话——我不见没递话的人，这是规矩，不是架子。",
+     "effects": [
+      "trust:shen_heling+3"
+     ]
+    }
+   }
+  },
+  "a_heng": {
+   "start": "n_heng_1",
+   "nodes": {
+    "n_heng_1": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她抱着一盆湿衣裳，看见你，脚步顿了一下，把盆换到另一边肩上。……大人。长廊在那边，往南走，过了月台就是。",
+     "choices": [
+      {
+       "text": "你是阿蘅。",
+       "goto": "n_heng_2"
+      },
+      {
+       "text": "我在找林照月的东西。",
+       "goto": "n_heng_3"
+      },
+      {
+       "text": "你的手在抖。",
+       "goto": "n_heng_4"
+      }
+     ]
+    },
+    "n_heng_2": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "奴婢在尚衣局当差，管针线。林大人的事，奴婢不知道——她的事轮不到奴婢知道，尚衣局离档案库隔着三进院。",
+     "choices": [
+      {
+       "text": "我没说她在查什么。",
+       "goto": "n_heng_2b"
+      },
+      {
+       "text": "隔着三进院，你还知道她出事。",
+       "goto": "n_heng_2b"
+      }
+     ]
+    },
+    "n_heng_2b": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她垂下眼，把盆沿捏得更紧。宫里的事，奴婢不该问。问了，就是想知道；想知道，就是有心。有心的人，在这宫里待不长。",
+     "choices": [
+      {
+       "text": "谁教你说这句话的。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_3": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她的东西都收了。嬷嬷说，人死了，东西要烧，烧了才干净。大人，您别去找了——找了也是灰。",
+     "choices": [
+      {
+       "text": "烧了？",
+       "goto": "n_heng_5"
+      },
+      {
+       "text": "谁说的。",
+       "goto": "n_heng_5"
+      }
+     ]
+    },
+    "n_heng_5": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她把盆往上托了托，指节发白。……崔少监说的。他说人死了，东西留着招祸。他说这话的时候，眼睛看着奴婢的柜子。",
+     "effects": [
+      "flag:7_heng_cui",
+      "trust:a_heng+5"
+     ],
+     "choices": [
+      {
+       "text": "你柜子里有什么。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_4": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她把手缩进袖子里。风冷。这廊下穿堂风最厉害，一到申时就起，奴婢站久了手就抖，不是怕什么。",
+     "choices": [
+      {
+       "text": "今天没风。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_hub": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她站在廊柱的阴影里，把盆抱在身前，像抱着一面盾。您问吧。只是别站太久，嬷嬷一会儿要查人。",
+     "choices": [
+      {
+       "text": "林照月待你如何？",
+       "goto": "n_heng_11"
+      },
+      {
+       "text": "那晚你在哪？",
+       "goto": "n_heng_13"
+      },
+      {
+       "text": "最后见她的人是谁？",
+       "goto": "n_heng_15"
+      },
+      {
+       "text": "崔慎找过你。",
+       "goto": "n_heng_17",
+       "if": [
+        "flag:7_heng_cui"
+       ]
+      },
+      {
+       "text": "阿蘅，最后见她的不是韩砚。",
+       "goto": "n_heng_20",
+       "if": [
+        "trust:a_heng>=60"
+       ]
+      },
+      {
+       "text": "她留给你的东西，还在吗？",
+       "goto": "n_heng_22",
+       "if": [
+        "trust:a_heng>=75"
+       ]
+      },
+      {
+       "text": "我在万春亭的藻井里找到了第三码。",
+       "goto": "n_heng_24",
+       "if": [
+        "has_clue:c6_code3"
+       ]
+      },
+      {
+       "text": "有人看见孟淮那晚上了角楼。",
+       "goto": "n_heng_20",
+       "if": [
+        "has_clue:c6_last_meeting"
+       ]
+      },
+      {
+       "text": "你先去吧。",
+       "goto": "n_heng_end"
+      }
+     ]
+    },
+    "n_heng_11": {
+     "who": "a_heng",
+     "audio": "soft",
+     "text": "她替奴婢改过名字。奴婢原来叫阿杏，档案库的册子上写错了字，写成‘杏’。她说杏太软，蘅是香草，压得住风。她替奴婢跑了三趟尚衣局，才改过来。",
+     "effects": [
+      "trust:a_heng+8"
+     ],
+     "choices": [
+      {
+       "text": "她替你跑三趟，你替她做什么。",
+       "goto": "n_heng_12"
+      }
+     ]
+    },
+    "n_heng_12": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "奴婢替她送信。宫里不许宫女私递书信，可她要送的地方都不远——东长街、乾清门、还有角楼底下那间值房。她说这些信不值钱，值钱的是别让人看见。",
+     "effects": [
+      "flag:7_heng_letters",
+      "trust:a_heng+5"
+     ],
+     "choices": [
+      {
+       "text": "信送给谁。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_13": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "奴婢那晚在尚衣局补一件袍子。针脚要密，补到二更，就睡了。雨那么大，什么都听不见，睡得沉。",
+     "choices": [
+      {
+       "text": "谁和你一起？",
+       "goto": "n_heng_14"
+      },
+      {
+       "text": "二更就睡了？雨最大的时候。",
+       "goto": "n_heng_14b"
+      }
+     ]
+    },
+    "n_heng_14": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "……小翠。她睡得早。她那个人，天一黑就困。她什么都不知道，大人您别去问她，她胆小，一问就哭。",
+     "choices": [
+      {
+       "text": "我问一句，她就哭？",
+       "goto": "n_heng_14b"
+      }
+     ]
+    },
+    "n_heng_14b": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她把盆换了个手。雨大，奴婢就睡得更沉。这话说完她自己愣了一下——刚才她说补袍子补到二更，针脚要密，得点灯；点了灯，就睡不沉。",
+     "choices": [
+      {
+       "text": "补袍子的时候，谁来找过你。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_15": {
+     "who": "a_heng",
+     "audio": "flat",
+     "text": "是韩统领。宫里都这么说。她说完这句，眼睛看着盆里的水，没有看你。水面上浮着一根线头，她看了很久。",
+     "effects": [
+      "flag:7_heng_lie_start"
+     ],
+     "choices": [
+      {
+       "text": "你看见他了？",
+       "goto": "n_heng_16"
+      },
+      {
+       "text": "宫里都这么说，还是崔慎这么说？",
+       "goto": "n_heng_16b"
+      }
+     ]
+    },
+    "n_heng_16": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "……没有。奴婢没看见。她把盆放下，又抱起来，动作乱了。奴婢是听人说的。听谁说的，奴婢记不清了。",
+     "effects": [
+      "flag:7_heng_crack",
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "记不清，还是不敢说。",
+       "goto": "n_heng_17"
+      }
+     ]
+    },
+    "n_heng_16b": {
+     "who": "a_heng",
+     "audio": "afraid",
+     "text": "她抬头看了你一眼，又立刻低下去。大人，您别问了。这宫里死一个人，要查十一天；死一个宫女，连一天都不用查。",
+     "effects": [
+      "flag:7_heng_silent"
+     ],
+     "choices": [
+      {
+       "text": "那我就问到你说为止。",
+       "goto": "n_heng_hub"
+      },
+      {
+       "text": "我不逼你。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_17": {
+     "who": "a_heng",
+     "audio": "afraid",
+     "text": "她把你往廊柱后面拉了半步，声音低得几乎没有。崔少监说，若有人来问，就说韩统领。说错一个字，奴婢就调去浣衣局。浣衣局的人，冬天手上都会烂。",
+     "effects": [
+      "flag:7_heng_threat",
+      "trust:a_heng+8"
+     ],
+     "choices": [
+      {
+       "text": "我可以保你。",
+       "goto": "n_heng_18"
+      },
+      {
+       "text": "那你为什么跟我说实话。",
+       "goto": "n_heng_18b"
+      }
+     ]
+    },
+    "n_heng_18": {
+     "who": "a_heng",
+     "audio": "afraid",
+     "text": "保？她笑了一下，很轻，像怕被人听见。上一个说保她的人，从角楼上下来了。大人，您在这宫里连一间自己的屋子都没有。",
+     "choices": [
+      {
+       "text": "屋子会有的。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_18b": {
+     "who": "a_heng",
+     "audio": "low",
+     "text": "因为您问了两遍。问一遍的人，是来交差的；问两遍的人，是自己心里也过不去。林大人说过，这种人不多了。",
+     "effects": [
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "她说过几次。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_20": {
+     "who": "a_heng",
+     "audio": "broken",
+     "text": "她把盆放在地上，蹲下去，双手抱住膝盖，很久没有出声。……是孟千户。他站在楼梯口，穿的是蓑衣，不是禁军的甲。奴婢认得那双靴，靴筒上有铁钉。",
+     "effects": [
+      "flag:8_heng_meng",
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "她说了什么。",
+       "goto": "n_heng_21"
+      },
+      {
+       "text": "你为什么现在说。",
+       "goto": "n_heng_21b"
+      }
+     ]
+    },
+    "n_heng_21": {
+     "who": "a_heng",
+     "audio": "broken",
+     "text": "她说‘我知道你是谁派来的’。他说‘那你就该知道交什么’。然后他往前一步，她就往后退。奴婢在楼梯下头，只看见两只影子——一只大的，一只小的。",
+     "effects": [
+      "flag:8_heng_meng_words",
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "然后你下楼了。",
+       "goto": "n_heng_21c"
+      }
+     ]
+    },
+    "n_heng_21c": {
+     "who": "a_heng",
+     "audio": "broken",
+     "text": "奴婢不该下楼的。她后来说过一句话，奴婢没听清——像是‘第七张在我手里’。奴婢当时以为是说纸。现在想，她是在给自己留一句能被人记住的话。",
+     "effects": [
+      "flag:8_heng_seventh"
+     ],
+     "choices": [
+      {
+       "text": "第七张。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_21b": {
+     "who": "a_heng",
+     "audio": "low",
+     "text": "因为您今晚没有带刀。带刀的人问话，奴婢只说一半；不带刀的人，奴婢想试试能不能说完。",
+     "effects": [
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "说完吧。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_22": {
+     "who": "a_heng",
+     "audio": "afraid",
+     "text": "她把手伸进衣襟，摸出一个油纸包，只有半张巴掌大。她说，不许给禁军，不许给内官监，只给一个‘从宫外来的、肯在雨里站着的人’。奴婢等了十一天。",
+     "choices": [
+      {
+       "text": "给我。",
+       "goto": "n_heng_23"
+      },
+      {
+       "text": "你留着更危险。",
+       "goto": "n_heng_23b"
+      }
+     ]
+    },
+    "n_heng_23": {
+     "who": "a_heng",
+     "audio": "low",
+     "text": "她把纸放在你手里，手是冰的。纸上是七个格子，六个填了字，第七个空着。空的那格画了一道极细的线，像一扇门，也像一道缝。",
+     "effects": [
+      "clue:c12_heng_code",
+      "flag:12_heng_code_given",
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "这第七格，她说过什么。",
+       "goto": "n_heng_25"
+      }
+     ]
+    },
+    "n_heng_23b": {
+     "who": "a_heng",
+     "audio": "low",
+     "text": "她摇头，把纸塞过来。奴婢藏了十一天。藏东西的人，比找东西的人先死——这话是她说的，现在奴婢信了。您拿着，走得越远越好。",
+     "effects": [
+      "clue:c12_heng_code",
+      "flag:12_heng_code_given",
+      "trust:a_heng+10"
+     ],
+     "choices": [
+      {
+       "text": "第七格是什么意思。",
+       "goto": "n_heng_25"
+      }
+     ]
+    },
+    "n_heng_25": {
+     "who": "a_heng",
+     "audio": "low",
+     "text": "她说第七格不在纸上，在人身上。奴婢不懂。她还说，等七张凑齐，会有人来抢——抢的人不会穿夜行衣，会穿官服。",
+     "effects": [
+      "flag:12_heng_warning"
+     ],
+     "choices": [
+      {
+       "text": "她说完这句，去了角楼。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_24": {
+     "who": "a_heng",
+     "audio": "cry",
+     "text": "她盯着那张纸，眼泪掉下来砸在纸上，她赶紧用袖子去吸。她说她凑到第三张就够……她说够了就能翻案。奴婢当时信了。",
+     "effects": [
+      "flag:8_heng_three"
+     ],
+     "choices": [
+      {
+       "text": "三张不够。",
+       "goto": "n_heng_25b"
+      },
+      {
+       "text": "她告诉过你几码？",
+       "goto": "n_heng_25b"
+      }
+     ]
+    },
+    "n_heng_25b": {
+     "who": "a_heng",
+     "audio": "broken",
+     "text": "那她为什么还要去角楼。她把脸埋在袖子里。她不是去交东西的——她那晚出门前，把自己最好的一支簪子给了奴婢。",
+     "effects": [
+      "flag:8_heng_going_to_die"
+     ],
+     "choices": [
+      {
+       "text": "她知道会死。",
+       "goto": "n_heng_hub"
+      }
+     ]
+    },
+    "n_heng_end": {
+     "who": "a_heng",
+     "audio": "nervous",
+     "text": "她抱起盆，走两步，回头。大人，雨停了就走吧。这宫里的路，白天和夜里不是一条——您记住这句话，比记住奴婢的名字有用。",
+     "effects": [
+      "trust:a_heng+5"
+     ]
+    }
+   }
+  },
+  "meng_huai": {
+   "start": "n_meng_1",
+   "nodes": {
+    "n_meng_1": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他横在阶下，一只手按在刀鞘上。角楼封了。要看，拿监察司的牌；没牌，从原路回去。这楼上的东西，谁碰谁沾。",
+     "choices": [
+      {
+       "text": "我有牌。",
+       "goto": "n_meng_2"
+      },
+      {
+       "text": "封条是你贴的。",
+       "goto": "n_meng_3"
+      },
+      {
+       "text": "你靴上有泥。",
+       "goto": "n_meng_4"
+      }
+     ]
+    },
+    "n_meng_2": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他把牌翻来覆去地看，看得比该看的久。裴大人的印。……上去吧。别碰栏杆，别在楼上抽烟，别拿脚去试那块松了的砖。",
+     "choices": [
+      {
+       "text": "松了的砖？",
+       "goto": "n_meng_2b"
+      }
+     ]
+    },
+    "n_meng_2b": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他顿了一下。楼西角，砖是活的。前年就报过修，工部没理。下雨天踩上去，人一晃，什么都抓不住。",
+     "effects": [
+      "flag:1_meng_brick"
+     ],
+     "choices": [
+      {
+       "text": "你踩过。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_3": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "是我。雨水泡了三天，不封，等人来踩？禁军的规矩，出人命的场子先封，再报。你要写折子，这一条不用写，写别的。",
+     "choices": [
+      {
+       "text": "你和韩砚说法一样。",
+       "goto": "n_meng_3b"
+      }
+     ]
+    },
+    "n_meng_3b": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他眼皮跳了一下。统领教的。禁军上下都这么说话——你听两个人说一样的话，不代表他们在串词，只代表他们在同一个衙门吃饭。",
+     "effects": [
+      "flag:1_meng_same_words"
+     ],
+     "choices": [
+      {
+       "text": "第三个人也会这么说。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_4": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "宫里哪块地不泥？下了十一天雨，连殿里的金砖都返潮。你倒会看靴——御史台的人，眼睛都长在别人脚上。",
+     "choices": [
+      {
+       "text": "你靴筒上还有别的。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_hub": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他把手从刀鞘上挪开，又放回去，指节在鞘口上敲了两下。问吧。我站在这儿，替你挡风，也替你挡别的。",
+     "choices": [
+      {
+       "text": "那晚你什么时候到角楼？",
+       "goto": "n_meng_11"
+      },
+      {
+       "text": "巡逻记录是你签的？",
+       "goto": "n_meng_13"
+      },
+      {
+       "text": "谁让你封的楼？",
+       "goto": "n_meng_15"
+      },
+      {
+       "text": "林照月认识你。",
+       "goto": "n_meng_17"
+      },
+      {
+       "text": "你推了她。",
+       "accuse": "meng_huai",
+       "goto": "n_meng_20"
+      },
+      {
+       "text": "裴景衡让你去做什么？",
+       "goto": "n_meng_22",
+       "if": [
+        "trust:meng_huai>=60"
+       ]
+      },
+      {
+       "text": "值房那份巡逻记录，墨是新的。",
+       "goto": "n_meng_14",
+       "if": [
+        "has_clue:c2_ink_two"
+       ]
+      },
+      {
+       "text": "东长街的石础里少了一块砖。",
+       "goto": "n_meng_24",
+       "if": [
+        "has_clue:c4_plinth_loose"
+       ]
+      },
+      {
+       "text": "让开。",
+       "goto": "n_meng_end"
+      }
+     ]
+    },
+    "n_meng_11": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "亥时。雨最大的时候，东长街的水到脚踝。我一路蹚过来，连灯笼都点不着，靠摸墙走。到楼底下，抬头看了一眼。",
+     "choices": [
+      {
+       "text": "你上去的时候，她死了吗？",
+       "goto": "n_meng_12"
+      },
+      {
+       "text": "亥时你在巡哪一段？",
+       "goto": "n_meng_12b"
+      }
+     ]
+    },
+    "n_meng_12": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "死了。我上去，她已经躺在阶下——脸朝下，一只手伸着，像要抓什么。雨把血冲到砖缝里，黑的，不显。",
+     "effects": [
+      "flag:1_meng_stage"
+     ],
+     "choices": [
+      {
+       "text": "阶下？你说的是‘上去’。",
+       "goto": "n_meng_12c"
+      }
+     ]
+    },
+    "n_meng_12c": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他停了半息。楼下的阶。我说岔了。雨夜看不清，人一急，话就颠。你要拿这个当证据，御史台能从初一查到腊月。",
+     "effects": [
+      "flag:1_meng_slip_stage",
+      "trust:meng_huai+5"
+     ],
+     "choices": [
+      {
+       "text": "我不急。你再说一遍。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_12b": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "东长街到角楼，一线。这条线我一天走八遍，闭着眼都知道哪块砖高哪块砖低。记录上有，你可以去翻。",
+     "choices": [
+      {
+       "text": "记录上写的是你一个人。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_13": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "值房的记录是书吏写的，我只画押。禁军千户，一天要画二十个押，画到最后，手是自己的，名字是别人的。",
+     "choices": [
+      {
+       "text": "画押要看清。",
+       "goto": "n_meng_14"
+      },
+      {
+       "text": "你的押是个‘十’字。",
+       "goto": "n_meng_14"
+      }
+     ]
+    },
+    "n_meng_14": {
+     "who": "meng_huai",
+     "audio": "cold",
+     "text": "他脸色变了，声音低下去。……那张纸你从哪儿拿的。值房挂在墙上的东西，你怎么会去看那一栏——那一栏上一个月的字，都是一个书吏的手。",
+     "choices": [
+      {
+       "text": "值房。",
+       "goto": "n_meng_14b"
+      },
+      {
+       "text": "先说谁写的。",
+       "goto": "n_meng_14b"
+      }
+     ]
+    },
+    "n_meng_14b": {
+     "who": "meng_huai",
+     "audio": "cold",
+     "text": "他把刀鞘捏得响了一声。记录是裴大人让人整的。整记录是常事，年年整，换纸、补页、腾清——你别把‘整’字听成‘造’字。",
+     "effects": [
+      "flag:2_meng_record_pei",
+      "flag:2_meng_panic"
+     ],
+     "choices": [
+      {
+       "text": "整的是哪一页。",
+       "goto": "n_meng_14c"
+      }
+     ]
+    },
+    "n_meng_14c": {
+     "who": "meng_huai",
+     "audio": "cold",
+     "text": "他把脸转向雨。……三月初七那一页。原本写的是值房夜巡，后来腾清的时候改成‘角楼’。改的时候我不在。这话我说完了，你别再问第二遍。",
+     "effects": [
+      "flag:2_meng_record_changed",
+      "trust:meng_huai+5"
+     ],
+     "choices": [
+      {
+       "text": "改的人知道那晚有人在角楼。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_15": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "监察使衙门。封楼是规矩，不是我的主意——我这种人不配有主意。上头说封，我就贴条；上头说撤，我就撕条。",
+     "choices": [
+      {
+       "text": "上头是裴景衡。",
+       "goto": "n_meng_16"
+      }
+     ]
+    },
+    "n_meng_16": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "监察司只有一个上头。他让我封，我就封；他让我守，我就守。你要问为什么，去问他——我一个千户，只知道听令，不知道道理。",
+     "effects": [
+      "flag:2_meng_pei_order",
+      "trust:meng_huai+5"
+     ],
+     "choices": [
+      {
+       "text": "听令的人，也要担罪。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_17": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "她不认识我。禁军千人，她认得几个？我这号人站在她面前，她连眼皮都不会抬——档案官看的是纸，不是人。",
+     "choices": [
+      {
+       "text": "她说‘我知道你是谁派来的’。",
+       "goto": "n_meng_18",
+       "if": [
+        "flag:8_heng_meng"
+       ]
+      },
+      {
+       "text": "你袖口少了一枚扣子。",
+       "goto": "n_meng_18b"
+      }
+     ]
+    },
+    "n_meng_18": {
+     "who": "meng_huai",
+     "audio": "cold",
+     "text": "很长时间没有说话。雨从檐口成串地落。……她说了这句？她把话说得太满。说满话的人，容易摔——这宫里，站得越高，摔得越快。",
+     "effects": [
+      "flag:2_meng_slip_words",
+      "trust:meng_huai+8"
+     ],
+     "choices": [
+      {
+       "text": "她说完这句，就摔了。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_18b": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他下意识把袖子往下拉了一寸。扣子掉了。宫里的活，袖口最费——抬人、搬箱、拉绳子，一年要掉七八个扣。",
+     "effects": [
+      "flag:2_meng_button"
+     ],
+     "choices": [
+      {
+       "text": "掉在角楼上了。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_20": {
+     "who": "meng_huai",
+     "audio": "angry",
+     "text": "他往前一步，影子把你整个人罩住。你再说一遍。这屋顶上死过的人，不止她一个——你在这种地方指着一个千户说这种话，得先想清楚谁替你收尸。",
+     "choices": [
+      {
+       "text": "你推了她。",
+       "goto": "n_meng_21"
+      },
+      {
+       "text": "你要动手，就在这儿。",
+       "goto": "n_meng_21b"
+      }
+     ]
+    },
+    "n_meng_21": {
+     "who": "meng_huai",
+     "audio": "low",
+     "text": "我推她？他笑了一声，牙关咬得很紧。她转身的时候，雨大到看不清三尺外的东西。我伸手——是去抓她。抓和推，中间差一寸，那一寸在雨里。",
+     "effects": [
+      "flag:2_meng_admit_reach",
+      "trust:meng_huai+5"
+     ],
+     "choices": [
+      {
+       "text": "你伸手的时候，她已经站在边上了。",
+       "goto": "n_meng_hub"
+      },
+      {
+       "text": "你去角楼，不是巡夜。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_21b": {
+     "who": "meng_huai",
+     "audio": "cold",
+     "text": "他把手从刀鞘上拿开，垂在身侧。我杀过的人，都在战场上，正面，看得见脸。推一个女人下楼，不算本事——这话你记着，我孟淮再混，也只混在明处。",
+     "choices": [
+      {
+       "text": "明处的人，也会奉命。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_22": {
+     "who": "meng_huai",
+     "audio": "low",
+     "text": "他沉默了很久，才开口。劝。裴大人说，她手里有几张纸，让她交出来，别闹到御前。我去了，我劝了，她不肯。这是我能说的全部。",
+     "effects": [
+      "flag:2_meng_ordered",
+      "trust:meng_huai+10"
+     ],
+     "choices": [
+      {
+       "text": "然后呢。",
+       "goto": "n_meng_23"
+      },
+      {
+       "text": "你劝人的时候带着刀。",
+       "goto": "n_meng_23b"
+      }
+     ]
+    },
+    "n_meng_23": {
+     "who": "meng_huai",
+     "audio": "low",
+     "text": "然后她自己往后退了一步。栏杆是湿的，砖是活的，雨是斜的。这话我对着值房的墙说过一百遍——说到第一百遍的时候，我自己都开始信了。",
+     "effects": [
+      "flag:2_meng_self_lie",
+      "trust:meng_huai+8"
+     ],
+     "choices": [
+      {
+       "text": "第一百零一遍，说给我听。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_23b": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "禁军带刀，和厨子带勺一样。你要拿刀说事，这宫里三千把刀，你先一把把问过来。问完了，再来问我这一把。",
+     "choices": [
+      {
+       "text": "我只问这一把。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_24": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "石础？他抬脚在那块石头上磕了两下，声音是空的。这条街我一天走八遍，走了九年，从没想过石头里头是空的。藏东西的人，比我会挑地方。",
+     "effects": [
+      "flag:4_meng_pillar"
+     ],
+     "choices": [
+      {
+       "text": "藏的人知道巡逻的时辰。",
+       "goto": "n_meng_hub"
+      },
+      {
+       "text": "你也藏过东西。",
+       "goto": "n_meng_hub"
+      }
+     ]
+    },
+    "n_meng_end": {
+     "who": "meng_huai",
+     "audio": "rough",
+     "text": "他把身子让开半边，刚好够一个人过。上去吧。记住，栏杆别扶——那块木头，比这宫里的人还滑。",
+     "effects": [
+      "trust:meng_huai+3"
+     ]
+    }
+   }
+  },
+  "lu_yan": {
+   "start": "n_lu_1",
+   "nodes": {
+    "n_lu_1": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他不看你。扫帚在青砖上来回，把一层薄灰推成一条线，线正好停在你脚前，不往前，也不退后。灰很细，是档案库里那种被虫蛀过的纸屑。",
+     "choices": [
+      {
+       "text": "老丈。",
+       "goto": "n_lu_2"
+      },
+      {
+       "text": "咸安宫的地窖在哪？",
+       "goto": "n_lu_3"
+      },
+      {
+       "text": "丁卯年。",
+       "goto": "n_lu_4",
+       "if": [
+        "chapter>=8"
+       ]
+      },
+      {
+       "text": "你在档案库多少年了？",
+       "goto": "n_lu_4b"
+      }
+     ]
+    },
+    "n_lu_2": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他抬头，眼睛很浑，像蒙了一层灰。喉咙里发出一声短气，抬手点了点自己的嘴，摇头。然后继续扫，扫帚压着灰，一点声音都没有。",
+     "choices": [
+      {
+       "text": "你听得见我说话。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_3": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "扫帚停了。他抬手指西边，抬到一半又摆下来，手掌在身前压了两下——意思是不能去，去了出不来。他的手指关节很大，是常年搬箱子的手。",
+     "effects": [
+      "flag:6_lu_cellar"
+     ],
+     "choices": [
+      {
+       "text": "你进去过。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_4": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他握扫帚的手紧了一下，指节凸起来。过了很久，他弯下腰，用食指在灰上写了一个字：火。写完立刻用鞋底抹掉，抹得很干净。",
+     "effects": [
+      "flag:6_lu_fire",
+      "trust:lu_yan+10"
+     ],
+     "choices": [
+      {
+       "text": "火是灭证。",
+       "goto": "n_lu_hub"
+      },
+      {
+       "text": "你在场。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_4b": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他伸出手，先比了一个‘十’，又弯下三根手指。十三年？他摇头，重新比了一遍，这次比得很慢：十五。然后指了指脚下的砖。",
+     "effects": [
+      "flag:6_lu_fifteen",
+      "trust:lu_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "十五年前，这库烧过。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_hub": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他继续扫，灰线绕开你的鞋，像绕开一块石头。廊下没有别人，风把纸屑吹起来，又落回原处。",
+     "choices": [
+      {
+       "text": "你识字。",
+       "goto": "n_lu_11"
+      },
+      {
+       "text": "林照月来找过你。",
+       "goto": "n_lu_13"
+      },
+      {
+       "text": "你在怕谁？",
+       "goto": "n_lu_17"
+      },
+      {
+       "text": "七册互证，一册一码。",
+       "goto": "n_lu_15",
+       "if": [
+        "trust:lu_yan>=60"
+       ]
+      },
+      {
+       "text": "太和殿匾额后有一张纸。",
+       "goto": "n_lu_20",
+       "if": [
+        "has_clue:c3_plaque_hollow"
+       ]
+      },
+      {
+       "text": "你就是当年逃出来的书吏。",
+       "goto": "n_lu_22",
+       "if": [
+        "flag:6_lu_witness"
+       ]
+      },
+      {
+       "text": "我走了。",
+       "goto": "n_lu_end"
+      }
+     ]
+    },
+    "n_lu_11": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他愣了一下，随即摇头，指了指耳朵，又指指嘴。但他的眼睛在你脸上停得太久了——久到不像一个听不见的人。",
+     "choices": [
+      {
+       "text": "哑了多久？",
+       "goto": "n_lu_12"
+      },
+      {
+       "text": "你说一个字，我就走。",
+       "goto": "n_lu_12b"
+      }
+     ]
+    },
+    "n_lu_12": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他伸出手，比了个‘十五’，然后把手掌横在喉咙前，慢慢划过。做完这个动作，他低头继续扫，扫得比刚才快。",
+     "effects": [
+      "flag:6_lu_fifteen_silent",
+      "trust:lu_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "十五年前哑的。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_12b": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他退了一步，把扫帚横在身前，像一道栅栏。喉咙动了两下，没有声音出来。他的眼睛看着你身后，像在确认廊下有没有第三个人。",
+     "choices": [
+      {
+       "text": "我不逼你。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_13": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他点头。然后用手比了个高度，到胸口，再比了个写字的动作，最后把手掌摊开——那是问人要东西的手势，宫里老吏都这么伸手。",
+     "choices": [
+      {
+       "text": "她问你什么？",
+       "goto": "n_lu_14"
+      },
+      {
+       "text": "她给了你东西？",
+       "goto": "n_lu_14b"
+      }
+     ]
+    },
+    "n_lu_14": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他在灰上写：码。写完立刻用鞋底抹掉，抹完抬头看你，眼里有一点很硬的东西——不是怕，是审。他在看你会不会把这两个字说出去。",
+     "effects": [
+      "flag:6_lu_code_word",
+      "trust:lu_yan+8"
+     ],
+     "choices": [
+      {
+       "text": "我不会说。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_14b": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他摇头。然后用两根手指点了点自己的胸口——她给的不是东西，是话。话在他身上，压了十一天。",
+     "choices": [
+      {
+       "text": "什么话。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_15": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他终于开口，声音像很久没用的门轴。七册互证。一册改了，另六册就对不上。所以改的人，不是改一个字——他要把七册全握住，或者全烧掉。",
+     "effects": [
+      "clue:c3_ledger_gap",
+      "flag:11_lu_seven_rule",
+      "trust:lu_yan+12"
+     ],
+     "choices": [
+      {
+       "text": "所以他们烧了东庑。",
+       "goto": "n_lu_16"
+      },
+      {
+       "text": "七册现在在哪。",
+       "goto": "n_lu_16b"
+      }
+     ]
+    },
+    "n_lu_16": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他点头，喉咙里咯咯响。烧东庑，是因为东庑存的是底册。底册一烧，七册就成了孤本；孤本在谁手里，账就在谁手里。",
+     "choices": [
+      {
+       "text": "那一晚，你在库里。",
+       "goto": "n_lu_16c"
+      }
+     ]
+    },
+    "n_lu_16b": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他摇头，摇得很慢。不知道。七册散在宫里七处，藏的人是当年的库使，不是我。我只知道怎么读，不知道它们现在压在谁的墙里。",
+     "effects": [
+      "flag:11_lu_no_location"
+     ],
+     "choices": [
+      {
+       "text": "库使是裴廷芳。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_16c": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "我在。他抬起手，指甲在灰上划了一道。我数过七辆车，从西华门出去，车辙压得很深。烧的那晚我值夜，火从东边起，人从西边走。",
+     "effects": [
+      "flag:11_lu_witness",
+      "trust:lu_yan+10"
+     ],
+     "choices": [
+      {
+       "text": "你是那三个书吏里的一个。",
+       "goto": "n_lu_22"
+      }
+     ]
+    },
+    "n_lu_17": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他把扫帚放下，闭上眼，一动不动，像一截靠在墙上的旧木头。你问三句，他答零句；风把他的袖子吹起来，他也不动。",
+     "choices": [
+      {
+       "text": "我可以叫内官监的人来。",
+       "goto": "n_lu_18"
+      },
+      {
+       "text": "我不逼你。",
+       "goto": "n_lu_18b"
+      }
+     ]
+    },
+    "n_lu_18": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他睁开眼，看你一眼，然后继续扫。灰线绕过你，像绕过一块石头。这一眼里没有怕，只有一种很旧的、认命的冷。",
+     "effects": [
+      "trust:lu_yan-5"
+     ],
+     "choices": [
+      {
+       "text": "我不是来抓你的。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_18b": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他点了点头，很轻。然后把扫帚往墙边靠了靠，给你让出半步地方——这宫里，让半步就是让了一条命。",
+     "effects": [
+      "trust:lu_yan+5"
+     ],
+     "choices": [
+      {
+       "text": "那我等你想说。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_20": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他凑近看，鼻息很重，看了很久。然后用指甲在纸角刮了刮，又对着光举起来，最后摇头。他在灰上写：假的。",
+     "effects": [
+      "flag:6_lu_paper_false"
+     ],
+     "choices": [
+      {
+       "text": "纸是假的？",
+       "goto": "n_lu_21"
+      },
+      {
+       "text": "码是假的？",
+       "goto": "n_lu_21b"
+      }
+     ]
+    },
+    "n_lu_21": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他写：纸是真的，码位是挪过的。挪码的人还活着——这一手叫‘借位’，只有当年在内库做过账的人会。挪过位的码，能救人，也能杀人。",
+     "effects": [
+      "flag:6_lu_code_moved",
+      "trust:lu_yan+12"
+     ],
+     "choices": [
+      {
+       "text": "会这一手的人有多少。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_21b": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他点头。然后用两根手指比了个‘七’，再弯下一根。比完看着你，等你说话。廊外的雨小了，檐水一滴一滴打在阶石上。",
+     "effects": [
+      "flag:6_lu_seven_minus_one"
+     ],
+     "choices": [
+      {
+       "text": "少一码。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_22": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他站直了，第一次站直。喉咙动了几下。……陆延。名字很轻，像怕把它弄坏。然后他指了指地窖的方向，又指了指自己，把扫帚递到你手里。",
+     "effects": [
+      "flag:11_lu_identity",
+      "trust:lu_yan+15"
+     ],
+     "choices": [
+      {
+       "text": "崔慎知道吗？",
+       "goto": "n_lu_23"
+      },
+      {
+       "text": "你为什么装哑。",
+       "goto": "n_lu_23b"
+      }
+     ]
+    },
+    "n_lu_23": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他摇头，然后用手在脖子上横了一下，又指了指东边——内官监的方向。做完这个动作，他把扫帚拿回去，握得很紧。",
+     "effects": [
+      "flag:11_lu_cui_risk"
+     ],
+     "choices": [
+      {
+       "text": "他们以为你死了。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_23b": {
+     "who": "lu_yan",
+     "audio": "hoarse",
+     "text": "他写：会说话的人，都被记在册上。写完他看着那行字，看了很久，然后用鞋底抹掉——抹得比哪一次都用力。",
+     "effects": [
+      "flag:11_lu_silent_reason"
+     ],
+     "choices": [
+      {
+       "text": "册子还在。",
+       "goto": "n_lu_hub"
+      }
+     ]
+    },
+    "n_lu_end": {
+     "who": "lu_yan",
+     "audio": "silent",
+     "text": "他重新拿起扫帚。灰线往前推，把你刚才站过的地方抹平了。走到廊口，他停了一下，没有回头，抬手指了指西边，又指了指自己的眼睛。",
+     "effects": [
+      "trust:lu_yan+3"
+     ]
+    }
+   }
+  },
+  "su_weian": {
+   "start": "n_su_1",
+   "nodes": {
+    "n_su_1": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他让你伸手，三指搭上腕，指腹很凉。脉浮，夜里没睡，心里有事。你不是来瞧病的——瞧病的人，进门先看药柜，你进门先看我的桌子。",
+     "choices": [
+      {
+       "text": "林照月的脉案。",
+       "goto": "n_su_2"
+      },
+      {
+       "text": "你诊过她的脉。",
+       "goto": "n_su_3"
+      },
+      {
+       "text": "先说你为什么手抖。",
+       "goto": "n_su_4"
+      }
+     ]
+    },
+    "n_su_2": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "她的脉案在架子上，三十六页。我给人看病，不留话——脉案是给下一个大夫看的，不是给衙门看的。你要看，可以看，别抄。",
+     "choices": [
+      {
+       "text": "三十六页里，少了四页。",
+       "goto": "n_su_5"
+      },
+      {
+       "text": "谁调走过？",
+       "goto": "n_su_5b"
+      }
+     ]
+    },
+    "n_su_5": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他把手收进袖子里。……你数过。这架子上的脉案，一年添三百本，谁会有工夫数一本人有几页。你数了，说明有人让你数。",
+     "effects": [
+      "flag:5_su_counted",
+      "trust:su_weian+5"
+     ],
+     "choices": [
+      {
+       "text": "我自己数的。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_5b": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "院判的架子，谁都能开。内官监的人来取过一回，说上头要看。他们取东西从来不写单子，只写一句‘奉谕’。",
+     "effects": [
+      "flag:5_su_cui_took"
+     ],
+     "choices": [
+      {
+       "text": "奉谁的谕。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_3": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "诊过。三月前，一次。她说是心悸，夜里心跳得厉害，睡不安。我开了安神的方子——酸枣仁、远志、一点点朱砂。方子是干净的。",
+     "choices": [
+      {
+       "text": "心悸的人，牙龈会出血吗？",
+       "goto": "n_su_6",
+       "if": [
+        "has_clue:c7_tongue_sign"
+       ]
+      },
+      {
+       "text": "方子干净，人不干净。",
+       "goto": "n_su_6b"
+      }
+     ]
+    },
+    "n_su_6": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他的手停了半息。……牙龈出血，可以是肝火，可以是牙疳，可以是她咬破了嘴。你若只凭这一个字，就断定是毒，那你这案子查不下去。",
+     "effects": [
+      "flag:5_su_deflect"
+     ],
+     "choices": [
+      {
+       "text": "你早知道。",
+       "goto": "n_su_6b"
+      }
+     ]
+    },
+    "n_su_6b": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他把药秤往边上推了推。干净这两个字，在太医院最贵。药要干净，方要干净，脉案也要干净——不干净的东西留在架子上，会有人来问。",
+     "effects": [
+      "flag:5_su_clean_word"
+     ],
+     "choices": [
+      {
+       "text": "谁来问。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_4": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他笑了一下，很薄。太医院的手抖，是因为药秤。三钱和五钱，差一线；一线之差，人能活，也能死。你握过药秤就懂了。",
+     "choices": [
+      {
+       "text": "我握过刀。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_hub": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他把脉枕往边上推了推，给你腾出一角桌子，袖口在桌沿上蹭了一下。问吧。太医院一日三诊，我还有两个时辰。",
+     "choices": [
+      {
+       "text": "她中的是什么毒？",
+       "goto": "n_su_11"
+      },
+      {
+       "text": "你为什么改脉案？",
+       "goto": "n_su_13"
+      },
+      {
+       "text": "乌头从哪来？",
+       "goto": "n_su_15"
+      },
+      {
+       "text": "崔慎逼你的。",
+       "goto": "n_su_17"
+      },
+      {
+       "text": "你改了她的脉案，掩盖了中毒。",
+       "accuse": "su_weian",
+       "goto": "n_su_20"
+      },
+      {
+       "text": "那四页，你抄了一份留着。",
+       "goto": "n_su_20b",
+       "if": [
+        "trust:su_weian>=60"
+       ]
+      },
+      {
+       "text": "柳医女见过她的舌象。",
+       "goto": "n_su_24",
+       "if": [
+        "has_clue:c7_tongue_sign"
+       ]
+      },
+      {
+       "text": "这张纸的墨，你认得吗？",
+       "goto": "n_su_26",
+       "if": [
+        "has_clue:c3_plaque_hollow"
+       ]
+      },
+      {
+       "text": "告辞。",
+       "goto": "n_su_end"
+      }
+     ]
+    },
+    "n_su_11": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "毒？他把这两个字咬得很平。她的脉案上写的是‘心悸，肝郁’。肝郁的人会手抖、会失眠、会忽然发火——这些症状，她全有。",
+     "choices": [
+      {
+       "text": "你背得很熟。",
+       "goto": "n_su_12"
+      },
+      {
+       "text": "乌头碱也让人心悸。",
+       "goto": "n_su_12b"
+      }
+     ]
+    },
+    "n_su_12": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "脉案我读过一百遍。改一个字，就要读一百遍——读到后来，那些字不像字，像一排排躺着的人。你做过这种事吗？为一个字，读一整夜。",
+     "effects": [
+      "flag:5_su_slip_read"
+     ],
+     "choices": [
+      {
+       "text": "改的是哪个字。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_12b": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他抬眼看你，很快又低下去。乌头入药，三分是药，五分是毒。这话我说过很多次，你别拿它来套我——套得住话，套不住脉。",
+     "choices": [
+      {
+       "text": "那就让我看脉。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_13": {
+     "who": "su_weian",
+     "audio": "cold",
+     "text": "我没有改。笔迹可以仿，纸可以换，印可以借。你要指我，得先有那一页——那一页不在架子上，也不在我手里。",
+     "effects": [
+      "flag:5_su_deny"
+     ],
+     "choices": [
+      {
+       "text": "那一页在崔慎手里。",
+       "goto": "n_su_14"
+      }
+     ]
+    },
+    "n_su_14": {
+     "who": "su_weian",
+     "audio": "cold",
+     "text": "他沉默了一会儿。……崔少监拿走的东西，从来不还。他拿走的时候说‘院判，这页纸不干净’。我当时听懂了，也只能听懂。",
+     "effects": [
+      "flag:5_su_cui_page",
+      "trust:su_weian+8"
+     ],
+     "choices": [
+      {
+       "text": "不干净的是毒，不是纸。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_15": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "太医院一年用乌头十七斤。炮制、配丸、外敷、泡酒，样样都要。账在药库，出入都有签押——你可以去数，数完了再来问我。",
+     "choices": [
+      {
+       "text": "十七斤里，少了多少。",
+       "goto": "n_su_16"
+      }
+     ]
+    },
+    "n_su_16": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他没答，伸手把药柜最下层的抽屉推严。少不少，不在我院里。药库的钥匙三把，一把在我这儿，一把在内官监，一把在值夜的医女手上。",
+     "effects": [
+      "flag:5_su_key3"
+     ],
+     "choices": [
+      {
+       "text": "值夜的医女是谁。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_17": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "崔慎。他来的时候带着内官监的牌，站在药柜边上，说‘院判，这页纸不干净’。他没说要我写什么，只说要干净。",
+     "effects": [
+      "flag:5_su_cui",
+      "trust:su_weian+8"
+     ],
+     "choices": [
+      {
+       "text": "你怎么回的？",
+       "goto": "n_su_18"
+      },
+      {
+       "text": "所以你就改了。",
+       "goto": "n_su_18b"
+      }
+     ]
+    },
+    "n_su_18": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "我说，字是我写的。他笑了一下，说‘字是你的，纸是我的’。然后他把那页拿走，第二天送来一张新的，让我照着抄。",
+     "choices": [
+      {
+       "text": "新页上写的是什么。",
+       "goto": "n_su_18b"
+      }
+     ]
+    },
+    "n_su_18b": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "我改了四页。他突然说得很轻，像怕被药柜听见。改的是‘毒’字，不是人。你把这两个分开写，我认；你要是合成一个，我不认。",
+     "effects": [
+      "flag:5_su_admit_pages",
+      "trust:su_weian+12"
+     ],
+     "choices": [
+      {
+       "text": "毒字改成什么。",
+       "goto": "n_su_19"
+      }
+     ]
+    },
+    "n_su_19": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "改成‘肝郁’，改成‘心悸’，改成‘旧疾复发’。三个都是病，三个都能死人，三个都不会有人来查。这宫里死人不稀奇，稀奇的是有人来查。",
+     "effects": [
+      "flag:5_su_three_words"
+     ],
+     "choices": [
+      {
+       "text": "她不是病死的。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_20": {
+     "who": "su_weian",
+     "audio": "cold",
+     "text": "他站起来，把药柜的抽屉一格格推回去，推得很整齐。我杀她？我用什么？乌头？我院里有一百二十斤乌头，我要杀她，她活不过第一个月。",
+     "choices": [
+      {
+       "text": "你改了她的脉案。",
+       "goto": "n_su_21"
+      },
+      {
+       "text": "你掩盖了中毒。",
+       "goto": "n_su_21b"
+      }
+     ]
+    },
+    "n_su_21": {
+     "who": "su_weian",
+     "audio": "cold",
+     "text": "我改了。他很平静，平静得像在说别人的手。这一条我认。你写进折子，我签字——但你要在折子上写清楚：我改的是纸，她死的时候我不在。",
+     "effects": [
+      "flag:5_su_confess_forge"
+     ],
+     "choices": [
+      {
+       "text": "我相信这一条。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_21b": {
+     "who": "su_weian",
+     "audio": "cold",
+     "text": "掩盖中毒，是让凶手多活了十一天。他直视你。这十一天，你在做什么？头三天你在午门，中间五天下雨，后三天你在太和殿看匾。",
+     "effects": [
+      "flag:5_su_counter",
+      "trust:su_weian+5"
+     ],
+     "choices": [
+      {
+       "text": "你查过我。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_20b": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "他看了你很久。然后从袖里摸出一小片纸，推到桌沿。这是原方。我抄了一份，藏在药柜第三格，用《千金方》压着——不是为翻案，是为我自己夜里能睡着。",
+     "effects": [
+      "clue:c7_recipe_swap",
+      "flag:5_su_original",
+      "trust:su_weian+12"
+     ],
+     "choices": [
+      {
+       "text": "你为什么留着。",
+       "goto": "n_su_22b"
+      },
+      {
+       "text": "这能救你自己。",
+       "goto": "n_su_22c"
+      }
+     ]
+    },
+    "n_su_22b": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "因为总有一天会有人来数那四页。纸在，我就还有一条路：认改纸，不认杀人。纸不在，我连这条路都没有。",
+     "choices": [
+      {
+       "text": "现在这张纸在我手里。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_22c": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "救不了。他摇头。留证据的人，是给自己留一条死法。我今年五十七，做院判十四年，见过的死人比活人多——我知道哪种死法体面。",
+     "choices": [
+      {
+       "text": "那就别死。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_24": {
+     "who": "su_weian",
+     "audio": "low",
+     "text": "柳医女。他闭了一下眼。她是三月里替林照月送药的。她跟我说过舌象，我让她别再提。一个医女的话，在宫里比纸还薄。",
+     "effects": [
+      "flag:5_su_liu",
+      "trust:su_weian+8"
+     ],
+     "choices": [
+      {
+       "text": "薄的东西，压在证据上面正好。",
+       "goto": "n_su_25"
+      }
+     ]
+    },
+    "n_su_25": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他从架上抽出一本册子，翻到夹着一根干草的那页，推给你。舌淡、苔灰、齿痕、龈缝有黑线——这是乌头，不是肝郁。你看清楚了，再决定写谁的名字。",
+     "effects": [
+      "flag:5_su_tongue_seen"
+     ],
+     "choices": [
+      {
+       "text": "写你，还是不写你。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_26": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他把纸举到窗光下看了很久，又凑近闻。松烟，还有桐油。宫里只有造办处配这种墨，一年二十斤，专给誊录诰命的用。写字的人手很稳，可用的不是他自己的墨。",
+     "effects": [
+      "flag:3_su_ink"
+     ],
+     "choices": [
+      {
+       "text": "谁的墨。",
+       "goto": "n_su_hub"
+      },
+      {
+       "text": "抄的人怕留自己的墨。",
+       "goto": "n_su_hub"
+      }
+     ]
+    },
+    "n_su_end": {
+     "who": "su_weian",
+     "audio": "dry",
+     "text": "他重新坐回去，把脉枕摆正，袖口拉平。下次来，让我诊完再问。脉不会撒谎，人会——你要是连脉都不肯让我摸，那你查的不是案子，是你自己。",
+     "effects": [
+      "trust:su_weian+3"
+     ]
+    }
+   }
+  },
+  "pei_jingyuan": {
+   "start": "n_yuan_1",
+   "nodes": {
+    "n_yuan_1": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "她合上册子，先看你的靴，再看你的手，最后才看你的脸。外官进内廷，先要报一句‘见过尚仪’。这不是给你立的规矩，是给这院子立的。",
+     "choices": [
+      {
+       "text": "见过尚仪。",
+       "goto": "n_yuan_2"
+      },
+      {
+       "text": "我不懂这些规矩。",
+       "goto": "n_yuan_3"
+      },
+      {
+       "text": "你哥哥让我来的。",
+       "goto": "n_yuan_4"
+      }
+     ]
+    },
+    "n_yuan_2": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "她点头，态度松了一线，抬手让女史退下。懂规矩的人少，肯守的更少。坐吧，茶凉了也别嫌——内廷的茶，从来是凉的。",
+     "effects": [
+      "trust:pei_jingyuan+8"
+     ],
+     "choices": [
+      {
+       "text": "那就坐着说。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_3": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "不懂规矩的人，在内廷活不过三天。她把册子压在手下。但你既然是查案的，就站着说吧。站着的人，说话会短一些，我喜欢短话。",
+     "choices": [
+      {
+       "text": "三月初七那晚，你在哪。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_4": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "她的手停在册页上，指腹压着纸，压出一道白痕。哥哥……他说了什么？他让你来问我，还是让你来问我哥哥在哪。",
+     "choices": [
+      {
+       "text": "他说那晚他在值房。",
+       "goto": "n_yuan_5"
+      },
+      {
+       "text": "他什么也没说。",
+       "goto": "n_yuan_5b"
+      }
+     ]
+    },
+    "n_yuan_5": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "他是在值房。她说得太快了，快得像早就备好。说完自己也觉察了，低头去理册页的角，理了三遍。",
+     "effects": [
+      "flag:1_yuan_too_fast"
+     ],
+     "choices": [
+      {
+       "text": "尚仪，你理那页纸理了三遍。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_5b": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "那你不该来问我。她把册子合上。裴家的事，轮不到外人算；宫里的事，我也不敢算。你若要问，去问值房的册子，那上头写什么，就是什么。",
+     "choices": [
+      {
+       "text": "册子我看了。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_hub": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "她把手拢在袖里，坐得很直，像一把收好的伞。问吧。尚仪局酉时下钥，我只有这些话的工夫。",
+     "choices": [
+      {
+       "text": "三月初七那晚，你在哪？",
+       "goto": "n_yuan_11"
+      },
+      {
+       "text": "尚仪的仪注册记时辰吗？",
+       "goto": "n_yuan_13"
+      },
+      {
+       "text": "你哥哥那晚在哪？",
+       "goto": "n_yuan_15"
+      },
+      {
+       "text": "你在护着他。",
+       "goto": "n_yuan_17"
+      },
+      {
+       "text": "你哥哥那晚去了角楼。",
+       "goto": "n_yuan_19",
+       "if": [
+        "flag:1_pei_absent"
+       ]
+      },
+      {
+       "text": "亥时三刻，你听见了什么？",
+       "goto": "n_yuan_20",
+       "if": [
+        "trust:pei_jingyuan>=60"
+       ]
+      },
+      {
+       "text": "值房册上找不到他的名字。",
+       "goto": "n_yuan_24",
+       "if": [
+        "has_clue:c4_jy_brother_out"
+       ]
+      },
+      {
+       "text": "太和殿的匾，三年前重挂过。",
+       "goto": "n_yuan_26",
+       "if": [
+        "has_clue:c3_plaque_hollow"
+       ]
+      },
+      {
+       "text": "打扰了。",
+       "goto": "n_yuan_end"
+      }
+     ]
+    },
+    "n_yuan_11": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "在尚仪局。那天有祭先蚕的仪注要改，改到亥时。先蚕礼是三月里最大的事，错一个字，尚仪局全体罚俸——我们比谁都怕错。",
+     "choices": [
+      {
+       "text": "谁和你一起？",
+       "goto": "n_yuan_12"
+      },
+      {
+       "text": "亥时之后呢？",
+       "goto": "n_yuan_12b"
+      }
+     ]
+    },
+    "n_yuan_12": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "两个女史。她们先走了，我留下收册、锁柜、灭灯。尚仪的规矩，最后走的人查一遍火烛——这院子里，最后一个走的永远是我。",
+     "effects": [
+      "flag:1_yuan_alone",
+      "trust:pei_jingyuan+5"
+     ],
+     "choices": [
+      {
+       "text": "所以你一个人。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_12b": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "回房。廊下的灯那晚灭了两盏，我差点在第三级台阶上摔了。这我记得很清楚——摔过的地方，人一辈子都记得。",
+     "effects": [
+      "flag:1_yuan_lamp"
+     ],
+     "choices": [
+      {
+       "text": "灯是谁灭的。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_13": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "记。每一页都要记时辰、人名、事由，错了要画圈改，圈上盖尚仪的小印。这不是给你看的，是给二十年后的人看的。",
+     "choices": [
+      {
+       "text": "那晚的册子还在吗？",
+       "goto": "n_yuan_14"
+      },
+      {
+       "text": "上面有你哥哥的名字吗？",
+       "goto": "n_yuan_14b"
+      }
+     ]
+    },
+    "n_yuan_14": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "在。她把册子往自己这边挪了半寸。你若要看，得走内官监的令。我劝你别调——不是我藏什么，是那册子上有二十几个名字。",
+     "effects": [
+      "flag:1_yuan_book"
+     ],
+     "choices": [
+      {
+       "text": "二十几个名字里，有一个不在。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_14b": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "他不在尚仪的册子上。他不是尚仪局的人，也不该出现在我的册子上——尚仪局的册子只记女官和内监，记不到监察使。",
+     "choices": [
+      {
+       "text": "他进内廷，总要有一处记号。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_15": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "在值房。监察司的值房在乾清门西，一间半的屋子，一张桌子，一把椅子。他在那儿坐了十二年，坐得椅子腿都短了一截。",
+     "choices": [
+      {
+       "text": "你去看过？",
+       "goto": "n_yuan_16"
+      },
+      {
+       "text": "你怎么知道。",
+       "goto": "n_yuan_16b"
+      }
+     ]
+    },
+    "n_yuan_16": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "没有。她答得很快，然后又慢下来。他说的。他每天回家都说一句‘今天在值房’，说了十二年，我没理由不信。",
+     "effects": [
+      "flag:1_yuan_hearsay"
+     ],
+     "choices": [
+      {
+       "text": "所以你的证词，是他说的。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_16b": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "他每晚都在那儿，十几年了。除了——她停住，把话咽回去，端起茶盏碰了碰唇，没有喝。",
+     "effects": [
+      "flag:1_yuan_except",
+      "trust:pei_jingyuan+5"
+     ],
+     "choices": [
+      {
+       "text": "除了什么。",
+       "goto": "n_yuan_16b"
+      }
+     ]
+    },
+    "n_yuan_17": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "他是我哥哥。她把册子抱在怀里，抱得很紧。父亲只剩我们两个，母亲走得早。你要查他，先拿出东西来——不是给我看，是给这院子看。",
+     "choices": [
+      {
+       "text": "那晚他不在值房。",
+       "goto": "n_yuan_18"
+      },
+      {
+       "text": "你也在被人利用。",
+       "goto": "n_yuan_18b"
+      }
+     ]
+    },
+    "n_yuan_18": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "谁告诉你的。她声音不高，但每个字都咬得清。你要是拿不出凭据，这话出不了这道门——不是我要拦你，是这院子会记下你今天的脚步。",
+     "effects": [
+      "flag:1_yuan_threat"
+     ],
+     "choices": [
+      {
+       "text": "凭据在我手里。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_18b": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "被谁？她笑了一下，笑得很难看。宫里人人都在被人利用。你是，我也是。我被利用的方式，是替人守着一个我并不知道的秘密。",
+     "effects": [
+      "flag:1_yuan_used",
+      "trust:pei_jingyuan+8"
+     ],
+     "choices": [
+      {
+       "text": "那个秘密，你想知道吗。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_19": {
+     "who": "pei_jingyuan",
+     "audio": "afraid",
+     "text": "她站起来，册子掉在地上，纸页散开。他没有。……他要是去了，他不会让我知道。他从来不让家里知道他做的事——父亲教他的第一句话就是这个。",
+     "choices": [
+      {
+       "text": "你在替他遮掩。",
+       "goto": "n_yuan_21"
+      },
+      {
+       "text": "那你怕什么。",
+       "goto": "n_yuan_21b"
+      }
+     ]
+    },
+    "n_yuan_21": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "我在替他收拾。她蹲下去捡纸，一张一张理平。这十几年，我一直在替他收拾——他喝醉的夜，他撕掉的纸，他忘了回家的那些晚上。",
+     "effects": [
+      "flag:1_yuan_cover"
+     ],
+     "choices": [
+      {
+       "text": "这一次，你收拾不了。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_21b": {
+     "who": "pei_jingyuan",
+     "audio": "afraid",
+     "text": "怕他死。她声音很低。父亲的名字已经在纸上了，哥哥要是也上去，裴家就没了。你不知道没有家的女官在宫里是什么样子——连一杯凉茶都没人递。",
+     "effects": [
+      "flag:1_yuan_fear",
+      "flag:1_pei_father_name"
+     ],
+     "choices": [
+      {
+       "text": "父亲的名字，在哪张纸上。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_20": {
+     "who": "pei_jingyuan",
+     "audio": "afraid",
+     "text": "她盯着你看了很久，才开口，声音很轻。亥时三刻，东边的门响了一下。我以为是他回来了，就把灯留着。他寅时才回，鞋是湿的，伞是干的。",
+     "effects": [
+      "clue:c4_jy_brother_out",
+      "flag:1_pei_absent",
+      "flag:1_pei_wet_boots",
+      "trust:pei_jingyuan+15"
+     ],
+     "choices": [
+      {
+       "text": "伞是干的，鞋是湿的。",
+       "goto": "n_yuan_23"
+      },
+      {
+       "text": "你为什么现在说。",
+       "goto": "n_yuan_23b"
+      }
+     ]
+    },
+    "n_yuan_23": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "伞在门房。他回来的时候，伞插在门房的伞桶里，干的。人淋了雨，伞却是干的——那一夜他到底走了哪条路，我到现在也想不通。",
+     "effects": [
+      "flag:1_yuan_umbrella"
+     ],
+     "choices": [
+      {
+       "text": "走的是没有雨的路。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_23b": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "因为你说‘那晚他不在值房’的时候，没有得意。她看着你。得意的人，我一个字都不说；不得意的人，我想赌一次。",
+     "effects": [
+      "trust:pei_jingyuan+10"
+     ],
+     "choices": [
+      {
+       "text": "这一赌，赌的是裴家。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_24": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "她看着那张纸，看了很久，指尖在纸边上来回。……值房的册子，是他自己记的。他记的时候，从来不写自己——他说，监察使不给自己作证。",
+     "effects": [
+      "flag:1_pei_self_record",
+      "trust:pei_jingyuan+10"
+     ],
+     "choices": [
+      {
+       "text": "那就等于没有不在场证明。",
+       "goto": "n_yuan_25"
+      },
+      {
+       "text": "你能替他作证吗？",
+       "goto": "n_yuan_25b"
+      }
+     ]
+    },
+    "n_yuan_25": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "我能作证的是：他寅时回来，鞋是湿的，伞在桶里。再多一句，我不说。你把这一句写进折子，我签；你要我写第二句，我宁可辞了这个尚仪。",
+     "effects": [
+      "flag:1_yuan_witness_ready"
+     ],
+     "choices": [
+      {
+       "text": "一句就够。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_25b": {
+     "who": "pei_jingyuan",
+     "audio": "low",
+     "text": "作证要签字。签了字，裴家就没有监察使了。她把手压在册子上。我这辈子签过很多字，仪注、赏单、罚单——没有一张像这张这么重。",
+     "effects": [
+      "flag:1_yuan_hesitate"
+     ],
+     "choices": [
+      {
+       "text": "重的东西，才压得住。",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_26": {
+     "who": "pei_jingyuan",
+     "audio": "cold",
+     "text": "她翻出两页告祭档，指给你看。修匾要告祭，告祭要记档：时辰、工匠、监工，一格都不能空。监工那一栏写的是内务府，画押的却是内官监的人。",
+     "effects": [
+      "flag:3_yuan_plaque_record"
+     ],
+     "choices": [
+      {
+       "text": "谁能在内务府的格子里画内官监的押。",
+       "goto": "n_yuan_hub"
+      },
+      {
+       "text": "这一页，你还敢签吗？",
+       "goto": "n_yuan_hub"
+      }
+     ]
+    },
+    "n_yuan_end": {
+     "who": "pei_jingyuan",
+     "audio": "composed",
+     "text": "她把册子捡起来，拍掉灰，理平纸角。大人，尚仪局的门戌时关。你走的时候别回头——这院子里的灯，照不了那么远。",
+     "effects": [
+      "trust:pei_jingyuan+5"
+     ]
+    }
+   }
+  }
+ }
+}

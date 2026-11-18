@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>自检 · 宫阙疑云</title>
+<style>
+body{margin:0;background:#0a0c10;color:#e9e2d3;font:15px/1.9 -apple-system,"Noto Sans SC",sans-serif;padding:20px}
+h1{font-size:18px;letter-spacing:.2em;font-weight:600;margin:6px 0 16px}
+.row{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(200,180,140,.14)}
+.k{width:120px;flex:none;color:#a99f8c;font-size:13px}
+.v{flex:1;font-size:13.5px;word-break:break-all}
+.ok{color:#8fd0a8}.bad{color:#e2705f}.wait{color:#c9a227}
+pre{margin-top:16px;background:rgba(255,255,255,.04);padding:12px;font-size:12px;line-height:1.7;white-space:pre-wrap;border:1px solid rgba(200,180,140,.16)}
+</style>
+</head>
+<body>
+<h1>自检</h1>
+<div id="rows"></div>
+<pre id="log">正在检查…</pre>
+
+<script type="module">
+const rows = document.getElementById('rows');
+const logs = [];
+const add = (k, v, cls = '') => {
+  const d = document.createElement('div'); d.className = 'row';
+  d.innerHTML = `<div class="k">${k}</div><div class="v ${cls}">${v}</div>`;
+  rows.appendChild(d);
+};
+const log = t => { logs.push(t); document.getElementById('log').textContent = logs.join('\n'); };
+
+add('地址', location.href);
+add('浏览器', navigator.userAgent.slice(0, 90));
+add('模块脚本', ('noModule' in document.createElement('script')) ? '支持' : '不支持', 'ok');
+try {
+  const gl = document.createElement('canvas').getContext('webgl2');
+  add('WebGL2', gl ? gl.getParameter(gl.VERSION) : '没有（画面会黑）', gl ? 'ok' : 'bad');
+} catch (e) { add('WebGL2', '报错 ' + e.message, 'bad'); }
+
+const files = ['data/walk_meta.json', 'data/anchors.json', 'data/content_clues.json',
+  'vendor/three/three.module.js', 'vendor/three/three.core.js',
+  'vendor/three/loaders/GLTFLoader.js', 'js/main.js',
+  'assets/glb/r01_wumen.glb'];
+for (const f of files) {
+  const t0 = performance.now();
+  try {
+    const r = await fetch(f, { method: 'GET', cache: 'no-store' });
+    const len = (await r.arrayBuffer()).byteLength;
+    const ms = Math.round(performance.now() - t0);
+    add(f, `${r.status} · ${(len / 1024).toFixed(0)} KB · ${ms} ms`, r.ok ? 'ok' : 'bad');
+  } catch (e) {
+    add(f, '失败：' + e.message, 'bad');
+  }
+}
+try {
+  await import('./js/util.js');
+  add('模块 import', 'OK', 'ok');
+  await import('./vendor/three/three.module.js');
+  add('three 导入', 'OK', 'ok');
+} catch (e) {
+  add('模块 import', '失败：' + e.message, 'bad');
+}
+log('完成。把这一页截图发我即可定位。');
+</script>
+<script>
+window.addEventListener('error', e => {
+  const p = document.getElementById('log');
+  if (p) p.textContent += '\n错误：' + (e.message || '') + ' @' + (e.filename || '');
+});
+</script>
+</body>
+</html>

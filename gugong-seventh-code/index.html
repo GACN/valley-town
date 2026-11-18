@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0a0c10">
+<title>宫阙疑云：第七码</title>
+<link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="view"></canvas>
+
+  <div id="loading">
+    <div class="lbox">
+      <div class="lk">紫禁城 · 架空纪年</div>
+      <h1>宫阙疑云</h1>
+      <div class="lsub">第七码</div>
+      <div class="lbar"><i></i></div>
+      <div class="ltext">正在载入</div>
+    </div>
+  </div>
+</div>
+
+<div id="bootfail" style="display:none;position:fixed;inset:0;z-index:200;background:#0a0c10;color:#e9e2d3;
+  font:14px/1.9 -apple-system,'Noto Sans SC',sans-serif;padding:28px 22px;overflow:auto">
+  <div style="font-size:12px;letter-spacing:.3em;color:#c9a227">载入诊断</div>
+  <h2 style="font-family:serif;letter-spacing:.14em;margin:10px 0 14px">页面没能启动</h2>
+  <div id="bootfailMsg" style="color:#a99f8c;white-space:pre-wrap"></div>
+  <div style="margin-top:18px;font-size:12.5px;color:#6f6759">
+    排查：1) 确认用 Chrome/Safari 直接打开这个地址（不要在微信、文件管理器里预览）；
+    2) 地址要带 http:// 且与本机同一 Wi-Fi；3) 换成 <code>?q=low</code> 试一次。
+  </div>
+</div>
+<script>
+(function () {
+  var errs = [];
+  window.addEventListener('error', function (e) {
+    errs.push('脚本错误：' + (e.message || '') + (e.filename ? ' @ ' + e.filename + ':' + e.lineno : ''));
+  });
+  window.addEventListener('unhandledrejection', function (e) {
+    errs.push('未处理异常：' + (e.reason && (e.reason.message || e.reason)) );
+  });
+  function fail(reason) {
+    var box = document.getElementById('bootfail');
+    var msg = document.getElementById('bootfailMsg');
+    if (!box || !msg) return;
+    var info = [
+      '原因：' + reason,
+      '地址：' + location.href,
+      '模块脚本支持：' + ('noModule' in document.createElement('script') ? '支持' : '不支持（浏览器太旧）'),
+      'WebGL2：' + (function () { try { return document.createElement('canvas').getContext('webgl2') ? '有' : '没有'; } catch (e) { return '没有'; } })(),
+      '屏幕：' + window.innerWidth + '×' + window.innerHeight,
+    ].concat(errs).join('\n');
+    msg.textContent = info;
+    box.style.display = 'block';
+  }
+  window.__bootFail = fail;
+  setTimeout(function () {
+    if (!window.__game) fail('8 秒内没有启动（脚本没跑起来，或主模块加载失败）');
+  }, 8000);
+  setTimeout(function () {
+    if (!window.__game) fail('20 秒仍未启动');
+  }, 20000);
+})();
+</script>
+<script type="module" src="js/main.js" onerror="window.__bootFail && window.__bootFail('main.js 加载失败（检查 js/ 是否可达）')"></script>
+</body>
+</html>

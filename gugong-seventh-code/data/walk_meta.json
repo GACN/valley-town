@@ -1,0 +1,21 @@
+{
+ "step": 1.5,
+ "x0": -415.0,
+ "x1": 415.0,
+ "y0": -485.0,
+ "y1": 590.0,
+ "nx": 553,
+ "ny": 716,
+ "eye": 1.55,
+ "stats": {
+  "walk_terrain": 40001,
+  "walk_bare": 289819,
+  "blocked_building": 6515,
+  "blocked_bare": 21250,
+  "water": 38363
+ },
+ "height_unit": "cm",
+ "height_encoding": "uint16 little-endian",
+ "blocked_encoding": "uint8 row-major j*nx+i, +Y=north, 0=free 1=blocked 2=water",
+ "note": "顶面归属法：最高面属于地形层→可站；属于建筑/构件→阻挡"
+}

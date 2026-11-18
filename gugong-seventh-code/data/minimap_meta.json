@@ -1,0 +1,5 @@
+{
+ "minimap": "data/minimap.png",
+ "px_per_cell": 1,
+ "note": "y 轴已翻转，北在上"
+}

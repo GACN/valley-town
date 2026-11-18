@@ -2,6 +2,14 @@
 
 一个能走、能开车、能进屋、能改天气的三维山谷小镇。纯前端，单页，离线可跑（three.js 已本地化，不联网）。
 
+## 本仓库收录的作品
+
+| 作品 | 在线 | 说明 |
+|---|---|---|
+| 山谷小镇 Valley Town | [打开](https://gacn.github.io/valley-town/) | 程序生成的山谷小镇，可走可开车可进屋 |
+| 宫阙疑云：第七码 | [打开](https://gacn.github.io/valley-town/gugong-seventh-code/) | 用真实尺寸紫禁城白模做的第一人称悬疑推理游戏（14 章 / 4 结局）。白模生成脚本与渲染预览在 [gugong-seventh-code/model-source](gugong-seventh-code/model-source/) |
+
+
 ## 怎么打开
 
 在有这个文件夹的机器上起一个静态服务器（手机/Termux 里也行）：

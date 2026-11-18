@@ -1,0 +1,28 @@
+{
+  "note": "具名推理：玩家把证据关联到这些组合时，记下 d_<name>，供第十三/十四章任务条件使用（deduce:d_chain）。any 里任意一对成立即算；also_when 是兜底条件（七码齐 + 推理数）。",
+  "named": [
+    {
+      "id": "d_chain",
+      "label": "完整证据链：旧案总账 → 月例银 → 雨夜现场",
+      "any": [
+        ["c13_full_ledger", "c9_shen_monthly_ledger"],
+        ["c13_full_ledger", "c10_monthly_ledger"],
+        ["c13_seven_codes_solved", "c5_shen_yanqiu_monthly"],
+        ["c9_palace_ledger_missing", "c10_monthly_ledger"],
+        ["c8_seven_ledger_frame", "c9_shen_monthly_ledger"],
+        ["c11_code6", "c12_code7"]
+      ],
+      "also_when": { "codes": 7, "deductions_min": 5 }
+    },
+    {
+      "id": "d_rain_night",
+      "label": "雨夜时间线：巡逻记录 → 角楼现场",
+      "any": [
+        ["c10_monthly_ledger", "c10_rail_gap"],
+        ["c5_patrol_fake", "c10_rail_gap"],
+        ["c2_patrol_route", "c10_rail_gap"]
+      ],
+      "also_when": { "codes": 5, "deductions_min": 4 }
+    }
+  ]
+}

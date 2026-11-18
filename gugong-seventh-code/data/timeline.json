@@ -1,0 +1,30 @@
+{
+  "note": "第十章「角楼重现」的时间线推演题：把当夜发生的事按更次排好，错一处就不能成立。",
+  "puzzles": [
+    {
+      "id": "rain_night",
+      "title": "雨夜三月初七",
+      "subtitle": "把七件事排进六个更次。三更鼓与那声闷响必须同刻。",
+      "slots": [
+        { "id": "xushi_1", "label": "戌时初", "clock": "19:00" },
+        { "id": "xushi_3", "label": "戌时三刻", "clock": "19:45" },
+        { "id": "haishi_1", "label": "亥时初", "clock": "21:00" },
+        { "id": "haishi_3", "label": "亥时三刻", "clock": "21:45" },
+        { "id": "zishi_1", "label": "子时初", "clock": "23:00" },
+        { "id": "zishi_3", "label": "子时三刻", "clock": "23:45" }
+      ],
+      "events": [
+        { "id": "e_lin_up", "label": "林照月提着灯笼登上东北角楼", "slot": "haishi_1" },
+        { "id": "e_meng_out", "label": "孟淮离禁军值房，往角楼方向去（巡逻簿记）", "slot": "haishi_1" },
+        { "id": "e_wangfu_steps", "label": "王福在膳房后窗听见两个人的脚步往城墙走", "slot": "haishi_1" },
+        { "id": "e_gu_token", "label": "顾昀在午门收第三块玄字令牌", "slot": "haishi_3" },
+        { "id": "e_pei_sign", "label": "裴景衡在监察司签押房批完一叠文书", "slot": "xushi_3" },
+        { "id": "e_bell3", "label": "三更鼓响", "slot": "zishi_1" },
+        { "id": "e_thud", "label": "角楼下传来一声闷响，雨里没人应声", "slot": "zishi_1" }
+      ],
+      "onSolve": ["flag:puzzle_rain_night", "flag:time_contradiction", "trust:zheng_e+5"],
+      "solveText": "三更鼓与那声闷响在同一刻。可巡逻簿把孟淮写成戌时三刻出值房——那样他就该在鼓响前一个多时辰回到值房。簿子是后补的。",
+      "failText": "对不上的地方被你自己先看出来了：鼓声、脚步、令牌，这三件事挤不到一处去。再排一遍。"
+    }
+  ]
+}

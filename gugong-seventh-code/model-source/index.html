@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紫禁·骨 —— 故宫白模</title>
+<style>
+  :root{
+    --ink:#17202b; --ink2:#4a5765; --line:#d8dee6; --bg:#f4f6f8;
+    --accent:#a8332a; --gold:#b08a3e; --card:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased}
+  header{padding:52px 24px 34px;background:
+    radial-gradient(120% 90% at 50% -20%, #ffffff 0%, #eef1f4 55%, #e6eaee 100%);
+    border-bottom:1px solid var(--line);text-align:center}
+  h1{margin:0;font-size:38px;letter-spacing:.22em;font-weight:700}
+  .sub{margin-top:10px;color:var(--ink2);font-size:14px;letter-spacing:.12em}
+  .rule{width:56px;height:3px;background:var(--accent);margin:18px auto 0}
+  main{max-width:1120px;margin:0 auto;padding:34px 20px 80px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 34px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 14px}
+  .stat b{display:block;font-size:24px;letter-spacing:.02em}
+  .stat span{font-size:12px;color:var(--ink2)}
+  h2{font-size:19px;letter-spacing:.14em;margin:44px 0 6px;padding-left:12px;
+     border-left:3px solid var(--accent)}
+  h2 small{font-size:12px;color:var(--ink2);letter-spacing:.06em;margin-left:8px;font-weight:400}
+  figure{margin:18px 0 0;background:var(--card);border:1px solid var(--line);
+    border-radius:12px;overflow:hidden}
+  figure img{display:block;width:100%;height:auto}
+  figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink2);
+    display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line)}
+  figcaption b{color:var(--ink);font-weight:600}
+  table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:#f0f3f6;font-weight:600;font-size:12.5px;letter-spacing:.05em}
+  tr:last-child td{border-bottom:none}
+  td.num{font-variant-numeric:tabular-nums;color:var(--ink2)}
+  .note{background:#fffdf7;border:1px solid #ecdfc2;border-radius:10px;padding:16px 18px;
+    font-size:13.5px;color:#5a4a2a}
+  .note b{color:#8a6a20}
+  .shots{display:grid;grid-template-columns:1fr;gap:16px}
+  footer{max-width:1120px;margin:0 auto;padding:0 20px 60px;color:var(--ink2);font-size:12.5px}
+  @media(max-width:760px){
+    h1{font-size:26px;letter-spacing:.14em}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    main{padding:22px 14px 60px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>紫 禁 · 骨</h1>
+  <div class="sub">故宫程序化白模 ｜ 真实尺度重建 ｜ Blender 4.0 · CPU</div>
+  <div class="rule"></div>
+</header>
+
+<main>
+  <div class="stats">
+    <div class="stat"><b>961 × 753 m</b><span>城垣范围（实测值）</span></div>
+    <div class="stat"><b>35.05 m</b><span>太和殿通高（含三台 8.13m）</span></div>
+    <div class="stat"><b id="objn">4177</b><span>模型对象数</span></div>
+    <div class="stat"><b id="vertn">49.8 万</b><span>顶点数</span></div>
+  </div>
+
+  <div class="note">
+    <b>关于「1:1」的诚实说明：</b>本模型是<b>尺度真实</b>的程序化白模 —— 关键尺寸全部采用故宫博物院公布数据（城垣 961×753m、太和殿面阔 63.96m／进深 37.2m／通高 35.05m、三台 8.13m、午门 37.95m、城墙高 9.90m／底宽 8.62m／顶宽 6.66m、护城河宽 52m）。
+    几何层级做到<b>构件级</b>（柱网、斗拱、瓦垄、脊、栏杆、踏跺、隔扇），但<b>不含</b>室内梁架、非中轴次要院落、彩画纹样与瓦当滴水这类毫米级细节 —— 那不是这份模型的目标，也不该假装有。
+  </div>
+
+  <h2>一 · 全城<small>961 × 753 米</small></h2>
+  <div class="shots" id="gallery"></div>
+
+  <h2>二 · 尺度核对表<small>官方数据 vs 模型</small></h2>
+  <table>
+    <thead><tr><th>构件</th><th>官方数据</th><th>模型（程序内）</th><th>来源</th></tr></thead>
+    <tbody>
+      <tr><td>城垣</td><td>南北 961m／东西 753m／总长 3428m</td><td class="num">同值</td><td>故宫博物院</td></tr>
+      <tr><td>城墙断面</td><td>高 9.90m，底 8.62m，顶 6.66m，内外各收 0.96m</td><td class="num">同值（梯形断面）</td><td>故宫博物院</td></tr>
+      <tr><td>护城河</td><td>宽 52m</td><td class="num">同值</td><td>故宫博物院</td></tr>
+      <tr><td>太和殿</td><td>面阔 63.96m／进深 37.2m／殿高 26.92m／通高 35.05m</td><td class="num">同值（实测脊高 35.05）</td><td>故宫博物院</td></tr>
+      <tr><td>三台</td><td>南北 232m／东西 130m／高 8.13m</td><td class="num">同值（三层须弥座）</td><td>故宫博物院</td></tr>
+      <tr><td>午门</td><td>通高 37.95m</td><td class="num">同值</td><td>北京市政府</td></tr>
+      <tr><td>角楼</td><td>高 27.5m，九梁十八柱七十二条脊</td><td class="num">27.5m（脊数示意）</td><td>通行说法</td></tr>
+      <tr><td>保和殿／中和殿／后三宫</td><td>面阔进深为通行测绘值</td><td class="num">按值建，段落间距按总图比例</td><td>测绘资料</td></tr>
+    </tbody>
+  </table>
+
+  <h2>三 · 2 分钟展示片脚本<small>《紫禁·骨》8 镜</small></h2>
+  <div id="script"></div>
+
+</main>
+
+<footer>
+  生成环境：droidspaces 容器（Ubuntu 24.04）· Blender 4.0.2 · Cycles CPU · 无 GPU · 无降噪<br>
+  工程目录：/storage/emulated/0/Music/每日归档/2026-11/gugong/
+</footer>
+
+<script>
+const SHOTS = [
+  ["01_air_full",      "全城鸟瞰", "南侧 45° 高空。961×753m 城垣、961m 中轴、四座角楼与护城河一次入画。"],
+  ["02_wumen",         "午门",     "凹形雁翅楼 + 五凤楼正楼 + 四阙亭，通高 37.95m。"],
+  ["03_axis",          "中轴",     "午门 → 太和门 → 三大殿，所有门开在同一条线上。"],
+  ["07_santai",        "三台",     "三层须弥座，8.13m，把三大殿整体抬高八米。"],
+  ["04_taidian_front", "太和殿",   "面阔 11 间 63.96m，进深 5 间 37.2m，重檐庑殿，通高 35.05m。"],
+  ["05_taidian_corner","太和殿 45°","重檐、斗拱、瓦垄、翼角在斜光下的层次。"],
+  ["06_eave_detail",   "翼角",     "檐口从脊到檐由陡转缓，四角起翘；瓦垄一条条走到檐边。"],
+  ["08_inner",         "内廷",     "乾清门、乾清宫、交泰殿、坤宁宫，进深套进的院落。"],
+  ["09_jiaolou",       "角楼",     "十字歇山三重檐，27.5m，城角上的一朵。"],
+  ["10_yuhuayuan",     "御花园",   "钦安殿居中，万春亭、千秋亭对称，52 株树。"],
+  ["11_plan_top",      "平面",     "近正俯视：961×753m 城垣，中轴前朝后寝，两侧院落肌理。"],
+  ["12_wings_close",   "东西宫区", "东西六宫等 18 组院落，各含正殿、配殿、院墙与门。"],
+];
+const g = document.getElementById("gallery");
+SHOTS.forEach(([k, title, desc]) => {
+  const f = document.createElement("figure");
+  f.innerHTML = `<img src="previews/${k}.jpg" alt="${title}" loading="lazy">
+    <figcaption><b>${title}</b><span>${desc}</span></figcaption>`;
+  g.appendChild(f);
+});
+
+const SCRIPT = [
+  ["0:00–0:10","01 建制","从午门外 600m 高空缓推，整城显形","紫禁城　南北 961 米　东西 753 米　城垣 3428 米","先有墙，才有城。三千四百二十八米，围出一个世界。"],
+  ["0:10–0:24","02 午门","仰角 12°，crane up 从门洞升到正脊","午门　通高 37.95 米","凹进去的是门，凸出来的是威。三十七米九五，是进入这座城之前，必须抬头的理由。"],
+  ["0:24–0:38","03 轴线","门洞内贴地 3m，24mm 超广角直线前推","中轴　午门 → 太和门 → 三大殿","所有的门都开在同一条线上。古人不说对称，他们只说：中。"],
+  ["0:38–0:54","04 三台","广场东南 45° 仰角 18°，横移 + 缓推","三台　三层须弥座　高 8.13 米","八米一三，三级台阶，把一个王朝抬到了众人之上。"],
+  ["0:54–1:08","05 太和殿","正南 260m，85mm 长焦压缩，极缓推","太和殿　面阔 63.96 米　通高 35.05 米","六十三米九六，十一间。站在这里，只有一件事——让人变小。"],
+  ["1:08–1:22","06 翼角","东南 30m 仰角 10°，90mm 沿檐口横移","庑殿顶　四坡五脊　瓦垄　斗拱","屋顶不是盖上去的，是算出来的。脊陡、檐缓、角翘——一条曲线里，藏着排水、出檐和等级。"],
+  ["1:22–1:34","07 内廷","乾清门南高空 26°，越过前三殿推进院落","内廷　乾清宫 · 交泰殿 · 坤宁宫","前面是天下，后面是家。同一座城，用宽度办公，用进深生活。"],
+  ["1:34–1:48","08 角楼","城东北角外 90m，85mm，绕角 30° 弧移","角楼　高 27.5 米　七十二条脊","城墙转角的地方，本来只需要一个哨位。他们给了它二十七米五和七十二根脊。"],
+  ["1:48–2:00","09 收","北侧高空反向拉远，末 3 秒叠化为正脊特写","8700 余间　占地 72 万平方米","九千间房，一条中轴。它不说话，但它把秩序，砌进了每一块砖里。"],
+];
+let html = `<table><thead><tr><th>时间码</th><th>镜头</th><th>机位 / 运动</th><th>字幕</th><th>旁白</th></tr></thead><tbody>`;
+SCRIPT.forEach(([t, s, cam, sub, vo]) => {
+  html += `<tr><td class="num">${t}</td><td><b>${s}</b></td><td>${cam}</td><td>${sub}</td><td>${vo}</td></tr>`;
+});
+html += `</tbody></table>`;
+document.getElementById("script").innerHTML = html;
+</script>
+</body>
+</html>

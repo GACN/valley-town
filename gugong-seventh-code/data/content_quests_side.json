@@ -1,0 +1,1998 @@
+{
+ "quests": [
+  {
+   "id": "qs_w1_token",
+   "type": "side",
+   "chapter": 1,
+   "title": "多出来的一枚",
+   "giver": "gu_yun",
+   "summary": "顾昀数了三十年令牌，那一夜多出一枚——全案第一处对不上的数，也是唯一有人肯开口的地方。",
+   "steps": [
+    {
+     "id": "qs_w1_token_a",
+     "text": "在午门门内广场找到顾昀，问他三月初七收了几枚令牌",
+     "at": {
+      "kind": "npc",
+      "npc": "gu_yun"
+     },
+     "requires": [
+      "chapter>=1"
+     ],
+     "grants": [
+      "flag:qs_w1_token_a",
+      "trust:gu_yun+5"
+     ],
+     "hint": "他总在西门洞下避雨，手里那串牌磨得发亮"
+    },
+    {
+     "id": "qs_w1_token_b",
+     "text": "去东侧门洞，数门钉下被雨泡白的划痕",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wumen_in",
+      "radius": 10
+     },
+     "requires": [
+      "flag:qs_w1_token_a"
+     ],
+     "grants": [
+      "flag:qs_w1_token_b"
+     ]
+    },
+    {
+     "id": "qs_w1_token_c",
+     "text": "绕到午门外，看车马行留下的车辙宽窄",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wumen_out",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w1_token_b"
+     ],
+     "grants": [
+      "flag:token_gap",
+      "trust:gu_yun+8"
+     ],
+     "hint": "单辙比双辙深，说明车是空着出去的"
+    }
+   ]
+  },
+  {
+   "id": "qs_w1_caravan",
+   "type": "side",
+   "chapter": 1,
+   "title": "初七的车",
+   "giver": "ashina",
+   "summary": "阿史那的车队按月出宫，只有三月那趟多停了半个时辰——胡商不怕官府，怕的是账，账里有一行他不敢念。",
+   "steps": [
+    {
+     "id": "qs_w1_caravan_a",
+     "text": "在午门外拦住阿史那，问他三月那趟车装了什么",
+     "at": {
+      "kind": "npc",
+      "npc": "ashina"
+     },
+     "requires": [
+      "chapter>=1"
+     ],
+     "grants": [
+      "flag:qs_w1_caravan_a",
+      "trust:ashina+5"
+     ],
+     "hint": "他只认银子，不认官话"
+    },
+    {
+     "id": "qs_w1_caravan_b",
+     "text": "看石阶上的盐渍和货箱压出的凹痕",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wumen_out",
+      "radius": 10
+     },
+     "requires": [
+      "flag:qs_w1_caravan_a"
+     ],
+     "grants": [
+      "flag:qs_w1_caravan_b"
+     ]
+    },
+    {
+     "id": "qs_w1_caravan_c",
+     "text": "到内金水桥，比一比桥面车辙的间距",
+     "at": {
+      "kind": "anchor",
+      "anchor": "jinshui",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w1_caravan_b"
+     ],
+     "grants": [
+      "flag:caravan_halting",
+      "trust:ashina+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w1_rain",
+   "type": "side",
+   "chapter": 1,
+   "title": "没打伞的人",
+   "giver": "a_luo",
+   "summary": "阿罗嘴碎，可他记得雨夜里谁没打伞——这种碎话比口供值钱，因为说的人不知道自己说了什么。",
+   "steps": [
+    {
+     "id": "qs_w1_rain_a",
+     "text": "在太和门广场找到阿罗，听他把那三个人的事说完",
+     "at": {
+      "kind": "npc",
+      "npc": "a_luo"
+     },
+     "requires": [
+      "chapter>=1"
+     ],
+     "grants": [
+      "flag:qs_w1_rain_a",
+      "trust:a_luo+5"
+     ]
+    },
+    {
+     "id": "qs_w1_rain_b",
+     "text": "看檐下滴水线，找出唯一干燥的一尺地",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihemen_plaza",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w1_rain_a"
+     ],
+     "grants": [
+      "flag:qs_w1_rain_b"
+     ],
+     "hint": "站过人的地方，砖是干的"
+    },
+    {
+     "id": "qs_w1_rain_c",
+     "text": "把阿罗的三句话按更次排开",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w1_rain_b"
+     ],
+     "grants": [
+      "flag:rain_timeline",
+      "trust:a_luo+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w2_shift",
+   "type": "side",
+   "chapter": 2,
+   "title": "班牌",
+   "giver": "a_luo",
+   "summary": "常平失踪那夜替人代了班，班牌还挂在太和门——代的是谁的班，全宫没人肯说第二遍。",
+   "steps": [
+    {
+     "id": "qs_w2_shift_a",
+     "text": "到太和门下，找门房外挂着的班牌",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihemen",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=2"
+     ],
+     "grants": [
+      "flag:qs_w2_shift_a"
+     ]
+    },
+    {
+     "id": "qs_w2_shift_b",
+     "text": "进太和门值宿房，翻那一夜的值宿册",
+     "at": {
+      "kind": "interior",
+      "interior": "thm_hall"
+     },
+     "requires": [
+      "flag:qs_w2_shift_a"
+     ],
+     "grants": [
+      "flag:qs_w2_shift_b"
+     ],
+     "hint": "册子上有一格墨色新得发亮"
+    },
+    {
+     "id": "qs_w2_shift_c",
+     "text": "拿册子去问郑锷：禁军的班是谁排的",
+     "at": {
+      "kind": "npc",
+      "npc": "zheng_e"
+     },
+     "requires": [
+      "flag:qs_w2_shift_b"
+     ],
+     "grants": [
+      "flag:changping_shift_swap",
+      "trust:zheng_e+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w2_ledger",
+   "type": "side",
+   "chapter": 2,
+   "title": "门簿上的空格",
+   "giver": "gu_yun",
+   "summary": "门簿上少写一个人，比多写一个人更响——顾昀不敢自己翻那一页，你能翻。",
+   "steps": [
+    {
+     "id": "qs_w2_ledger_a",
+     "text": "上午门城楼，取那一夜的门簿",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "chapter>=2"
+     ],
+     "grants": [
+      "flag:qs_w2_ledger_a",
+      "trust:gu_yun+5"
+     ]
+    },
+    {
+     "id": "qs_w2_ledger_b",
+     "text": "回门内广场，对一遍门洞与门簿上写的时辰",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wumen_in",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w2_ledger_a"
+     ],
+     "grants": [
+      "flag:qs_w2_ledger_b"
+     ]
+    },
+    {
+     "id": "qs_w2_ledger_c",
+     "text": "把令牌数与门簿并排看",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w2_ledger_b"
+     ],
+     "grants": [
+      "flag:gate_ledger_gap",
+      "trust:gu_yun+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w2_boot",
+   "type": "side",
+   "chapter": 2,
+   "title": "湿靴印",
+   "giver": "han_yan",
+   "summary": "韩砚要你替他看一眼台阶上的靴印，却不肯说为什么怕那串印子——他怕的不是印子，是尺码被人认出来。",
+   "steps": [
+    {
+     "id": "qs_w2_boot_a",
+     "text": "在太和门广场石阶上，量那串半干的靴印",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihemen_plaza",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=2"
+     ],
+     "grants": [
+      "flag:qs_w2_boot_a"
+     ]
+    },
+    {
+     "id": "qs_w2_boot_b",
+     "text": "到金水桥边，看水退后留在栏板上的泥线",
+     "at": {
+      "kind": "anchor",
+      "anchor": "jinshui",
+      "radius": 10
+     },
+     "requires": [
+      "flag:qs_w2_boot_a"
+     ],
+     "grants": [
+      "flag:qs_w2_boot_b"
+     ]
+    },
+    {
+     "id": "qs_w2_boot_c",
+     "text": "把靴印的尺寸告诉韩砚",
+     "at": {
+      "kind": "npc",
+      "npc": "han_yan"
+     },
+     "requires": [
+      "flag:qs_w2_boot_b"
+     ],
+     "grants": [
+      "flag:boot_size_measured",
+      "trust:han_yan+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w3_craft",
+   "type": "side",
+   "chapter": 3,
+   "title": "匠人记号",
+   "giver": "a_luo",
+   "summary": "三台的石头都刻着匠人记号，谁动过哪一块，石头自己记得——这是整座宫里唯一买不通的证人。",
+   "steps": [
+    {
+     "id": "qs_w3_craft_a",
+     "text": "上太和殿月台，摸阶石侧面的刻记号",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihedian_yuetai",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=3"
+     ],
+     "grants": [
+      "flag:qs_w3_craft_a",
+      "trust:a_luo+5"
+     ]
+    },
+    {
+     "id": "qs_w3_craft_b",
+     "text": "绕到三台东侧，找记号断了的那一段",
+     "at": {
+      "kind": "anchor",
+      "anchor": "santai_east",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w3_craft_a"
+     ],
+     "grants": [
+      "flag:qs_w3_craft_b"
+     ]
+    },
+    {
+     "id": "qs_w3_craft_c",
+     "text": "到三台西侧比对同一批石料",
+     "at": {
+      "kind": "anchor",
+      "anchor": "santai_west",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w3_craft_b"
+     ],
+     "grants": [
+      "flag:stone_marks",
+      "trust:a_luo+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w3_ash",
+   "type": "side",
+   "chapter": 3,
+   "title": "铜鹤腹里的灰",
+   "giver": "chen_momo",
+   "summary": "陈嬷嬷说铜鹤三年没清过灰，腹里却是新的——有人在殿前烧过纸，而殿前不该有火。",
+   "steps": [
+    {
+     "id": "qs_w3_ash_a",
+     "text": "在月台边找陈嬷嬷，问她铜鹤几时清过",
+     "at": {
+      "kind": "npc",
+      "npc": "chen_momo"
+     },
+     "requires": [
+      "chapter>=3"
+     ],
+     "grants": [
+      "flag:qs_w3_ash_a",
+      "trust:chen_momo+5"
+     ]
+    },
+    {
+     "id": "qs_w3_ash_b",
+     "text": "到殿前广场，看炉脚那一圈焦痕",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihedian_front",
+      "radius": 16
+     },
+     "requires": [
+      "flag:qs_w3_ash_a"
+     ],
+     "grants": [
+      "flag:qs_w3_ash_b"
+     ]
+    },
+    {
+     "id": "qs_w3_ash_c",
+     "text": "进太和殿，看香案下扫过的灰",
+     "at": {
+      "kind": "interior",
+      "interior": "thd_hall"
+     },
+     "requires": [
+      "flag:qs_w3_ash_b"
+     ],
+     "grants": [
+      "flag:burnt_paper",
+      "trust:chen_momo+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w3_plaque",
+   "type": "side",
+   "chapter": 3,
+   "title": "匾后的风",
+   "giver": "lu_yan",
+   "summary": "哑吏在宫里扫了十五年地，他知道哪块匾后有风——这是你第一次听懂他不说话，也是他第一次愿意让你听懂。",
+   "steps": [
+    {
+     "id": "qs_w3_plaque_a",
+     "text": "到月台，看哑吏的扫帚停在哪一级",
+     "at": {
+      "kind": "anchor",
+      "anchor": "taihedian_yuetai",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=3"
+     ],
+     "grants": [
+      "flag:qs_w3_plaque_a"
+     ]
+    },
+    {
+     "id": "qs_w3_plaque_b",
+     "text": "进殿，站在匾下听风",
+     "at": {
+      "kind": "interior",
+      "interior": "thd_hall"
+     },
+     "requires": [
+      "flag:qs_w3_plaque_a"
+     ],
+     "grants": [
+      "flag:qs_w3_plaque_b"
+     ],
+     "hint": "有风，说明后面是空的"
+    },
+    {
+     "id": "qs_w3_plaque_c",
+     "text": "把听到的告诉他，看他点头还是摇头",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:qs_w3_plaque_b"
+     ],
+     "grants": [
+      "flag:plaque_gap_seen",
+      "trust:lu_yan+12"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w4_key",
+   "type": "side",
+   "chapter": 4,
+   "title": "第三把钥匙",
+   "giver": "gu_yun",
+   "summary": "长街通六宫的角门锁了三把，钥匙只该有两把——第三把在谁身上，决定了谁能在夜里穿宫而不被记档。",
+   "steps": [
+    {
+     "id": "qs_w4_key_a",
+     "text": "到东长街北口的角门，数锁孔里的划痕",
+     "at": {
+      "kind": "anchor",
+      "anchor": "corr_east",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=4"
+     ],
+     "grants": [
+      "flag:qs_w4_key_a"
+     ]
+    },
+    {
+     "id": "qs_w4_key_b",
+     "text": "沿内廷东街走一遍，看哪家院门新上了油",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_east_street",
+      "radius": 10
+     },
+     "requires": [
+      "flag:qs_w4_key_a"
+     ],
+     "grants": [
+      "flag:qs_w4_key_b"
+     ]
+    },
+    {
+     "id": "qs_w4_key_c",
+     "text": "把三把锁的磨损排个先后",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w4_key_b"
+     ],
+     "grants": [
+      "flag:third_key",
+      "unlock:r08_east_six"
+     ],
+     "hint": "磨得最轻的那把，用得最少，也最新"
+    }
+   ]
+  },
+  {
+   "id": "qs_w4_ningshou",
+   "type": "side",
+   "chapter": 4,
+   "title": "空院子的新锁",
+   "giver": "a_luo",
+   "summary": "宁寿宫空了多年，封院门上却挂着一把新锁——空着的院子有人进出，这座宫就没有真正的空处。",
+   "steps": [
+    {
+     "id": "qs_w4_ningshou_a",
+     "text": "进宁寿宫，看封院门上那把锁",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_nsg",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=4"
+     ],
+     "grants": [
+      "flag:qs_w4_ningshou_a"
+     ]
+    },
+    {
+     "id": "qs_w4_ningshou_b",
+     "text": "数院里石阶上的脚印，看方向是进还是出",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w4_ningshou_a"
+     ],
+     "grants": [
+      "flag:qs_w4_ningshou_b"
+     ]
+    },
+    {
+     "id": "qs_w4_ningshou_c",
+     "text": "问阿罗：谁让他往空院子里送灯油",
+     "at": {
+      "kind": "npc",
+      "npc": "a_luo"
+     },
+     "requires": [
+      "flag:qs_w4_ningshou_b"
+     ],
+     "grants": [
+      "flag:ningshou_sealed_wing",
+      "trust:a_luo+8",
+      "unlock:r10_east_wings"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w4_shoe",
+   "type": "side",
+   "chapter": 4,
+   "title": "鞋样",
+   "giver": "shen_yanqiu",
+   "summary": "承乾宫晾着的绣样里混进一只鞋样，尺码不是宫里女人的——这只鞋样能把某只脚钉在雨夜的砖上。",
+   "steps": [
+    {
+     "id": "qs_w4_shoe_a",
+     "text": "进承乾宫，看廊下晾着的绣样",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_cqg",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=4"
+     ],
+     "grants": [
+      "flag:qs_w4_shoe_a"
+     ]
+    },
+    {
+     "id": "qs_w4_shoe_b",
+     "text": "把鞋样拿给沈砚秋看，问她认不认得针脚",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "flag:qs_w4_shoe_a"
+     ],
+     "grants": [
+      "flag:qs_w4_shoe_b",
+      "trust:shen_yanqiu+5"
+     ]
+    },
+    {
+     "id": "qs_w4_shoe_c",
+     "text": "量鞋底的长度，与台阶上的靴印比对",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w4_shoe_b"
+     ],
+     "grants": [
+      "flag:shoe_pattern_man",
+      "trust:shen_yanqiu+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w5_cards",
+   "type": "side",
+   "chapter": 5,
+   "title": "牌桌上的账",
+   "giver": "chen_momo",
+   "summary": "陈嬷嬷的牌桌记得比内库账清——哪家欠谁的人情，她一口报得出，这是你唯一买不到的东西。",
+   "steps": [
+    {
+     "id": "qs_w5_cards_a",
+     "text": "在乾清门外陪陈嬷嬷打一圈牌",
+     "at": {
+      "kind": "npc",
+      "npc": "chen_momo"
+     },
+     "requires": [
+      "chapter>=5"
+     ],
+     "grants": [
+      "flag:qs_w5_cards_a",
+      "trust:chen_momo+5"
+     ]
+    },
+    {
+     "id": "qs_w5_cards_b",
+     "text": "送她回西街，听她说完那三家的旧事",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_west_street",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w5_cards_a"
+     ],
+     "grants": [
+      "flag:qs_w5_cards_b"
+     ]
+    },
+    {
+     "id": "qs_w5_cards_c",
+     "text": "到乾清门前，把三家的关系画在纸上",
+     "at": {
+      "kind": "anchor",
+      "anchor": "qianqingmen",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w5_cards_b"
+     ],
+     "grants": [
+      "flag:family_debt_map",
+      "trust:chen_momo+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w5_rx",
+   "type": "side",
+   "chapter": 5,
+   "title": "药方少了一味",
+   "giver": "liu_yinv",
+   "summary": "柳医女记得林照月的舌象，可药方上少了一味——改方的人手很稳，稳得像天天改别人的方子。",
+   "steps": [
+    {
+     "id": "qs_w5_rx_a",
+     "text": "在太医院外等柳医女，问她记得的舌象",
+     "at": {
+      "kind": "npc",
+      "npc": "liu_yinv"
+     },
+     "requires": [
+      "chapter>=5"
+     ],
+     "grants": [
+      "flag:qs_w5_rx_a",
+      "trust:liu_yinv+5"
+     ]
+    },
+    {
+     "id": "qs_w5_rx_b",
+     "text": "进太医院正堂，翻林照月的就诊底方",
+     "at": {
+      "kind": "interior",
+      "interior": "tcm_hall"
+     },
+     "requires": [
+      "flag:qs_w5_rx_a"
+     ],
+     "grants": [
+      "flag:qs_w5_rx_b"
+     ]
+    },
+    {
+     "id": "qs_w5_rx_c",
+     "text": "去文华殿后的藏书房，比对同一批药档的抄件",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_whg",
+      "radius": 16
+     },
+     "requires": [
+      "flag:qs_w5_rx_b"
+     ],
+     "grants": [
+      "flag:qs_w5_rx_c"
+     ]
+    },
+    {
+     "id": "qs_w5_rx_d",
+     "text": "把底方放在苏惟安案上，不说话",
+     "at": {
+      "kind": "npc",
+      "npc": "su_weian"
+     },
+     "requires": [
+      "flag:qs_w5_rx_c"
+     ],
+     "grants": [
+      "flag:prescription_altered",
+      "trust:liu_yinv+10",
+      "trust:su_weian+5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w5_cuff",
+   "type": "side",
+   "chapter": 5,
+   "title": "带血的袖口",
+   "giver": "bai_shi",
+   "summary": "白氏洗过林照月一件带血的袖口，她只肯在景仁宫的井台边说——那是她在这座宫里唯一还敢站的地方。",
+   "steps": [
+    {
+     "id": "qs_w5_cuff_a",
+     "text": "到景仁宫井台，等白氏来打水",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_jrg",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=5"
+     ],
+     "grants": [
+      "flag:qs_w5_cuff_a"
+     ]
+    },
+    {
+     "id": "qs_w5_cuff_b",
+     "text": "问她那件袖口上的血是几时洗的",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:qs_w5_cuff_a"
+     ],
+     "grants": [
+      "flag:qs_w5_cuff_b",
+      "trust:bai_shi+5"
+     ]
+    },
+    {
+     "id": "qs_w5_cuff_c",
+     "text": "把洗血的时辰与雨夜的更次对上",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w5_cuff_b"
+     ],
+     "grants": [
+      "flag:cuff_blood_known",
+      "trust:bai_shi+15"
+     ],
+     "hint": "她说的时辰，比官方记的死更早半个时辰"
+    }
+   ]
+  },
+  {
+   "id": "qs_w6_hex",
+   "type": "side",
+   "chapter": 6,
+   "title": "第三卦",
+   "giver": "ming_jing",
+   "summary": "明净不测吉凶，只肯起三卦；第三卦他说是替死人问的——道士的话要拆两层，一层方位，一层时候。",
+   "steps": [
+    {
+     "id": "qs_w6_hex_a",
+     "text": "到钦安殿，看香炉里插着几炷香",
+     "at": {
+      "kind": "anchor",
+      "anchor": "qinandian",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=6"
+     ],
+     "grants": [
+      "flag:qs_w6_hex_a"
+     ]
+    },
+    {
+     "id": "qs_w6_hex_b",
+     "text": "请明净起卦，只问方位，不问生死",
+     "at": {
+      "kind": "npc",
+      "npc": "ming_jing"
+     },
+     "requires": [
+      "flag:qs_w6_hex_a"
+     ],
+     "grants": [
+      "flag:qs_w6_hex_b",
+      "trust:ming_jing+5"
+     ]
+    },
+    {
+     "id": "qs_w6_hex_c",
+     "text": "把卦象里的方位，对到宫城图上",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w6_hex_b"
+     ],
+     "grants": [
+      "flag:hex_third",
+      "trust:ming_jing+10"
+     ],
+     "hint": "他说的「东北」，不是角楼"
+    }
+   ]
+  },
+  {
+   "id": "qs_w6_carve",
+   "type": "side",
+   "chapter": 6,
+   "title": "树上刻字",
+   "giver": "a_heng",
+   "summary": "御花园西边的老槐上刻着两个名字，阿蘅看一眼就背过身去——她背过身，说明其中一个名字还活着。",
+   "steps": [
+    {
+     "id": "qs_w6_carve_a",
+     "text": "进御花园，找西边那棵皮裂得最深的老槐",
+     "at": {
+      "kind": "anchor",
+      "anchor": "yuhuayuan",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=6"
+     ],
+     "grants": [
+      "flag:qs_w6_carve_a"
+     ]
+    },
+    {
+     "id": "qs_w6_carve_b",
+     "text": "绕到树后，看刻痕的深浅和笔顺",
+     "at": {
+      "kind": "anchor",
+      "anchor": "garden_west",
+      "radius": 10
+     },
+     "requires": [
+      "flag:qs_w6_carve_a"
+     ],
+     "grants": [
+      "flag:qs_w6_carve_b"
+     ],
+     "hint": "两个字，一个刻得深，一个刻得浅"
+    },
+    {
+     "id": "qs_w6_carve_c",
+     "text": "把刻的字念给阿蘅听",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:qs_w6_carve_b"
+     ],
+     "grants": [
+      "flag:carved_names",
+      "trust:a_heng+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w6_caisson",
+   "type": "side",
+   "chapter": 6,
+   "title": "多一层格子",
+   "giver": "lu_yan",
+   "summary": "万春亭的藻井比图纸多一层格子——陆延用扫帚指了指头顶，什么也没说，这比说出来更要紧。",
+   "steps": [
+    {
+     "id": "qs_w6_caisson_a",
+     "text": "到万春亭，抬头数藻井的格",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wanchunting",
+      "radius": 8
+     },
+     "requires": [
+      "chapter>=6"
+     ],
+     "grants": [
+      "flag:qs_w6_caisson_a"
+     ]
+    },
+    {
+     "id": "qs_w6_caisson_b",
+     "text": "到千秋亭对照同一批匠人的做法",
+     "at": {
+      "kind": "anchor",
+      "anchor": "qianqiuting",
+      "radius": 8
+     },
+     "requires": [
+      "flag:qs_w6_caisson_a"
+     ],
+     "grants": [
+      "flag:qs_w6_caisson_b"
+     ]
+    },
+    {
+     "id": "qs_w6_caisson_c",
+     "text": "把数出的层数报给哑吏",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:qs_w6_caisson_b"
+     ],
+     "grants": [
+      "flag:caisson_extra_row",
+      "trust:lu_yan+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w7_stack",
+   "type": "side",
+   "chapter": 7,
+   "title": "石缝里的干粮纸",
+   "giver": "ming_jing",
+   "summary": "堆秀山的石缝里塞着干粮纸，道士说他没扔过——有人在山上待过不止一夜，看的是北边的门。",
+   "steps": [
+    {
+     "id": "qs_w7_stack_a",
+     "text": "上堆秀山，沿石阶摸每一道缝",
+     "at": {
+      "kind": "anchor",
+      "anchor": "duixiushan",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=7"
+     ],
+     "grants": [
+      "flag:qs_w7_stack_a"
+     ]
+    },
+    {
+     "id": "qs_w7_stack_b",
+     "text": "从东路下来，看墙根被踩倒的草",
+     "at": {
+      "kind": "anchor",
+      "anchor": "garden_east",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w7_stack_a"
+     ],
+     "grants": [
+      "flag:qs_w7_stack_b"
+     ]
+    },
+    {
+     "id": "qs_w7_stack_c",
+     "text": "把干粮纸拿给明净看",
+     "at": {
+      "kind": "npc",
+      "npc": "ming_jing"
+     },
+     "requires": [
+      "flag:qs_w7_stack_b"
+     ],
+     "grants": [
+      "flag:stack_hiding_place",
+      "trust:ming_jing+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w7_box",
+   "type": "side",
+   "chapter": 7,
+   "title": "封着的箱",
+   "giver": "cui_shen",
+   "summary": "崔慎让你去延禧宫取一只封着的箱，说里面是旧陈设——他真正想看的，是你敢不敢拆那道封条。",
+   "steps": [
+    {
+     "id": "qs_w7_box_a",
+     "text": "进延禧宫，找那只贴着内官监封条的箱",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_yxg",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=7"
+     ],
+     "grants": [
+      "flag:qs_w7_box_a"
+     ]
+    },
+    {
+     "id": "qs_w7_box_b",
+     "text": "看封条上的字号，与钟座上刻的年款",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w7_box_a"
+     ],
+     "grants": [
+      "flag:qs_w7_box_b"
+     ],
+     "hint": "字号与年款不在同一年"
+    },
+    {
+     "id": "qs_w7_box_c",
+     "text": "把箱子送回崔慎手上，一个字也不多问",
+     "at": {
+      "kind": "npc",
+      "npc": "cui_shen"
+     },
+     "requires": [
+      "flag:qs_w7_box_b"
+     ],
+     "grants": [
+      "flag:cui_marks_you",
+      "trust:cui_shen+5"
+     ],
+     "hint": "他会笑，笑的时候不看你"
+    }
+   ]
+  },
+  {
+   "id": "qs_w7_memorial",
+   "type": "side",
+   "chapter": 7,
+   "title": "多出来的祭单",
+   "giver": "chen_momo",
+   "summary": "奉先殿每年多烧一份祭单，名单上有个不该在的名字——陈家替人烧了十年，烧的是活人的名字。",
+   "steps": [
+    {
+     "id": "qs_w7_memorial_a",
+     "text": "到奉先殿外，等一次祭祀的时辰",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_fxd",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=7"
+     ],
+     "grants": [
+      "flag:qs_w7_memorial_a"
+     ]
+    },
+    {
+     "id": "qs_w7_memorial_b",
+     "text": "问陈嬷嬷：祭单是谁拟的",
+     "at": {
+      "kind": "npc",
+      "npc": "chen_momo"
+     },
+     "requires": [
+      "flag:qs_w7_memorial_a"
+     ],
+     "grants": [
+      "flag:qs_w7_memorial_b",
+      "trust:chen_momo+5"
+     ]
+    },
+    {
+     "id": "qs_w7_memorial_c",
+     "text": "把祭单上多出的名字，与十五年前的旧档对一对",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w7_memorial_b"
+     ],
+     "grants": [
+      "flag:extra_memorial_name",
+      "trust:chen_momo+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w8_cellar",
+   "type": "side",
+   "chapter": 8,
+   "title": "封条上的年份",
+   "giver": "he_qing",
+   "summary": "咸安宫偏院的地窖封了十五年，封条上的年份是改过的——改年份的人，怕人算日子。",
+   "steps": [
+    {
+     "id": "qs_w8_cellar_a",
+     "text": "在咸安宫外等何清，问他地窖的位置",
+     "at": {
+      "kind": "npc",
+      "npc": "he_qing"
+     },
+     "requires": [
+      "chapter>=8"
+     ],
+     "grants": [
+      "flag:qs_w8_cellar_a",
+      "trust:he_qing+5"
+     ]
+    },
+    {
+     "id": "qs_w8_cellar_b",
+     "text": "进咸安宫偏院，看地窖口的封条",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_yxd",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w8_cellar_a"
+     ],
+     "grants": [
+      "flag:qs_w8_cellar_b"
+     ]
+    },
+    {
+     "id": "qs_w8_cellar_c",
+     "text": "下地窖，摸封条下的旧胶痕",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:qs_w8_cellar_b"
+     ],
+     "grants": [
+      "flag:cellar_seal_year",
+      "trust:he_qing+12"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w8_weapon",
+   "type": "side",
+   "chapter": 8,
+   "title": "借出去的刀",
+   "giver": "meng_huai",
+   "summary": "孟淮要你替他核兵器簿，说是考你细不细——簿上少了两把刀，借的人没写名字，他等着看你怎么问。",
+   "steps": [
+    {
+     "id": "qs_w8_weapon_a",
+     "text": "到武英殿，看兵器架的编号缺口",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_wyg",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=8"
+     ],
+     "grants": [
+      "flag:qs_w8_weapon_a"
+     ]
+    },
+    {
+     "id": "qs_w8_weapon_b",
+     "text": "进禁军值房，翻兵器簿的借出页",
+     "at": {
+      "kind": "interior",
+      "interior": "barracks"
+     },
+     "requires": [
+      "flag:qs_w8_weapon_a"
+     ],
+     "grants": [
+      "flag:qs_w8_weapon_b"
+     ],
+     "hint": "借出页的纸比前后都白"
+    },
+    {
+     "id": "qs_w8_weapon_c",
+     "text": "把簿子摊在孟淮面前，只说少了什么",
+     "at": {
+      "kind": "npc",
+      "npc": "meng_huai"
+     },
+     "requires": [
+      "flag:qs_w8_weapon_b"
+     ],
+     "grants": [
+      "flag:weapon_borrowed",
+      "trust:meng_huai+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w8_niche",
+   "type": "side",
+   "chapter": 8,
+   "title": "佛龛的石座",
+   "giver": "chen_momo",
+   "summary": "慈宁宫佛龛的石座比龛身浅两寸，垫过东西的地方新灰压着旧灰——有人在这龛下取走过一件扁的东西。",
+   "steps": [
+    {
+     "id": "qs_w8_niche_a",
+     "text": "进慈宁宫，看佛龛的石座",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_cng",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=8"
+     ],
+     "grants": [
+      "flag:qs_w8_niche_a"
+     ]
+    },
+    {
+     "id": "qs_w8_niche_b",
+     "text": "问陈嬷嬷：太后当年在龛下垫过什么",
+     "at": {
+      "kind": "npc",
+      "npc": "chen_momo"
+     },
+     "requires": [
+      "flag:qs_w8_niche_a"
+     ],
+     "grants": [
+      "flag:qs_w8_niche_b",
+      "trust:chen_momo+5"
+     ]
+    },
+    {
+     "id": "qs_w8_niche_c",
+     "text": "量石座的深浅，比一件卷轴的粗细",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w8_niche_b"
+     ],
+     "grants": [
+      "flag:shrine_base_void",
+      "trust:chen_momo+12"
+     ],
+     "hint": "垫过东西的地方，灰是两层的"
+    }
+   ]
+  },
+  {
+   "id": "qs_w9_well",
+   "type": "side",
+   "chapter": 9,
+   "title": "井壁的砖",
+   "giver": "bai_shi",
+   "summary": "咸福宫的井封了十年，井台石缝里还有洗衣的碱痕——白氏在井边洗过不该洗的东西，而井壁第三层的砖缝比别处松。",
+   "steps": [
+    {
+     "id": "qs_w9_well_a",
+     "text": "进咸福宫，找那口封着的井",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_xfg",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=9"
+     ],
+     "grants": [
+      "flag:qs_w9_well_a"
+     ]
+    },
+    {
+     "id": "qs_w9_well_b",
+     "text": "在井台边问白氏：最后一次打水是哪年",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:qs_w9_well_a"
+     ],
+     "grants": [
+      "flag:qs_w9_well_b",
+      "trust:bai_shi+5"
+     ]
+    },
+    {
+     "id": "qs_w9_well_c",
+     "text": "数井壁砖的层数，从井口往下第三层",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w9_well_b"
+     ],
+     "grants": [
+      "flag:well_brick_order",
+      "trust:bai_shi+10"
+     ],
+     "hint": "第三层的砖，比别的干净"
+    }
+   ]
+  },
+  {
+   "id": "qs_w9_wall",
+   "type": "side",
+   "chapter": 9,
+   "title": "厚两寸的墙",
+   "giver": "a_heng",
+   "summary": "储秀宫西梢间的墙比东梢间厚两寸，阿蘅说她小时候在那儿藏过糖——糖后来不见了，墙却一直厚着。",
+   "steps": [
+    {
+     "id": "qs_w9_wall_a",
+     "text": "进储秀宫，敲西梢间的墙",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_cxg",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=9"
+     ],
+     "grants": [
+      "flag:qs_w9_wall_a"
+     ]
+    },
+    {
+     "id": "qs_w9_wall_b",
+     "text": "绕到翊坤宫外，看那间屋子的窗纸位置",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_ykg",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w9_wall_a"
+     ],
+     "grants": [
+      "flag:qs_w9_wall_b"
+     ]
+    },
+    {
+     "id": "qs_w9_wall_c",
+     "text": "问阿蘅：糖是什么时候不见的",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:qs_w9_wall_b"
+     ],
+     "grants": [
+      "flag:cxg_wall_layer",
+      "trust:a_heng+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w9_shrine",
+   "type": "side",
+   "chapter": 9,
+   "title": "佛龛后的香灰",
+   "giver": "chen_momo",
+   "summary": "长春宫的佛龛后有新香灰，可这宫里的主子早不信佛了——有人借佛龛放东西，也借佛龛取东西。",
+   "steps": [
+    {
+     "id": "qs_w9_shrine_a",
+     "text": "进长春宫，看佛龛前的蒲团印",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_ccg",
+      "radius": 10
+     },
+     "requires": [
+      "chapter>=9"
+     ],
+     "grants": [
+      "flag:qs_w9_shrine_a"
+     ]
+    },
+    {
+     "id": "qs_w9_shrine_b",
+     "text": "问陈嬷嬷：谁还在这宫里上香",
+     "at": {
+      "kind": "npc",
+      "npc": "chen_momo"
+     },
+     "requires": [
+      "flag:qs_w9_shrine_a"
+     ],
+     "grants": [
+      "flag:qs_w9_shrine_b",
+      "trust:chen_momo+5"
+     ]
+    },
+    {
+     "id": "qs_w9_shrine_c",
+     "text": "比佛龛的深度与墙的厚度",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w9_shrine_b"
+     ],
+     "grants": [
+      "flag:shrine_ash_fresh",
+      "trust:chen_momo+8"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w10_shenwu",
+   "type": "side",
+   "chapter": 10,
+   "title": "北门的门钉",
+   "giver": "zheng_e",
+   "summary": "神武门的门钉补过一排，补的人在雨里干了一夜——北门那夜开过，开门的钥匙不在禁军值房。",
+   "steps": [
+    {
+     "id": "qs_w10_shenwu_a",
+     "text": "到神武门，数门钉的排数",
+     "at": {
+      "kind": "anchor",
+      "anchor": "shenwumen",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=10"
+     ],
+     "grants": [
+      "flag:qs_w10_shenwu_a"
+     ]
+    },
+    {
+     "id": "qs_w10_shenwu_b",
+     "text": "把补钉的位置与门轴磨痕对上",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w10_shenwu_a"
+     ],
+     "grants": [
+      "flag:qs_w10_shenwu_b"
+     ]
+    },
+    {
+     "id": "qs_w10_shenwu_c",
+     "text": "问郑锷：北门那夜的钥匙在谁手里",
+     "at": {
+      "kind": "npc",
+      "npc": "zheng_e"
+     },
+     "requires": [
+      "flag:qs_w10_shenwu_b"
+     ],
+     "grants": [
+      "flag:north_gate_opened",
+      "trust:zheng_e+12"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w10_carving",
+   "type": "side",
+   "chapter": 10,
+   "title": "木上的刀口",
+   "giver": "lu_yan",
+   "summary": "角楼木构件上有刻记，是十五年前匠人留下的——陆延认得那种刀口，因为那年岁修的工账是他记的。",
+   "steps": [
+    {
+     "id": "qs_w10_carving_a",
+     "text": "到东北角楼，看檐下木构件的刻记",
+     "at": {
+      "kind": "anchor",
+      "anchor": "tower_ne",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=10"
+     ],
+     "grants": [
+      "flag:qs_w10_carving_a"
+     ]
+    },
+    {
+     "id": "qs_w10_carving_b",
+     "text": "进角楼，找同一批木料的第二处刻记",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_ne"
+     },
+     "requires": [
+      "flag:qs_w10_carving_a"
+     ],
+     "grants": [
+      "flag:qs_w10_carving_b"
+     ]
+    },
+    {
+     "id": "qs_w10_carving_c",
+     "text": "把刻记画给哑吏看",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:qs_w10_carving_b"
+     ],
+     "grants": [
+      "flag:carpenter_marks_15y",
+      "trust:lu_yan+15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w10_prints",
+   "type": "side",
+   "chapter": 10,
+   "title": "只去不回",
+   "giver": "zheng_e",
+   "summary": "城墙上只有一行脚印往角楼去，没有回来的——雨把别的都冲了，这一行冲不掉，因为它踩在新补的砖上。",
+   "steps": [
+    {
+     "id": "qs_w10_prints_a",
+     "text": "上南城墙，沿女墙找那行脚印",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wall_south_top",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=10"
+     ],
+     "grants": [
+      "flag:qs_w10_prints_a"
+     ]
+    },
+    {
+     "id": "qs_w10_prints_b",
+     "text": "跟着脚印走到东北角楼",
+     "at": {
+      "kind": "anchor",
+      "anchor": "tower_ne",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w10_prints_a"
+     ],
+     "grants": [
+      "flag:qs_w10_prints_b"
+     ]
+    },
+    {
+     "id": "qs_w10_prints_c",
+     "text": "问郑锷：那夜谁在城墙上值更",
+     "at": {
+      "kind": "npc",
+      "npc": "zheng_e"
+     },
+     "requires": [
+      "flag:qs_w10_prints_b"
+     ],
+     "grants": [
+      "flag:one_way_prints",
+      "trust:zheng_e+12"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w11_coffer",
+   "type": "side",
+   "chapter": 11,
+   "title": "换过的锁",
+   "giver": "zhao_jiu",
+   "summary": "赵九走过暗道十八年，他说石函的锁是新换的，撬痕却是旧的——有人试过打不开，后来索性换了锁。",
+   "steps": [
+    {
+     "id": "qs_w11_coffer_a",
+     "text": "在暗道口找到赵九，问他石函的位置",
+     "at": {
+      "kind": "npc",
+      "npc": "zhao_jiu"
+     },
+     "requires": [
+      "chapter>=11"
+     ],
+     "grants": [
+      "flag:qs_w11_coffer_a",
+      "trust:zhao_jiu+5"
+     ]
+    },
+    {
+     "id": "qs_w11_coffer_b",
+     "text": "下暗道，摸石函上的锁扣",
+     "at": {
+      "kind": "interior",
+      "interior": "secret_passage"
+     },
+     "requires": [
+      "flag:qs_w11_coffer_a"
+     ],
+     "grants": [
+      "flag:qs_w11_coffer_b"
+     ]
+    },
+    {
+     "id": "qs_w11_coffer_c",
+     "text": "比锁扣的新旧与石函的潮痕",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w11_coffer_b"
+     ],
+     "grants": [
+      "flag:coffer_lock_changed",
+      "trust:zhao_jiu+12"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w11_base",
+   "type": "side",
+   "chapter": 11,
+   "title": "空石础",
+   "giver": "he_qing",
+   "summary": "何清说廊柱石础本该实心，东长街第三根敲上去是空的——空的那一格，正对着档案库的方向。",
+   "steps": [
+    {
+     "id": "qs_w11_base_a",
+     "text": "在东长街找到何清，问哪一根柱子声音不对",
+     "at": {
+      "kind": "npc",
+      "npc": "he_qing"
+     },
+     "requires": [
+      "chapter>=11"
+     ],
+     "grants": [
+      "flag:qs_w11_base_a",
+      "trust:he_qing+5"
+     ]
+    },
+    {
+     "id": "qs_w11_base_b",
+     "text": "逐根敲过去，数到第三根",
+     "at": {
+      "kind": "anchor",
+      "anchor": "corr_east",
+      "radius": 8
+     },
+     "requires": [
+      "flag:qs_w11_base_a"
+     ],
+     "grants": [
+      "flag:qs_w11_base_b"
+     ]
+    },
+    {
+     "id": "qs_w11_base_c",
+     "text": "把石础的位置与档案库的方位对上",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w11_base_b"
+     ],
+     "grants": [
+      "flag:hollow_base_map",
+      "trust:he_qing+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w12_stipend",
+   "type": "side",
+   "chapter": 12,
+   "title": "月例",
+   "giver": "shen_yanqiu",
+   "summary": "沈砚秋替养父管了十年账，她只问一句：为什么「月例」每月多出一笔——这一笔能把整座内库翻过来。",
+   "steps": [
+    {
+     "id": "qs_w12_stipend_a",
+     "text": "在内廷西街拦住沈砚秋，问她账上最难平的一笔",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "chapter>=12"
+     ],
+     "grants": [
+      "flag:qs_w12_stipend_a",
+      "trust:shen_yanqiu+5"
+     ]
+    },
+    {
+     "id": "qs_w12_stipend_b",
+     "text": "进尚宫局，翻近三年的月例册",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_west_street",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w12_stipend_a"
+     ],
+     "grants": [
+      "flag:qs_w12_stipend_b"
+     ]
+    },
+    {
+     "id": "qs_w12_stipend_c",
+     "text": "把每月多出的那一笔，按月排成一条线",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w12_stipend_b"
+     ],
+     "grants": [
+      "flag:stipend_anomaly",
+      "trust:shen_yanqiu+15"
+     ],
+     "hint": "线不是直的，是七段"
+    }
+   ]
+  },
+  {
+   "id": "qs_w12_jingyuan",
+   "type": "side",
+   "chapter": 12,
+   "title": "尚仪的册子",
+   "giver": "pei_jingyuan",
+   "summary": "裴景媛要你替她核一页值夜册，好证明她那夜在交泰殿——她要的不是清白，是没人去问她哥哥。",
+   "steps": [
+    {
+     "id": "qs_w12_jingyuan_a",
+     "text": "到交泰殿外，找尚仪署的值夜册",
+     "at": {
+      "kind": "anchor",
+      "anchor": "jiaotaidian",
+      "radius": 12
+     },
+     "requires": [
+      "chapter>=12"
+     ],
+     "grants": [
+      "flag:qs_w12_jingyuan_a"
+     ]
+    },
+    {
+     "id": "qs_w12_jingyuan_b",
+     "text": "沿坤宁宫廊下走一遍，记下她当夜必经的那段路",
+     "at": {
+      "kind": "anchor",
+      "anchor": "kunninggong",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w12_jingyuan_a"
+     ],
+     "grants": [
+      "flag:qs_w12_jingyuan_b"
+     ]
+    },
+    {
+     "id": "qs_w12_jingyuan_c",
+     "text": "把册子还给她，问她那夜廊下还有谁",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:qs_w12_jingyuan_b"
+     ],
+     "grants": [
+      "flag:jingyuan_night_timeline",
+      "trust:pei_jingyuan+15"
+     ],
+     "hint": "她会先说「没人」，然后停很久"
+    }
+   ]
+  },
+  {
+   "id": "qs_w13_watch",
+   "type": "side",
+   "chapter": 13,
+   "title": "慢半刻的更",
+   "giver": "zheng_e",
+   "summary": "西北角楼那夜的更漏慢了半刻，值更的人换了三回——半刻，够一个人从墙上走过去再回来。",
+   "steps": [
+    {
+     "id": "qs_w13_watch_a",
+     "text": "到西北角楼，看更漏的水痕",
+     "at": {
+      "kind": "anchor",
+      "anchor": "tower_nw",
+      "radius": 14
+     },
+     "requires": [
+      "chapter>=13"
+     ],
+     "grants": [
+      "flag:qs_w13_watch_a"
+     ]
+    },
+    {
+     "id": "qs_w13_watch_b",
+     "text": "进角楼，翻值更的木牌",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_nw"
+     },
+     "requires": [
+      "flag:qs_w13_watch_a"
+     ],
+     "grants": [
+      "flag:qs_w13_watch_b"
+     ]
+    },
+    {
+     "id": "qs_w13_watch_c",
+     "text": "把三次换更的时辰排开",
+     "at": {
+      "kind": "deduce"
+     },
+     "requires": [
+      "flag:qs_w13_watch_b"
+     ],
+     "grants": [
+      "flag:nw_watch_delay",
+      "trust:zheng_e+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qs_w13_ration",
+   "type": "side",
+   "chapter": 13,
+   "title": "第二份饭",
+   "giver": "wang_fu",
+   "summary": "膳房每晚多出一份饭，王福不敢问送给谁——你替他把碗端过去，就会有人来见你。",
+   "steps": [
+    {
+     "id": "qs_w13_ration_a",
+     "text": "在膳房后门找王福，接下那只盖着布的碗",
+     "at": {
+      "kind": "npc",
+      "npc": "wang_fu"
+     },
+     "requires": [
+      "chapter>=13"
+     ],
+     "grants": [
+      "flag:qs_w13_ration_a",
+      "trust:wang_fu+5"
+     ]
+    },
+    {
+     "id": "qs_w13_ration_b",
+     "text": "端着碗走东街，别回头",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_east_street",
+      "radius": 14
+     },
+     "requires": [
+      "flag:qs_w13_ration_a"
+     ],
+     "grants": [
+      "flag:qs_w13_ration_b"
+     ],
+     "hint": "跟着你的人才怕你回头"
+    },
+    {
+     "id": "qs_w13_ration_c",
+     "text": "把碗放在内库账房的门槛上，退到街对面等",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_west_street",
+      "radius": 12
+     },
+     "requires": [
+      "flag:qs_w13_ration_b"
+     ],
+     "grants": [
+      "flag:extra_ration_route",
+      "trust:wang_fu+10"
+     ]
+    }
+   ]
+  }
+ ]
+}

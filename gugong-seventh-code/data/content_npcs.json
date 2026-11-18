@@ -1,0 +1,1555 @@
+{
+ "npcs": [
+  {
+   "id": "pei_jingheng",
+   "name": "裴景衡",
+   "title": "宫廷监察使",
+   "faction": "监察司",
+   "anchor": "qianqingmen",
+   "home_anchor": "huamen_e",
+   "robe": "#232f3d",
+   "accent": "#c9a227",
+   "trust0": 40,
+   "knows": [
+    "七码之说确有其实",
+    "韩砚当夜与死者争执",
+    "林照月私下查过旧档"
+   ],
+   "hides": [
+    "命孟淮往角楼",
+    "伪造失足现场",
+    "借外来调查员之手集码"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "huamen_e",
+     "label": "在官舍"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "huamen_e",
+     "label": "候门入宫，验今日文书"
+    },
+    {
+     "from": 10,
+     "to": 15,
+     "anchor": "qianqingmen",
+     "label": "坐监察司值房"
+    },
+    {
+     "from": 15,
+     "to": 17,
+     "anchor": "taihemen_plaza",
+     "label": "在广场见外官"
+    },
+    {
+     "from": 17,
+     "to": 22,
+     "anchor": "qianqingmen",
+     "label": "回值房，不见客"
+    },
+    {
+     "from": 22,
+     "to": 24,
+     "anchor": "huamen_e",
+     "label": "出宫，归官舍"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "你比信上写的日子早了两天。",
+     "宫里不给人第二次机会。记住。"
+    ],
+    "idle": [
+     "雨停了三日，瓦上还在滴。",
+     "她住过的那间屋子，已经锁了。"
+    ],
+    "press": [
+     "死人的事，交给活人办。你只管查，不必懂。",
+     "有些门推开就关不上。想清楚再问。"
+    ]
+   }
+  },
+  {
+   "id": "han_yan",
+   "name": "韩砚",
+   "title": "禁军统领",
+   "faction": "禁军",
+   "anchor": "qianqingmen",
+   "home_anchor": "qianqingmen",
+   "robe": "#1c1a16",
+   "accent": "#b08d3f",
+   "trust0": 15,
+   "knows": [
+    "父亲韩崇山当年押运封存文书",
+    "自己伪造过一次巡逻记录",
+    "那夜与林照月在角楼争执"
+   ],
+   "hides": [
+    "父亲涉案",
+    "为父亲遮掩而改过的巡逻记录"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "qianqingmen",
+     "label": "宿值房"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "qianqingmen",
+     "label": "点卯，发牌"
+    },
+    {
+     "from": 10,
+     "to": 13,
+     "anchor": "wumen_in",
+     "label": "巡午门、点门军"
+    },
+    {
+     "from": 13,
+     "to": 16,
+     "anchor": "corr_east",
+     "label": "走东长街查岗"
+    },
+    {
+     "from": 16,
+     "to": 20,
+     "anchor": "huamen_e",
+     "label": "巡东华门，验出入"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "qianqingmen",
+     "label": "回值房销假"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "站住。腰牌。",
+     "监察使的人？如今谁都能查案了。"
+    ],
+    "idle": [
+     "靴底三天没干过。",
+     "角楼那段墙，一夜巡四遍。"
+    ],
+    "press": [
+     "我父亲的名字，别从我嘴里问。",
+     "那夜我不在角楼。信不信由你。"
+    ]
+   }
+  },
+  {
+   "id": "shen_heling",
+   "name": "沈鹤龄",
+   "title": "掌印太监",
+   "faction": "内官监",
+   "anchor": "qianqinggong",
+   "home_anchor": "wb_nsg",
+   "robe": "#463d33",
+   "accent": "#8a7550",
+   "trust0": 30,
+   "knows": [
+    "月例银的账外流水",
+    "内库岁修的旧例",
+    "七册账互证的走账法子"
+   ],
+   "hides": [
+    "用月例银渠道洗钱",
+    "十五年前档案库那把火的来由"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wb_nsg",
+     "label": "在宁寿宫后院宿"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "wb_nsg",
+     "label": "起身，佛前上香"
+    },
+    {
+     "from": 9,
+     "to": 13,
+     "anchor": "qianqinggong",
+     "label": "御前回事"
+    },
+    {
+     "from": 13,
+     "to": 16,
+     "anchor": "jiaotaidian",
+     "label": "验印、对库册"
+    },
+    {
+     "from": 16,
+     "to": 20,
+     "anchor": "neiting_east_street",
+     "label": "在内官监核月例"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "wb_nsg",
+     "label": "回后院，熄灯"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "你从南边来。鞋上的泥不是宫里的。",
+     "宫里人都怕我。你不必——怕也无用。"
+    ],
+    "idle": [
+     "印在匣里，匣在我手里。",
+     "月例照旧发，一文不差。",
+     "老奴年纪大了，只记得旧例。"
+    ],
+    "press": [
+     "账是给人看的。"
+    ]
+   }
+  },
+  {
+   "id": "su_weian",
+   "name": "苏惟安",
+   "title": "太医院院判",
+   "faction": "太医院",
+   "anchor": "wb_fxd",
+   "home_anchor": "w6_jrg",
+   "robe": "#3a2422",
+   "accent": "#a2624f",
+   "trust0": 22,
+   "knows": [
+    "林照月死前一月脉象渐虚",
+    "乌头一类药材的宫内核销",
+    "自己改过的那页脉案"
+   ],
+   "hides": [
+    "把中毒写成体虚",
+    "改记录是受人威逼"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_jrg",
+     "label": "宿药房后间"
+    },
+    {
+     "from": 6,
+     "to": 8,
+     "anchor": "w6_jrg",
+     "label": "起，点药、晒药"
+    },
+    {
+     "from": 8,
+     "to": 12,
+     "anchor": "wb_fxd",
+     "label": "太医院正堂坐诊"
+    },
+    {
+     "from": 12,
+     "to": 14,
+     "anchor": "w6_jrg",
+     "label": "回房用饭、抄方"
+    },
+    {
+     "from": 14,
+     "to": 19,
+     "anchor": "wb_fxd",
+     "label": "正堂复诊，核脉案"
+    },
+    {
+     "from": 19,
+     "to": 24,
+     "anchor": "w6_jrg",
+     "label": "夜值，守药炉"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "手伸出来。不是诊脉，看你手冷不冷。",
+     "太医院不问案子，只问脉。"
+    ],
+    "idle": [
+     "药柜第三格，我三年没开过。",
+     "乌头不入常方。除非有人要它入。",
+     "死人不会说话，脉案会。"
+    ],
+    "press": [
+     "那页纸，我写的时候手是抖的。"
+    ]
+   }
+  },
+  {
+   "id": "a_heng",
+   "name": "阿蘅",
+   "title": "承乾宫宫女",
+   "faction": "内廷",
+   "anchor": "w6_cqg",
+   "home_anchor": "w6_yxg",
+   "robe": "#26382f",
+   "accent": "#86a68f",
+   "trust0": 10,
+   "knows": [
+    "林照月最后见的是孟淮",
+    "替她传过几封信",
+    "林照月死前怕的是谁"
+   ],
+   "hides": [
+    "最后见的人不是韩砚",
+    "替她藏过一封信"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_yxg",
+     "label": "在围房歇"
+    },
+    {
+     "from": 6,
+     "to": 12,
+     "anchor": "w6_cqg",
+     "label": "承乾宫洒扫、添炭"
+    },
+    {
+     "from": 12,
+     "to": 14,
+     "anchor": "neiting_east_street",
+     "label": "往内廷东街传话"
+    },
+    {
+     "from": 14,
+     "to": 18,
+     "anchor": "w6_cqg",
+     "label": "廊下当值"
+    },
+    {
+     "from": 18,
+     "to": 20,
+     "anchor": "yuhuayuan",
+     "label": "去井边汲水"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "w6_yxg",
+     "label": "回围房，不点灯"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "……奴才是承乾宫洒扫的。",
+     "您别站这儿。廊下有眼睛。"
+    ],
+    "idle": [
+     "水凉，手就麻。麻了就不怕了。",
+     "她教过我写自己的名字。"
+    ],
+    "press": [
+     "我什么都不知道。真的。",
+     "……别问了。问了我就活不成。"
+    ]
+   }
+  },
+  {
+   "id": "meng_huai",
+   "name": "孟淮",
+   "title": "禁军千户",
+   "faction": "禁军",
+   "anchor": "tower_ne",
+   "home_anchor": "qianqingmen",
+   "robe": "#201e19",
+   "accent": "#9d7b32",
+   "trust0": 18,
+   "knows": [
+    "那夜角楼上的争执",
+    "自己写的那份巡逻记录",
+    "裴家旧部在禁军里的位置"
+   ],
+   "hides": [
+    "推了林照月",
+    "替韩砚伪造巡逻记录"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "qianqingmen",
+     "label": "宿值房"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "qianqingmen",
+     "label": "点卯，领军械"
+    },
+    {
+     "from": 10,
+     "to": 13,
+     "anchor": "tower_ne",
+     "label": "巡东北角楼"
+    },
+    {
+     "from": 13,
+     "to": 17,
+     "anchor": "corr_east",
+     "label": "走东长街"
+    },
+    {
+     "from": 17,
+     "to": 20,
+     "anchor": "tower_ne",
+     "label": "再上角楼，独处"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "qianqingmen",
+     "label": "回值房"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "角楼风大。您站远些。",
+     "禁军办事，不问缘由。"
+    ],
+    "idle": [
+     "那夜雨大，什么都看不清。",
+     "墙根下不许停人。您不知道？"
+    ],
+    "press": [
+     "那夜角楼上有两个人。不止我一个。",
+     "巡逻的时辰，不是死的。"
+    ]
+   }
+  },
+  {
+   "id": "lu_yan",
+   "name": "陆延",
+   "title": "档案库老吏「哑吏」",
+   "faction": "档案库",
+   "anchor": "wb_yxd",
+   "home_anchor": "wb_yxd",
+   "robe": "#3b3a35",
+   "accent": "#8b8578",
+   "trust0": 5,
+   "knows": [
+    "丁卯年档案库那场火",
+    "七册互证的码法",
+    "地窖与旧柜的位置"
+   ],
+   "hides": [
+    "他不是哑巴",
+    "从火里逃出来的那个人是他"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wb_yxd",
+     "label": "在地窖口睡"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "wb_yxd",
+     "label": "扫院、清灰"
+    },
+    {
+     "from": 10,
+     "to": 12,
+     "anchor": "wb_wyg",
+     "label": "背废纸去武英殿"
+    },
+    {
+     "from": 12,
+     "to": 16,
+     "anchor": "wb_yxd",
+     "label": "守着库门"
+    },
+    {
+     "from": 16,
+     "to": 18,
+     "anchor": "corr_west",
+     "label": "沿西长街拾荒"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "wb_yxd",
+     "label": "回院，关门"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "他抬头看你，喉咙里滚出一声干响。",
+     "扫帚在你脚边停住。他退了半步。"
+    ],
+    "idle": [
+     "他在灰里划了七道横，又抹平。",
+     "他递来一片烧焦的纸角，又收回去。"
+    ],
+    "press": [
+     "「……」他指着喉咙，摇头。",
+     "他在你掌心写了个「火」字，立刻擦掉。"
+    ]
+   }
+  },
+  {
+   "id": "pei_jingyuan",
+   "name": "裴景媛",
+   "title": "尚仪局尚仪",
+   "faction": "尚仪局",
+   "anchor": "jiaotaidian",
+   "home_anchor": "w6_zcg",
+   "robe": "#26323e",
+   "accent": "#9fb0bd",
+   "trust0": 25,
+   "knows": [
+    "哥哥当夜不在值房",
+    "宫中仪注与夜禁时刻",
+    "交泰殿的钥匙分几把"
+   ],
+   "hides": [
+    "哥哥那晚究竟去了哪里",
+    "她替哥哥圆过的说辞"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_zcg",
+     "label": "在钟粹宫围房"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "w6_zcg",
+     "label": "梳洗，理仪注稿"
+    },
+    {
+     "from": 9,
+     "to": 13,
+     "anchor": "jiaotaidian",
+     "label": "核宝册、记仪注"
+    },
+    {
+     "from": 13,
+     "to": 17,
+     "anchor": "kunninggong",
+     "label": "坤宁宫侍仪"
+    },
+    {
+     "from": 17,
+     "to": 20,
+     "anchor": "jiaotaidian",
+     "label": "收册、落锁"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "w6_zcg",
+     "label": "回围房"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "尚仪局管礼，不管命。",
+     "您这样的人，宫里十年不遇一个。"
+    ],
+    "idle": [
+     "仪注错一个字，整场典就废了。",
+     "交泰殿的钥匙三把，我管一把。",
+     "哥哥忙。他一忙，就不回房。"
+    ],
+    "press": [
+     "那晚的事……我不该提。"
+    ]
+   }
+  },
+  {
+   "id": "gu_yun",
+   "name": "顾昀",
+   "title": "午门老门卒",
+   "faction": "门军",
+   "anchor": "wumen_in",
+   "home_anchor": "wumen_in",
+   "robe": "#191713",
+   "accent": "#8e7434",
+   "trust0": 32,
+   "knows": [
+    "当夜通行令牌的数目",
+    "午门开关的时刻",
+    "谁惯常从午门进出"
+   ],
+   "hides": [
+    "令牌多出一枚，他没敢上报"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wumen_in",
+     "label": "在门洞值夜"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "wumen_in",
+     "label": "开卯门，验牌"
+    },
+    {
+     "from": 10,
+     "to": 13,
+     "anchor": "wumen_out",
+     "label": "门外拦人验牌"
+    },
+    {
+     "from": 13,
+     "to": 16,
+     "anchor": "wall_south_top",
+     "label": "上南城墙巡一段"
+    },
+    {
+     "from": 16,
+     "to": 24,
+     "anchor": "wumen_in",
+     "label": "回门内，守到闭门"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "牌。……哦，监察使的。",
+     "午门卯时开，酉时关。规矩比我老。"
+    ],
+    "idle": [
+     "门上的钉子，我数过三百二十七颗。",
+     "雨夜牌上的漆会掉，一摸一手黑。",
+     "这把年纪，记性比册子准。"
+    ],
+    "press": [
+     "册子上的数，我一遍一遍数过。"
+    ]
+   }
+  },
+  {
+   "id": "bai_shi",
+   "name": "白氏",
+   "title": "浣衣局管事",
+   "faction": "浣衣局",
+   "anchor": "huamen_w",
+   "home_anchor": "huamen_w",
+   "robe": "#33302b",
+   "accent": "#7d7462",
+   "trust0": 28,
+   "knows": [
+    "替林照月洗过带血的袖口",
+    "宫中浣衣的轮值",
+    "各宫衣料的来路"
+   ],
+   "hides": [
+    "那件袖口上的血，她没报"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "huamen_w",
+     "label": "在浣衣房歇"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "huamen_w",
+     "label": "烧水，起锅"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "corr_west",
+     "label": "往西长街送衣"
+    },
+    {
+     "from": 12,
+     "to": 14,
+     "anchor": "huamen_w",
+     "label": "回房，理牌号"
+    },
+    {
+     "from": 14,
+     "to": 17,
+     "anchor": "w6_ysg",
+     "label": "送西六宫的衣裳"
+    },
+    {
+     "from": 17,
+     "to": 24,
+     "anchor": "huamen_w",
+     "label": "洗衣、晾衣到夜深"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "衣裳放盆里。手别碰水，凉。",
+     "浣衣局不认人，只认料子。"
+    ],
+    "idle": [
+     "血在凉水里是黑的，热水里才红。",
+     "脏衣裳洗得掉，脏事洗不掉。",
+     "西华门的水比井里的软。"
+    ],
+    "press": [
+     "那件袖口，我泡了三遍。"
+    ]
+   }
+  },
+  {
+   "id": "cui_shen",
+   "name": "崔慎",
+   "title": "内官监少监",
+   "faction": "内官监",
+   "anchor": "neiting_east_street",
+   "home_anchor": "w6_jyg",
+   "robe": "#3f382e",
+   "accent": "#8b7340",
+   "trust0": 12,
+   "knows": [
+    "沈鹤龄的月例银流水",
+    "自己威胁过阿蘅",
+    "换走的那页残档在谁手上"
+   ],
+   "hides": [
+    "逼阿蘅改口",
+    "换走角楼物证"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_jyg",
+     "label": "在景阳宫后院宿"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "w6_jyg",
+     "label": "起，清点库钥"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "neiting_east_street",
+     "label": "在内官监当值"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "qianqinggong",
+     "label": "御前听差"
+    },
+    {
+     "from": 15,
+     "to": 24,
+     "anchor": "w6_jyg",
+     "label": "回后院，见人不便"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "内官监的事，轮不到外人问。",
+     "您走错路了。这边是库房。"
+    ],
+    "idle": [
+     "少监不算大。可库房的钥匙在我这儿。",
+     "有些纸，烧了比留着干净。",
+     "听话的人活得久。"
+    ],
+    "press": [
+     "阿蘅那丫头？我不过问了她两句。"
+    ]
+   }
+  },
+  {
+   "id": "liu_yinv",
+   "name": "柳医女",
+   "title": "太医院医女",
+   "faction": "太医院",
+   "anchor": "w6_jrg",
+   "home_anchor": "wb_fxd",
+   "robe": "#35241f",
+   "accent": "#9a6a52",
+   "trust0": 26,
+   "knows": [
+    "见过林照月被下毒的舌象",
+    "后宫诊脉的规矩",
+    "药渣与煎法的讲究"
+   ],
+   "hides": [
+    "那份舌象她没敢写进册子"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wb_fxd",
+     "label": "药房值宿"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "wb_fxd",
+     "label": "煎药，登记药渣"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "w6_jrg",
+     "label": "内廷诊室候诊"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "w6_cqg",
+     "label": "往东六宫出诊"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "w6_jrg",
+     "label": "回诊室记案"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "wb_fxd",
+     "label": "回药房，守炉"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "您是来看病，还是来问病？",
+     "医女不记人名，只记症状。"
+    ],
+    "idle": [
+     "舌头不会撒谎。",
+     "乌头的毒，先麻舌尖，再麻指尖。",
+     "后宫的女人，病多半不在身上。"
+    ],
+    "press": [
+     "她的舌象，我看过一次就忘不掉。"
+    ]
+   }
+  },
+  {
+   "id": "chang_ping",
+   "name": "常平",
+   "title": "巡夜人",
+   "faction": "内廷",
+   "anchor": "wall_south_top",
+   "home_anchor": "wall_south_top",
+   "robe": "#232019",
+   "accent": "#7f6a3a",
+   "trust0": 14,
+   "knows": [
+    "自己改过巡逻路线",
+    "给钱那人的袖口料子",
+    "各更鼓的时刻"
+   ],
+   "hides": [
+    "收了钱，少走两趟"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wall_south_top",
+     "label": "在更铺睡"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "wall_south_top",
+     "label": "补觉，修灯笼"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "wumen_in",
+     "label": "领更筹、对牌"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "jinshui",
+     "label": "白天看桥，捡灯油"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "santai_west",
+     "label": "走三台西侧踩道"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "wall_south_top",
+     "label": "上城墙打更"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "别出声。这儿听鼓。",
+     "夜里的宫城，比白天宽。"
+    ],
+    "idle": [
+     "一更到五更，我走了十九年。",
+     "鼓声一停，宫就醒了。",
+     "有人给钱，只问少走几趟，不问为什么。"
+    ],
+    "press": [
+     "路线是我自己改的。"
+    ]
+   }
+  },
+  {
+   "id": "wang_fu",
+   "name": "王福",
+   "title": "膳房厨役",
+   "faction": "膳房",
+   "anchor": "corr_east",
+   "home_anchor": "w6_yhg",
+   "robe": "#3a352c",
+   "accent": "#8a7a58",
+   "trust0": 30,
+   "knows": [
+    "雨夜见穿禁军靴的人往北走",
+    "膳房送膳的时辰",
+    "禁军靴底钉三棱钉"
+   ],
+   "hides": [
+    "看见了，但没敢说"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_yhg",
+     "label": "在厨役房睡"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "corr_east",
+     "label": "生火、备早膳"
+    },
+    {
+     "from": 10,
+     "to": 12,
+     "anchor": "neiting_east_street",
+     "label": "推车送膳"
+    },
+    {
+     "from": 12,
+     "to": 16,
+     "anchor": "corr_east",
+     "label": "刷锅、剁肉"
+    },
+    {
+     "from": 16,
+     "to": 19,
+     "anchor": "neiting_east_street",
+     "label": "送晚膳，收食盒"
+    },
+    {
+     "from": 19,
+     "to": 24,
+     "anchor": "w6_yhg",
+     "label": "回房，倒头就睡"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "灶上正忙。要问话，等我添完柴。",
+     "膳房不供外人的茶。"
+    ],
+    "idle": [
+     "油烟熏眼，倒把地上看得清。",
+     "靴子踩水的声音不一样，钉子的更不一样。",
+     "那夜熬的粥，谁也没来领。"
+    ],
+    "press": [
+     "东长街，雨里，一个人往北走。"
+    ]
+   }
+  },
+  {
+   "id": "shen_yanqiu",
+   "name": "沈砚秋",
+   "title": "尚宫局女官",
+   "faction": "尚宫局",
+   "anchor": "neiting_west_street",
+   "home_anchor": "w6_ysg",
+   "robe": "#24303a",
+   "accent": "#a9a27f",
+   "trust0": 24,
+   "knows": [
+    "养父每月有一笔账外流水",
+    "尚宫局月例的发放",
+    "宫外几处铺子的名号"
+   ],
+   "hides": [
+    "她自己另记了一本私账"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "w6_ysg",
+     "label": "在永寿宫围房"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "w6_ysg",
+     "label": "起，核昨日的牌"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "neiting_west_street",
+     "label": "尚宫局当值"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "w6_ccg",
+     "label": "往长春宫核月例"
+    },
+    {
+     "from": 15,
+     "to": 19,
+     "anchor": "neiting_west_street",
+     "label": "回局，对账到掌灯"
+    },
+    {
+     "from": 19,
+     "to": 24,
+     "anchor": "w6_ysg",
+     "label": "回围房，写私册"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "尚宫局过的是日子，不是案子。",
+     "您身上有雨味。宫里没人淋着雨还到处走。"
+    ],
+    "idle": [
+     "月例每月初五发，一枚不多。",
+     "账要平。不平的账，我夜里睡不着。",
+     "他给我姓。没给我嫁妆。"
+    ],
+    "press": [
+     "有一笔钱，每月从账外走。"
+    ]
+   }
+  },
+  {
+   "id": "zhao_jiu",
+   "name": "赵九",
+   "title": "车马行头目",
+   "faction": "车马行",
+   "anchor": "shenwumen",
+   "home_anchor": "shenwumen",
+   "robe": "#2b2620",
+   "accent": "#96703f",
+   "trust0": 16,
+   "knows": [
+    "暗道运输的路线",
+    "宫外接货的时辰",
+    "神武门夜里的门包规矩"
+   ],
+   "hides": [
+    "替宫里人往宫外运东西",
+    "他自己也不知道运的是什么"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "shenwumen",
+     "label": "在车门歇"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "shenwumen",
+     "label": "修车、喂牲口"
+    },
+    {
+     "from": 10,
+     "to": 13,
+     "anchor": "wumen_out",
+     "label": "午门外接货"
+    },
+    {
+     "from": 13,
+     "to": 17,
+     "anchor": "shenwumen",
+     "label": "装车、点数"
+    },
+    {
+     "from": 17,
+     "to": 20,
+     "anchor": "wumen_out",
+     "label": "递话、结账"
+    },
+    {
+     "from": 20,
+     "to": 24,
+     "anchor": "shenwumen",
+     "label": "守夜车"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "车不进午门。到神武门就卸。",
+     "您这样的脚，走不了土路。"
+    ],
+    "idle": [
+     "麻袋不响，才最沉。",
+     "夜里过门，得给守门的留一壶酒。",
+     "我的人只认路，不认货。"
+    ],
+    "press": [
+     "那条道，从井底下过。"
+    ]
+   }
+  },
+  {
+   "id": "ming_jing",
+   "name": "明净",
+   "title": "钦安殿道士",
+   "faction": "钦安殿",
+   "anchor": "qinandian",
+   "home_anchor": "qinandian",
+   "robe": "#3c3c38",
+   "accent": "#b3ac9a",
+   "trust0": 20,
+   "knows": [
+    "卦象与星位",
+    "宫中旧年的零碎传闻",
+    "钦安殿香火账"
+   ],
+   "hides": [
+    "他用卦象说话，不肯说破"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "qinandian",
+     "label": "在殿后静室"
+    },
+    {
+     "from": 6,
+     "to": 10,
+     "anchor": "qinandian",
+     "label": "焚香、扫殿"
+    },
+    {
+     "from": 10,
+     "to": 12,
+     "anchor": "yuhuayuan",
+     "label": "绕园走一圈"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "qianqiuting",
+     "label": "千秋亭下起卦"
+    },
+    {
+     "from": 15,
+     "to": 19,
+     "anchor": "qinandian",
+     "label": "回殿，抄经"
+    },
+    {
+     "from": 19,
+     "to": 24,
+     "anchor": "qinandian",
+     "label": "夜坐，不与人言"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "你身上有火气。坐下，先听钟。",
+     "贫道不算生死，只算时辰。"
+    ],
+    "idle": [
+     "雨打琉璃，金水相激。凶，但旺。",
+     "殿里的香一日三炷。断过一炷。",
+     "香灰冷透了，才知道香烧到哪儿。"
+    ],
+    "press": [
+     "七爻动，六爻静。缺的那一爻，不在卦上。"
+    ]
+   }
+  },
+  {
+   "id": "a_luo",
+   "name": "阿罗",
+   "title": "小太监",
+   "faction": "内廷",
+   "anchor": "neiting_east_street",
+   "home_anchor": "neiting_east_street",
+   "robe": "#40382d",
+   "accent": "#8f7a4c",
+   "trust0": 34,
+   "knows": [
+    "各宫跑腿见闻",
+    "谁家赏钱给得爽快",
+    "宫里的零碎闲话"
+   ],
+   "hides": [
+    "传话常传错",
+    "自己也收过赏钱"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "neiting_east_street",
+     "label": "在围房睡"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "qianqingmen",
+     "label": "送水、递牌子"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "neiting_east_street",
+     "label": "听差、跑腿"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "w6_cqg",
+     "label": "往承乾宫送东西"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "corr_east",
+     "label": "跑东长街"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "neiting_east_street",
+     "label": "回围房，蹲在檐下"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "爷，您要点什么？水、炭，还是话？",
+     "我腿快，嘴也快。您别嫌。"
+    ],
+    "idle": [
+     "东边那位昨儿摔了个碗，说是猫碰的。",
+     "宫里没有猫。",
+     "我听见的不一定真。可我不撒谎——我传错。"
+    ],
+    "press": [
+     "有人说角楼那晚不止一个人。"
+    ]
+   }
+  },
+  {
+   "id": "chen_momo",
+   "name": "陈嬷嬷",
+   "title": "慈宁宫老嬷嬷",
+   "faction": "慈宁宫",
+   "anchor": "wb_cng",
+   "home_anchor": "wb_cng",
+   "robe": "#3a3330",
+   "accent": "#8e7f6a",
+   "trust0": 21,
+   "knows": [
+    "各家族在宫中的利益关系",
+    "各宫旧人旧事",
+    "妃嫔娘家的脉络"
+   ],
+   "hides": [
+    "谁家欠谁家的情，她只记在心里"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wb_cng",
+     "label": "在慈宁宫后罩房"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "wb_cng",
+     "label": "起，看佛堂灯油"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "kunninggong",
+     "label": "往坤宁宫回事"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "wb_cng",
+     "label": "回宫，见来请安的"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "neiting_west_street",
+     "label": "走内廷西街探人"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "wb_cng",
+     "label": "回房，捻珠"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "坐。老人家的屋子，只有凳子不凉。",
+     "你母亲若在，该与我一般年纪。"
+    ],
+    "idle": [
+     "宫里的账，一半在册上，一半在人情里。",
+     "裴家老太太从前最会做人。",
+     "沈家那位捧人时手是暖的，收回去也快。"
+    ],
+    "press": [
+     "有些情，欠了二十年还在还。"
+    ]
+   }
+  },
+  {
+   "id": "zheng_e",
+   "name": "郑锷",
+   "title": "禁军副将",
+   "faction": "禁军",
+   "anchor": "huamen_e",
+   "home_anchor": "qianqingmen",
+   "robe": "#1e1c17",
+   "accent": "#a8863a",
+   "trust0": 27,
+   "knows": [
+    "韩砚当夜二更已回值房",
+    "禁军换班的时辰",
+    "门军的名册"
+   ],
+   "hides": [
+    "为禁军遮丑，不肯先开口"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "qianqingmen",
+     "label": "宿值房"
+    },
+    {
+     "from": 6,
+     "to": 9,
+     "anchor": "huamen_e",
+     "label": "开东华门，点门军"
+    },
+    {
+     "from": 9,
+     "to": 12,
+     "anchor": "wumen_in",
+     "label": "巡午门，核腰牌"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "corr_east",
+     "label": "走东长街查岗"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "huamen_e",
+     "label": "回东华门，锁门"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "qianqingmen",
+     "label": "回值房，写呈"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "东华门的锁一天开四次。我管三次。",
+     "您是文官，不该在城墙上走。"
+    ],
+    "idle": [
+     "换班的鼓一响，人就散了。",
+     "禁军的丑，得禁军自己收拾。",
+     "茶凉了就该换。人不换，就凉透了。"
+    ],
+    "press": [
+     "韩统领那夜二更就回了值房。我递的茶。"
+    ]
+   }
+  },
+  {
+   "id": "he_qing",
+   "name": "何清",
+   "title": "档案库书吏",
+   "faction": "档案库",
+   "anchor": "wb_yxd",
+   "home_anchor": "wb_yxd",
+   "robe": "#33322b",
+   "accent": "#8d856f",
+   "trust0": 29,
+   "knows": [
+    "有一册账对不上码，被调走了",
+    "档案库的编号规矩",
+    "谁来过库房"
+   ],
+   "hides": [
+    "账被调走时他没拦，怕担责"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wb_yxd",
+     "label": "在库房耳房睡"
+    },
+    {
+     "from": 6,
+     "to": 13,
+     "anchor": "wb_yxd",
+     "label": "校册、对码、晒卷"
+    },
+    {
+     "from": 13,
+     "to": 15,
+     "anchor": "corr_west",
+     "label": "往西长街送抄件"
+    },
+    {
+     "from": 15,
+     "to": 19,
+     "anchor": "wb_wyg",
+     "label": "去武英殿领纸墨"
+    },
+    {
+     "from": 19,
+     "to": 24,
+     "anchor": "wb_yxd",
+     "label": "回库，落锁记簿"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "库里不许点火。手炉搁门外。",
+     "查档要批文。您有吗？"
+    ],
+    "idle": [
+     "码是死的，册是活的。册一动，码就错。",
+     "第七册的封皮，比别的旧。",
+     "六年里，我只见过一次调册不登记。"
+    ],
+    "press": [
+     "有一册，对不上码。上月被调走了。"
+    ]
+   }
+  },
+  {
+   "id": "ashina",
+   "name": "阿史那",
+   "title": "胡商管事",
+   "faction": "胡商",
+   "anchor": "wumen_out",
+   "home_anchor": "wumen_out",
+   "robe": "#2e2429",
+   "accent": "#a37a4e",
+   "trust0": 13,
+   "knows": [
+    "宫外的销赃渠道",
+    "胡商的货路",
+    "银子出城的路子"
+   ],
+   "hides": [
+    "替宫里人出货",
+    "从不问货的来路"
+   ],
+   "schedule": [
+    {
+     "from": 0,
+     "to": 6,
+     "anchor": "wumen_out",
+     "label": "在车店歇"
+    },
+    {
+     "from": 6,
+     "to": 12,
+     "anchor": "wumen_out",
+     "label": "验货、点皮张"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "anchor": "wumen_in",
+     "label": "进午门交验贡物"
+    },
+    {
+     "from": 15,
+     "to": 18,
+     "anchor": "taihemen_plaza",
+     "label": "与内官交接货单"
+    },
+    {
+     "from": 18,
+     "to": 24,
+     "anchor": "wumen_out",
+     "label": "出宫，守货"
+    }
+   ],
+   "lines": {
+    "greet": [
+     "胡商的货，过午门就得开封。您要查？",
+     "我姓阿史那。记不住，就叫老阿。"
+    ],
+    "idle": [
+     "银子比人走得快。",
+     "西边来的毡子宫里嫌粗，可暖和。",
+     "我不问货，只问路。"
+    ],
+    "press": [
+     "宫里的东西出了神武门，就归我管。"
+    ]
+   }
+  }
+ ]
+}

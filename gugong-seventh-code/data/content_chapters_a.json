@@ -1,0 +1,222 @@
+{
+ "chapters": [
+  {
+   "n": 1,
+   "title": "雨夜宫门",
+   "subtitle": "雨水把脚印冲掉了，可冲不掉令牌。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings"
+   ],
+   "intro": "雨从午门的门洞灌进来，把砖缝里的血冲成一条淡红的线。你踩着水走进宫城，靴底在门槛上滑了一下。灯笼只亮了三盏，值夜的人比该在的少一个。有人把一具尸体从东北角楼抬下来，用草席裹着，草席太短，露出一截湿透的发。监察使在门内等你，他不打伞，也不看你，只说了一句：她不是自己摔下去的。",
+   "beats": [
+    "b1_rain_gate",
+    "b1_body_carried",
+    "b1_pei_first_word",
+    "b1_token_table"
+   ],
+   "quests": [
+    "q1_1",
+    "q1_2",
+    "q1_3",
+    "q1_4",
+    "q1_5"
+   ],
+   "code": null,
+   "unlock_note": "本章解锁：午门、太和门广场、三台、外东路与外西路，可在宫城南部自由行走；内廷与御花园仍封着。"
+  },
+  {
+   "n": 2,
+   "title": "失踪的巡夜人",
+   "subtitle": "有人替他把那一夜的路重新画了一遍。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting"
+   ],
+   "intro": "失踪的巡夜人叫常平，四十岁，走路有点跛。三月初七那夜他在簿子上值了四个更次，却没人记得见过他。你翻那本簿子时，指尖摸到两处墨：一处干硬，一处还发黏。有人在他走过之后，替他把那一夜的路重新画了一遍，画得比真的还像真的。御膳房后墙的泥地上，有一双禁军靴的钉印，尺码不对。",
+   "beats": [
+    "b2_roster_two_inks",
+    "b2_kitchen_mud",
+    "b2_hiding_niche",
+    "b2_silver_cut"
+   ],
+   "quests": [
+    "q2_1",
+    "q2_2",
+    "q2_3",
+    "q2_4"
+   ],
+   "code": null,
+   "unlock_note": "本章解锁：内廷（乾清门、内廷东街与西街、乾清宫一带），可从外朝直接穿门而入。"
+  },
+  {
+   "n": 3,
+   "title": "太和殿的第一码",
+   "subtitle": "匾额挂了百年，后面只空了十一天。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting"
+   ],
+   "intro": "太和殿的门开了，门轴的声音在空殿里滚了一圈，落回你脚边。殿里没有灯，只有从高窗斜下来的一片白。你抬头看那块匾：挂了百年的字，灰尘积得很匀，只有东南一角被人擦过。夹层空着，空得刚好能放下一页纸——翻它的人只翻了最上面一层。取纸时踩翻的香炉还在阶下，灰没扫。",
+   "beats": [
+    "b3_hall_door",
+    "b3_plaque_dust",
+    "b3_hollow_paper",
+    "b3_scaffold_ash"
+   ],
+   "quests": [
+    "q3_1",
+    "q3_2",
+    "q3_3",
+    "q3_4"
+   ],
+   "code": 1,
+   "unlock_note": "本章解锁：太和殿室内（thd_hall）。殿内可近距离查看匾额、宝座与香炉。"
+  },
+  {
+   "n": 4,
+   "title": "东长街的第二码",
+   "subtitle": "石础不承重，只承一个人的手。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting",
+    "r08_east_six",
+    "r09_west_six"
+   ],
+   "intro": "东长街的廊柱一根接一根，数到第七根，石础的灰缝是新的。这条街白日走货，夜里走人，谁也不看谁。你跟着一个抱匣子的侍从走了一趟，他拐进耳房，灯亮半刻，出来时匣子空了。同一条街上，禁军说韩砚二更末就回了值房，可有人的话把这两个时辰对不上。石础中空，藏得下一页纸，也藏得下一个人的命。",
+   "beats": [
+    "b4_servant_walk",
+    "b4_plinth_seam",
+    "b4_zheng_timeline",
+    "b4_blood_cuff"
+   ],
+   "quests": [
+    "q4_1",
+    "q4_2",
+    "q4_3",
+    "q4_4",
+    "q4_5"
+   ],
+   "code": 2,
+   "unlock_note": "本章解锁：东六宫与西六宫（景仁宫、承乾宫、永和宫、翊坤宫一带），并放开东长街两端。"
+  },
+  {
+   "n": 5,
+   "title": "禁军值房",
+   "subtitle": "记录不会说谎，写字的人会。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting",
+    "r08_east_six",
+    "r09_west_six",
+    "r06_shenwumen"
+   ],
+   "intro": "禁军值房在神武门内东侧，门口挂一块木牌，谁当值就翻谁的名。三月初七那块被翻过面，背面重写了。你站在炭炉边，纸灰还是温的。地图上的巡逻线用朱笔改过，改得绕开了东北角楼——那不是疏忽，是有人不想让一条线穿过某个地方。簿上的字是禁军的字，写字的却不是禁军的手。",
+   "beats": [
+    "b5_duty_board",
+    "b5_red_line",
+    "b5_ash_warm",
+    "b5_hand_compare"
+   ],
+   "quests": [
+    "q5_1",
+    "q5_2",
+    "q5_3",
+    "q5_4"
+   ],
+   "code": null,
+   "unlock_note": "本章解锁：神武门与禁军值房（barracks）室内，可上北面城墙一段。"
+  },
+  {
+   "n": 6,
+   "title": "万春亭的第三码",
+   "subtitle": "亭子最高的地方，藏着一场烧了十五年的火。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting",
+    "r08_east_six",
+    "r09_west_six",
+    "r06_shenwumen",
+    "r05_yuhuayuan"
+   ],
+   "intro": "万春亭在御花园西北，四角攒尖，藻井的木头是香的。你仰头看那片顶，东南角的缝比别处宽一指。从堆秀山半山回望，亭顶有一片瓦的颜色不对，像后来补的。亭子最高的地方藏着一页纸，纸上的码连着十五年前那场火——那场火烧了档案库东庑，记死了三个失踪的书吏，只跑出来一个哑了的人。",
+   "beats": [
+    "b6_garden_gate",
+    "b6_hexagram",
+    "b6_ceiling_seam",
+    "b6_burn_scar"
+   ],
+   "quests": [
+    "q6_1",
+    "q6_2",
+    "q6_3",
+    "q6_4"
+   ],
+   "code": 3,
+   "unlock_note": "本章解锁：御花园全境（万春亭、千秋亭、钦安殿、堆秀山），可自内廷北门直入。"
+  },
+  {
+   "n": 7,
+   "title": "太医院疑案",
+   "subtitle": "药方救不了人，也埋不了人。",
+   "open_regions": [
+    "r00_world",
+    "r01_wumen",
+    "r02_taihemen",
+    "r03_santai",
+    "r10_east_wings",
+    "r11_west_wings",
+    "r04_neiting",
+    "r08_east_six",
+    "r09_west_six",
+    "r06_shenwumen",
+    "r05_yuhuayuan"
+   ],
+   "intro": "太医院正堂朝东，药味比人先进门。案上摊着林照月的脉案，三页缺了，缺口的纸茬是新的。你对着两张方子看：一张写着甘草，一张写着炙草，笔锋一样，只是后一张的墨浮在纸上。药碾的缝里抠出一点黑渣，苦得像杏。院判坐在阴影里，等你先开口——他要护的不是凶手，是他自己改过的那两行字。",
+   "beats": [
+    "b7_tcm_door",
+    "b7_two_recipes",
+    "b7_aconite_residue",
+    "b7_new_lacquer"
+   ],
+   "quests": [
+    "q7_1",
+    "q7_2",
+    "q7_3",
+    "q7_4",
+    "q7_5"
+   ],
+   "code": null,
+   "unlock_note": "本章解锁：太医院正堂（tcm_hall）室内与药库，可从东华门内直入。"
+  }
+ ]
+}

@@ -1,0 +1,2043 @@
+{
+ "quests": [
+  {
+   "id": "q8_1",
+   "type": "main",
+   "chapter": 8,
+   "title": "封条下的门",
+   "giver": "lu_yan",
+   "summary": "进咸安宫偏院的地窖，看十五年前的火从哪里烧起来。",
+   "steps": [
+    {
+     "id": "q8_1_a",
+     "text": "走到咸安宫偏院",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_yxd",
+      "radius": 18
+     },
+     "requires": [],
+     "grants": [
+      "flag:arrived_xianan"
+     ],
+     "hint": "西华门内往北，咸安宫西侧的夹院"
+    },
+    {
+     "id": "q8_1_b",
+     "text": "掀开地窖盖板，进入旧档案库",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:arrived_xianan"
+     ],
+     "grants": [
+      "flag:archive_open",
+      "unlock:r11_west_wings"
+     ],
+     "hint": "铁环锈死了，用撬棍"
+    },
+    {
+     "id": "q8_1_c",
+     "text": "在东庑残墙下找出火烧的起点",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:archive_open"
+     ],
+     "grants": [
+      "flag:fire_origin"
+     ],
+     "hint": "烧得最透的地方，不一定是火起的地方"
+    }
+   ]
+  },
+  {
+   "id": "q8_2",
+   "type": "main",
+   "chapter": 8,
+   "title": "灰里的三层",
+   "giver": "he_qing",
+   "summary": "把烧灼方向、倒塌方向、账页残片放回同一张图上。",
+   "steps": [
+    {
+     "id": "q8_2_a",
+     "text": "辨认焦木的烧灼方向",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:fire_origin"
+     ],
+     "grants": [
+      "flag:fire_direction"
+     ]
+    },
+    {
+     "id": "q8_2_b",
+     "text": "在铁皮柜底找到未燃尽的账页残片",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:fire_direction"
+     ],
+     "grants": [
+      "flag:ledger_scrap"
+     ]
+    },
+    {
+     "id": "q8_2_c",
+     "text": "把火点、风向、倒塌方向叠在一起看",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_fire_three_points"
+     },
+     "requires": [
+      "flag:fire_direction",
+      "flag:ledger_scrap"
+     ],
+     "grants": [
+      "flag:fire_three_points"
+     ],
+     "hint": "火只烧了东庑。西庑的书架是被人推倒的"
+    },
+    {
+     "id": "q8_2_d",
+     "text": "把残页递给哑吏，看他的手会不会抖",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:fire_three_points"
+     ],
+     "grants": [
+      "flag:lu_yan_reacts",
+      "trust:lu_yan+15"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q8_3",
+   "type": "main",
+   "chapter": 8,
+   "title": "哑吏的笔",
+   "giver": "lu_yan",
+   "summary": "让那个不说话的老杂役，在青砖上写字。",
+   "steps": [
+    {
+     "id": "q8_3_a",
+     "text": "在青砖上写第一个字给他看",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:lu_yan_reacts"
+     ],
+     "grants": [
+      "flag:lu_yan_writes"
+     ],
+     "hint": "他不接纸，只接砖"
+    },
+    {
+     "id": "q8_3_b",
+     "text": "看他写字的手：那是书吏的手",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_lu_yan_identity"
+     },
+     "requires": [
+      "flag:lu_yan_writes",
+      "flag:fire_three_points"
+     ],
+     "grants": [
+      "flag:lu_yan_is_luyan",
+      "trust:lu_yan+10"
+     ]
+    },
+    {
+     "id": "q8_3_c",
+     "text": "让他写下当年三个书吏的名字",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:lu_yan_is_luyan",
+      "trust:lu_yan>=25"
+     ],
+     "grants": [
+      "flag:old_roster",
+      "trust:lu_yan+10"
+     ],
+     "hint": "第三个名字，他写了很久"
+    }
+   ]
+  },
+  {
+   "id": "q8_4",
+   "type": "main",
+   "chapter": 8,
+   "title": "丁卯岁修录",
+   "giver": "he_qing",
+   "summary": "现任书吏说有一册账对不上码，那册账被人调走了。",
+   "steps": [
+    {
+     "id": "q8_4_a",
+     "text": "问何清，丁卯年的册子还剩几册",
+     "at": {
+      "kind": "npc",
+      "npc": "he_qing"
+     },
+     "requires": [
+      "flag:old_roster"
+     ],
+     "grants": [
+      "flag:he_qing_talk",
+      "trust:he_qing+10"
+     ]
+    },
+    {
+     "id": "q8_4_b",
+     "text": "在夹墙里取出《丁卯岁修录》残册",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:he_qing_talk"
+     ],
+     "grants": [
+      "flag:xiu_lu"
+     ]
+    },
+    {
+     "id": "q8_4_c",
+     "text": "想明白：七册互证，缺一册整本就对不上",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_seven_ledgers"
+     },
+     "requires": [
+      "flag:xiu_lu",
+      "flag:old_roster"
+     ],
+     "grants": [
+      "flag:seven_ledgers"
+     ],
+     "hint": "每一册账对应一个码，七个码才是一本账"
+    },
+    {
+     "id": "q8_4_d",
+     "text": "问陆延，第七码是什么",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:seven_ledgers",
+      "trust:lu_yan>=35"
+     ],
+     "grants": [
+      "flag:knows_seventh_code",
+      "trust:lu_yan+10"
+     ],
+     "hint": "他只在砖上写了两个字：七处"
+    }
+   ]
+  },
+  {
+   "id": "q9_1",
+   "type": "main",
+   "chapter": 9,
+   "title": "咸福宫的井",
+   "giver": "a_heng",
+   "summary": "井绳磨出七道沟，第四块砖是松的。",
+   "steps": [
+    {
+     "id": "q9_1_a",
+     "text": "走到咸福宫井台",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_xfg",
+      "radius": 14
+     },
+     "requires": [
+      "flag:knows_seventh_code"
+     ],
+     "grants": [
+      "flag:at_xfg_well"
+     ],
+     "hint": "西六宫，储秀宫西侧"
+    },
+    {
+     "id": "q9_1_b",
+     "text": "数井绳的磨痕，量井壁的砖缝",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_xfg",
+      "radius": 8
+     },
+     "requires": [
+      "flag:at_xfg_well"
+     ],
+     "grants": [
+      "flag:well_measured"
+     ]
+    },
+    {
+     "id": "q9_1_c",
+     "text": "判断哪一块砖被人反复抠过",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_well_gap"
+     },
+     "requires": [
+      "flag:well_measured"
+     ],
+     "grants": [
+      "flag:code4_hint"
+     ],
+     "hint": "水面下三寸，第七道磨痕的对面"
+    },
+    {
+     "id": "q9_1_d",
+     "text": "从井壁砖缝里取出第四码",
+     "at": {
+      "kind": "anchor",
+      "anchor": "w6_xfg",
+      "radius": 6
+     },
+     "requires": [
+      "flag:code4_hint"
+     ],
+     "grants": [
+      "code:4",
+      "flag:code4_get"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q9_2",
+   "type": "main",
+   "chapter": 9,
+   "title": "慈宁宫的龛",
+   "giver": "ming_jing",
+   "summary": "佛龛朝西，不合规矩。背板比龛身新。",
+   "steps": [
+    {
+     "id": "q9_2_a",
+     "text": "走到慈宁宫佛龛前",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_cng",
+      "radius": 16
+     },
+     "requires": [
+      "flag:code4_get"
+     ],
+     "grants": [
+      "flag:at_cng"
+     ]
+    },
+    {
+     "id": "q9_2_b",
+     "text": "问明净，佛龛为何朝西",
+     "at": {
+      "kind": "npc",
+      "npc": "ming_jing"
+     },
+     "requires": [
+      "flag:at_cng"
+     ],
+     "grants": [
+      "flag:shrine_west",
+      "trust:ming_jing+5"
+     ],
+     "hint": "他平日都在钦安殿，只有午后会到园子里走一圈"
+    },
+    {
+     "id": "q9_2_c",
+     "text": "卸下佛龛的背板",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_cng",
+      "radius": 6
+     },
+     "requires": [
+      "flag:shrine_west"
+     ],
+     "grants": [
+      "flag:code5_hint"
+     ]
+    },
+    {
+     "id": "q9_2_d",
+     "text": "从夹层里取出第五码",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_cng",
+      "radius": 6
+     },
+     "requires": [
+      "flag:code5_hint"
+     ],
+     "grants": [
+      "code:5",
+      "flag:code5_get"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q9_3",
+   "type": "main",
+   "chapter": 9,
+   "title": "阿蘅的第一句话",
+   "giver": "a_heng",
+   "summary": "她撒谎。但她撒谎时一直搓手上的冻疮。",
+   "steps": [
+    {
+     "id": "q9_3_a",
+     "text": "在承乾宫廊下拦住阿蘅",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:code5_get"
+     ],
+     "grants": [
+      "flag:met_aheng"
+     ]
+    },
+    {
+     "id": "q9_3_b",
+     "text": "不提林照月，只问她手上的冻疮",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:met_aheng"
+     ],
+     "grants": [
+      "trust:a_heng+15",
+      "flag:aheng_softened"
+     ]
+    },
+    {
+     "id": "q9_3_c",
+     "text": "向浣衣局白氏打听阿蘅的当值",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:met_aheng"
+     ],
+     "grants": [
+      "flag:aheng_schedule",
+      "trust:bai_shi+10"
+     ]
+    },
+    {
+     "id": "q9_3_d",
+     "text": "在她换值的路口等她",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:aheng_schedule",
+      "trust:a_heng>=20"
+     ],
+     "grants": [
+      "flag:aheng_opens",
+      "trust:a_heng+15"
+     ],
+     "hint": "不在廊下，在夹道拐角。她怕被人看见"
+    }
+   ]
+  },
+  {
+   "id": "q9_4",
+   "type": "main",
+   "chapter": 9,
+   "title": "绣鞋上的泥",
+   "giver": "bai_shi",
+   "summary": "袖口的血洗掉了，泥洗不掉。泥是红胶土。",
+   "steps": [
+    {
+     "id": "q9_4_a",
+     "text": "问白氏那件带血的袖口",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:at_cng"
+     ],
+     "grants": [
+      "flag:blood_cuff",
+      "trust:bai_shi+10"
+     ]
+    },
+    {
+     "id": "q9_4_b",
+     "text": "认出袖口上的泥是咸安宫的红胶土",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_mud_route"
+     },
+     "requires": [
+      "flag:blood_cuff",
+      "flag:at_xfg_well"
+     ],
+     "grants": [
+      "flag:mud_matches"
+     ],
+     "hint": "宫里只有咸安宫一带是红胶土"
+    },
+    {
+     "id": "q9_4_c",
+     "text": "让白氏认一认泥样",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:mud_matches"
+     ],
+     "grants": [
+      "flag:bai_shi_confirms",
+      "trust:bai_shi+15"
+     ]
+    },
+    {
+     "id": "q9_4_d",
+     "text": "把泥样放在阿蘅面前",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:bai_shi_confirms",
+      "trust:a_heng>=35"
+     ],
+     "grants": [
+      "flag:aheng_talks_blood",
+      "trust:a_heng+15"
+     ],
+     "hint": "她会先问：白嬷嬷还活着吗"
+    }
+   ]
+  },
+  {
+   "id": "q10_1",
+   "type": "main",
+   "chapter": 10,
+   "title": "断掉的门闩",
+   "giver": "zheng_e",
+   "summary": "门是从里面插的，闩却是从外面撞断的。",
+   "steps": [
+    {
+     "id": "q10_1_a",
+     "text": "登上东北角楼",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_ne"
+     },
+     "requires": [
+      "flag:aheng_talks_blood"
+     ],
+     "grants": [
+      "flag:at_tower_ne"
+     ],
+     "hint": "从城墙顶沿东侧走到底"
+    },
+    {
+     "id": "q10_1_b",
+     "text": "查看断掉的门闩",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_ne"
+     },
+     "requires": [
+      "flag:at_tower_ne"
+     ],
+     "grants": [
+      "flag:bolt_broken"
+     ]
+    },
+    {
+     "id": "q10_1_c",
+     "text": "判断撞断的方向",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_bolt"
+     },
+     "requires": [
+      "flag:bolt_broken"
+     ],
+     "grants": [
+      "flag:bolt_outside"
+     ],
+     "hint": "木茬朝里翻。有人是从外面进来的"
+    }
+   ]
+  },
+  {
+   "id": "q10_2",
+   "type": "main",
+   "chapter": 10,
+   "title": "三更的钟",
+   "giver": "zheng_e",
+   "summary": "把更次、雨势、巡逻顺序排成一条线。",
+   "steps": [
+    {
+     "id": "q10_2_a",
+     "text": "问郑锷当夜的更次",
+     "at": {
+      "kind": "npc",
+      "npc": "zheng_e"
+     },
+     "requires": [
+      "flag:bolt_outside"
+     ],
+     "grants": [
+      "flag:watch_time",
+      "trust:zheng_e+10"
+     ]
+    },
+    {
+     "id": "q10_2_b",
+     "text": "问膳房王福，雨夜里听见什么",
+     "at": {
+      "kind": "npc",
+      "npc": "wang_fu"
+     },
+     "requires": [
+      "flag:watch_time"
+     ],
+     "grants": [
+      "flag:wang_fu_heard",
+      "trust:wang_fu+10"
+     ],
+     "hint": "他说：靴子是禁军的靴子，人不是禁军的人"
+    },
+    {
+     "id": "q10_2_c",
+     "text": "把三更鼓与坠楼时刻对齐",
+     "at": {
+      "kind": "puzzle",
+      "puzzle": "rain_night",
+      "anchor": "tower_ne",
+      "radius": 18
+     },
+     "requires": [
+      "flag:watch_time",
+      "flag:wang_fu_heard"
+     ],
+     "grants": [
+      "flag:time_contradiction"
+     ],
+     "hint": "在东北角楼附近按「推演」，把七件事排进更次"
+    },
+    {
+     "id": "q10_2_d",
+     "text": "核对午门夜里的通行令牌",
+     "at": {
+      "kind": "npc",
+      "npc": "gu_yun"
+     },
+     "requires": [
+      "flag:time_contradiction"
+     ],
+     "grants": [
+      "flag:token_count",
+      "trust:gu_yun+10"
+     ],
+     "hint": "出宫三块，回宫两块"
+    }
+   ]
+  },
+  {
+   "id": "q10_3",
+   "type": "main",
+   "chapter": 10,
+   "title": "灯与影",
+   "giver": "wang_fu",
+   "summary": "灯在东南，影朝西北，栏杆上还有第三只手。",
+   "steps": [
+    {
+     "id": "q10_3_a",
+     "text": "看楼里灯架的位置",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_ne"
+     },
+     "requires": [
+      "flag:token_count"
+     ],
+     "grants": [
+      "flag:lamp_pos"
+     ]
+    },
+    {
+     "id": "q10_3_b",
+     "text": "在栏杆上找到第三个人的手印",
+     "at": {
+      "kind": "interior",
+      "interior": "tower_ne"
+     },
+     "requires": [
+      "flag:lamp_pos"
+     ],
+     "grants": [
+      "flag:print3"
+     ],
+     "hint": "两只手印在里侧，一只在外侧"
+    },
+    {
+     "id": "q10_3_c",
+     "text": "推演现场为什么是伪造的",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_light"
+     },
+     "requires": [
+      "flag:lamp_pos",
+      "flag:print3"
+     ],
+     "grants": [
+      "flag:scene_faked"
+     ],
+     "hint": "失足的人不会把灯挪到身后"
+    }
+   ]
+  },
+  {
+   "id": "q10_4",
+   "type": "main",
+   "chapter": 10,
+   "title": "巡逻簿上的墨",
+   "giver": "han_yan",
+   "summary": "同一页，两种墨。写的人写了两次。",
+   "steps": [
+    {
+     "id": "q10_4_a",
+     "text": "向孟淮索要当夜的巡逻簿",
+     "at": {
+      "kind": "npc",
+      "npc": "meng_huai"
+     },
+     "requires": [
+      "flag:scene_faked"
+     ],
+     "grants": [
+      "flag:got_patrol_book",
+      "trust:meng_huai-5"
+     ],
+     "hint": "他给得太爽快了"
+    },
+    {
+     "id": "q10_4_b",
+     "text": "看那一页的墨色深浅",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_ink"
+     },
+     "requires": [
+      "flag:got_patrol_book"
+     ],
+     "grants": [
+      "flag:patrol_faked"
+     ],
+     "hint": "韩砚的名字是后填上去的"
+    },
+    {
+     "id": "q10_4_c",
+     "text": "把伪造的记录给韩砚看",
+     "at": {
+      "kind": "npc",
+      "npc": "han_yan"
+     },
+     "requires": [
+      "flag:patrol_faked"
+     ],
+     "grants": [
+      "flag:han_yan_cleared",
+      "trust:han_yan+25"
+     ]
+    },
+    {
+     "id": "q10_4_d",
+     "text": "问他那晚为什么和林照月争吵",
+     "at": {
+      "kind": "npc",
+      "npc": "han_yan"
+     },
+     "requires": [
+      "flag:han_yan_cleared",
+      "trust:han_yan>=40"
+     ],
+     "grants": [
+      "flag:han_yan_motive",
+      "trust:han_yan+10"
+     ],
+     "hint": "他怕的不是杀人罪，是他父亲的名字"
+    }
+   ]
+  },
+  {
+   "id": "q11_1",
+   "type": "main",
+   "chapter": 11,
+   "title": "地窖里的风",
+   "giver": "lu_yan",
+   "summary": "西墙有风，风里有水腥气。墙后面是路。",
+   "steps": [
+    {
+     "id": "q11_1_a",
+     "text": "回到咸安宫地窖西墙，找那道风",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:han_yan_motive",
+      "flag:archive_open"
+     ],
+     "grants": [
+      "flag:west_draft"
+     ]
+    },
+    {
+     "id": "q11_1_b",
+     "text": "卸下三块砖",
+     "at": {
+      "kind": "interior",
+      "interior": "archive_ruins"
+     },
+     "requires": [
+      "flag:west_draft"
+     ],
+     "grants": [
+      "flag:passage_gap"
+     ],
+     "hint": "砖缝里没有灰，有人常开"
+    },
+    {
+     "id": "q11_1_c",
+     "text": "侧身进入暗道",
+     "at": {
+      "kind": "interior",
+      "interior": "secret_passage"
+     },
+     "requires": [
+      "flag:passage_gap"
+     ],
+     "grants": [
+      "flag:in_passage",
+      "unlock:r00_world"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q11_2",
+   "type": "main",
+   "chapter": 11,
+   "title": "石函",
+   "giver": "lu_yan",
+   "summary": "暗道里的石条上有车辙，岔口有一只石函。",
+   "steps": [
+    {
+     "id": "q11_2_a",
+     "text": "沿车辙往北走",
+     "at": {
+      "kind": "interior",
+      "interior": "secret_passage"
+     },
+     "requires": [
+      "flag:in_passage"
+     ],
+     "grants": [
+      "flag:cart_tracks"
+     ]
+    },
+    {
+     "id": "q11_2_b",
+     "text": "在岔口找到石函",
+     "at": {
+      "kind": "interior",
+      "interior": "secret_passage"
+     },
+     "requires": [
+      "flag:cart_tracks"
+     ],
+     "grants": [
+      "flag:stone_box"
+     ],
+     "hint": "靠水声最响的那一边"
+    },
+    {
+     "id": "q11_2_c",
+     "text": "认石函上的封蜡",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_box_mark"
+     },
+     "requires": [
+      "flag:stone_box"
+     ],
+     "grants": [
+      "flag:box_seal"
+     ],
+     "hint": "内官监的记号，用了十五年的旧模"
+    },
+    {
+     "id": "q11_2_d",
+     "text": "打开石函，取出第六码",
+     "at": {
+      "kind": "interior",
+      "interior": "secret_passage"
+     },
+     "requires": [
+      "flag:box_seal"
+     ],
+     "grants": [
+      "code:6",
+      "flag:code6_get"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q11_3",
+   "type": "main",
+   "chapter": 11,
+   "title": "车马行",
+   "giver": "zhao_jiu",
+   "summary": "货从暗道出，走西华门，进车马行，再往南。",
+   "steps": [
+    {
+     "id": "q11_3_a",
+     "text": "到神武门外找赵九",
+     "at": {
+      "kind": "anchor",
+      "anchor": "shenwumen",
+      "radius": 16
+     },
+     "requires": [
+      "flag:code6_get"
+     ],
+     "grants": [
+      "flag:met_zhao",
+      "trust:zhao_jiu+10"
+     ]
+    },
+    {
+     "id": "q11_3_b",
+     "text": "问他暗道里运的是什么",
+     "at": {
+      "kind": "npc",
+      "npc": "zhao_jiu"
+     },
+     "requires": [
+      "flag:met_zhao",
+      "trust:zhao_jiu>=25"
+     ],
+     "grants": [
+      "flag:zhao_talks",
+      "trust:zhao_jiu+15"
+     ],
+     "hint": "先给他看石函上的蜡，再问"
+    },
+    {
+     "id": "q11_3_c",
+     "text": "把路线画出来：暗道出西华门，绕墙北行，进车马行",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_route"
+     },
+     "requires": [
+      "flag:zhao_talks",
+      "flag:cart_tracks"
+     ],
+     "grants": [
+      "flag:route_known"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q11_4",
+   "type": "main",
+   "chapter": 11,
+   "title": "月例银",
+   "giver": "shen_yanqiu",
+   "summary": "尚宫局女官知道养父每月有一笔账外流水。",
+   "steps": [
+    {
+     "id": "q11_4_a",
+     "text": "问沈砚秋，月例银从哪里来",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "flag:route_known"
+     ],
+     "grants": [
+      "flag:met_yanqiu"
+     ]
+    },
+    {
+     "id": "q11_4_b",
+     "text": "不追问账目，只问她怕什么",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "flag:met_yanqiu"
+     ],
+     "grants": [
+      "trust:shen_yanqiu+20",
+      "flag:yanqiu_afraid"
+     ],
+     "hint": "她说：怕有一天要对人撒谎"
+    },
+    {
+     "id": "q11_4_c",
+     "text": "比对月例数额与旧案失银的比例",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_monthly"
+     },
+     "requires": [
+      "flag:yanqiu_afraid",
+      "flag:route_known"
+     ],
+     "grants": [
+      "flag:laundering"
+     ],
+     "hint": "每年三成，十五年，一分不差"
+    },
+    {
+     "id": "q11_4_d",
+     "text": "把比例写在纸上给她看",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "flag:laundering",
+      "trust:shen_yanqiu>=40"
+     ],
+     "grants": [
+      "flag:yanqiu_knows",
+      "trust:shen_yanqiu+20"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q12_1",
+   "type": "main",
+   "chapter": 12,
+   "title": "空了的耳房",
+   "giver": "a_luo",
+   "summary": "被子是别人叠的。针上的线断了。",
+   "steps": [
+    {
+     "id": "q12_1_a",
+     "text": "到内廷东路阿蘅的耳房",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_east_street",
+      "radius": 14
+     },
+     "requires": [
+      "flag:yanqiu_knows"
+     ],
+     "grants": [
+      "flag:aheng_room"
+     ]
+    },
+    {
+     "id": "q12_1_b",
+     "text": "看那床被叠过的被褥",
+     "at": {
+      "kind": "anchor",
+      "anchor": "neiting_east_street",
+      "radius": 8
+     },
+     "requires": [
+      "flag:aheng_room"
+     ],
+     "grants": [
+      "flag:bed_folded"
+     ],
+     "hint": "她的手有冻疮，叠不出这样的角"
+    },
+    {
+     "id": "q12_1_c",
+     "text": "问阿罗最后一次见阿蘅",
+     "at": {
+      "kind": "npc",
+      "npc": "a_luo"
+     },
+     "requires": [
+      "flag:aheng_room"
+     ],
+     "grants": [
+      "flag:aluo_last",
+      "trust:a_luo+5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q12_2",
+   "type": "main",
+   "chapter": 12,
+   "title": "按脚程找",
+   "giver": "a_luo",
+   "summary": "慈宁宫、东长街、御花园。她走不完这三段。",
+   "steps": [
+    {
+     "id": "q12_2_a",
+     "text": "慈宁宫：她该在申时当值",
+     "at": {
+      "kind": "anchor",
+      "anchor": "wb_cng",
+      "radius": 14
+     },
+     "requires": [
+      "flag:aluo_last"
+     ],
+     "grants": [
+      "flag:search_cng"
+     ]
+    },
+    {
+     "id": "q12_2_b",
+     "text": "东长街：她替林照月送过信",
+     "at": {
+      "kind": "anchor",
+      "anchor": "corr_east",
+      "radius": 16
+     },
+     "requires": [
+      "flag:search_cng"
+     ],
+     "grants": [
+      "flag:search_corr"
+     ]
+    },
+    {
+     "id": "q12_2_c",
+     "text": "御花园：她在这里躲过一次",
+     "at": {
+      "kind": "anchor",
+      "anchor": "yuhuayuan",
+      "radius": 20
+     },
+     "requires": [
+      "flag:search_corr"
+     ],
+     "grants": [
+      "flag:search_garden"
+     ]
+    },
+    {
+     "id": "q12_2_d",
+     "text": "算她的脚程：三段路，少了一段的时间",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_timing"
+     },
+     "requires": [
+      "flag:search_garden",
+      "flag:bed_folded"
+     ],
+     "grants": [
+      "flag:roster_changed"
+     ],
+     "hint": "不是她走得快，是有人改了当值牌"
+    },
+    {
+     "id": "q12_2_e",
+     "text": "去交泰殿问尚仪：当值牌是谁改的",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:roster_changed"
+     ],
+     "grants": [
+      "flag:roster_gone",
+      "trust:pei_jingyuan+5"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q12_3",
+   "type": "main",
+   "chapter": 12,
+   "title": "浣衣局的水",
+   "giver": "bai_shi",
+   "summary": "水还是热的。血是新的。她昨夜还在宫里。",
+   "steps": [
+    {
+     "id": "q12_3_a",
+     "text": "到浣衣局后井",
+     "at": {
+      "kind": "anchor",
+      "anchor": "corr_west",
+      "radius": 16
+     },
+     "requires": [
+      "flag:roster_gone"
+     ],
+     "grants": [
+      "flag:wash_well"
+     ]
+    },
+    {
+     "id": "q12_3_b",
+     "text": "问白氏，昨夜谁送过衣裳",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:wash_well"
+     ],
+     "grants": [
+      "flag:wash_witness",
+      "trust:bai_shi+10"
+     ]
+    },
+    {
+     "id": "q12_3_c",
+     "text": "看盆里的水：还温着",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_wash_blood"
+     },
+     "requires": [
+      "flag:wash_witness"
+     ],
+     "grants": [
+      "flag:aheng_alive"
+     ],
+     "hint": "血还没沉底，人走不到半个时辰"
+    },
+    {
+     "id": "q12_3_d",
+     "text": "求白氏带路",
+     "at": {
+      "kind": "npc",
+      "npc": "bai_shi"
+     },
+     "requires": [
+      "flag:aheng_alive",
+      "trust:bai_shi>=40"
+     ],
+     "grants": [
+      "flag:guide_barracks",
+      "trust:bai_shi+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q12_4",
+   "type": "main",
+   "chapter": 12,
+   "title": "值房后间",
+   "giver": "bai_shi",
+   "summary": "禁军值房后面有一间上锁的耳房。",
+   "steps": [
+    {
+     "id": "q12_4_a",
+     "text": "进禁军值房后间",
+     "at": {
+      "kind": "interior",
+      "interior": "barracks"
+     },
+     "requires": [
+      "flag:guide_barracks"
+     ],
+     "grants": [
+      "flag:at_barracks"
+     ]
+    },
+    {
+     "id": "q12_4_b",
+     "text": "找到被反锁的耳房",
+     "at": {
+      "kind": "interior",
+      "interior": "barracks"
+     },
+     "requires": [
+      "flag:at_barracks"
+     ],
+     "grants": [
+      "flag:found_aheng"
+     ],
+     "hint": "门缝里有人在数呼吸"
+    },
+    {
+     "id": "q12_4_c",
+     "text": "割断绳子，带她走",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:found_aheng"
+     ],
+     "grants": [
+      "flag:a_heng_saved",
+      "trust:a_heng+20"
+     ],
+     "hint": "先走。话留到城墙顶上再说"
+    },
+    {
+     "id": "q12_4_d",
+     "text": "让她交出贴身藏着的东西",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:a_heng_saved",
+      "trust:a_heng>=55"
+     ],
+     "grants": [
+      "code:7",
+      "flag:code7_get",
+      "trust:a_heng+10"
+     ],
+     "hint": "她缝在衣襟里，缝了十一天"
+    }
+   ]
+  },
+  {
+   "id": "q13_1",
+   "type": "main",
+   "chapter": 13,
+   "title": "七码合账",
+   "giver": "lu_yan",
+   "summary": "七份记录摊开，缺的那一行会自己显出来。",
+   "steps": [
+    {
+     "id": "q13_1_a",
+     "text": "把七码按册序排开",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_code_sum"
+     },
+     "requires": [
+      "flag:code7_get"
+     ],
+     "grants": [
+      "flag:seven_laid"
+     ]
+    },
+    {
+     "id": "q13_1_b",
+     "text": "解出丁卯年的总账",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_ledger_total"
+     },
+     "requires": [
+      "flag:seven_laid"
+     ],
+     "grants": [
+      "flag:old_total"
+     ],
+     "hint": "七条支线，七个人名，一个都不少"
+    },
+    {
+     "id": "q13_1_c",
+     "text": "把总账与月例银的流水叠起来",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_monthly_link"
+     },
+     "requires": [
+      "flag:old_total",
+      "flag:laundering"
+     ],
+     "grants": [
+      "flag:money_chain"
+     ]
+    },
+    {
+     "id": "q13_1_d",
+     "text": "判断崔慎在替谁做事",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_cui"
+     },
+     "requires": [
+      "flag:money_chain"
+     ],
+     "grants": [
+      "flag:cui_is_hand"
+     ],
+     "hint": "他换物证，却从不动账"
+    },
+    {
+     "id": "q13_1_e",
+     "text": "回想这十一天：谁在替你选路",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_pei"
+     },
+     "requires": [
+      "flag:cui_is_hand",
+      "flag:scene_faked"
+     ],
+     "grants": [
+      "flag:pei_controls"
+     ],
+     "hint": "每一次「恰好」都指向同一个人"
+    }
+   ]
+  },
+  {
+   "id": "q13_2",
+   "type": "main",
+   "chapter": 13,
+   "title": "被安排的路",
+   "giver": "pei_jingyuan",
+   "summary": "尚仪知道哥哥那晚不在值房。她不会先说。",
+   "steps": [
+    {
+     "id": "q13_2_a",
+     "text": "去尚仪局找裴景媛",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:pei_controls"
+     ],
+     "grants": [
+      "flag:met_jingyuan"
+     ]
+    },
+    {
+     "id": "q13_2_b",
+     "text": "不谈她哥哥，只谈那晚的值房",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:met_jingyuan"
+     ],
+     "grants": [
+      "trust:pei_jingyuan+15",
+      "flag:jingyuan_guarded"
+     ],
+     "hint": "她答得太快，快得像背过"
+    },
+    {
+     "id": "q13_2_c",
+     "text": "对上时间：亥时三刻，值房是空的",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_absent"
+     },
+     "requires": [
+      "flag:jingyuan_guarded",
+      "flag:time_contradiction"
+     ],
+     "grants": [
+      "flag:pei_absent"
+     ]
+    },
+    {
+     "id": "q13_2_d",
+     "text": "告诉她，你手里已经有七码",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:pei_absent",
+      "trust:pei_jingyuan>=45"
+     ],
+     "grants": [
+      "flag:jingyuan_will_speak",
+      "trust:pei_jingyuan+20"
+     ],
+     "hint": "她要的不是保全，是一个不至于太难看的结局"
+    }
+   ]
+  },
+  {
+   "id": "q13_3",
+   "type": "main",
+   "chapter": 13,
+   "title": "尚仪的口供",
+   "giver": "pei_jingyuan",
+   "summary": "让她把那三刻说完。再让哑吏认一支笔。",
+   "steps": [
+    {
+     "id": "q13_3_a",
+     "text": "让她说那晚亥时三刻",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingyuan"
+     },
+     "requires": [
+      "flag:jingyuan_will_speak",
+      "trust:pei_jingyuan>=60"
+     ],
+     "grants": [
+      "flag:jingyuan_testimony"
+     ]
+    },
+    {
+     "id": "q13_3_b",
+     "text": "让陆延认裴廷芳的笔迹",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:jingyuan_testimony"
+     ],
+     "grants": [
+      "flag:pei_tingfang_hand",
+      "trust:lu_yan+10"
+     ]
+    },
+    {
+     "id": "q13_3_c",
+     "text": "比对「裴」字的起笔",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_signature"
+     },
+     "requires": [
+      "flag:pei_tingfang_hand",
+      "flag:old_total"
+     ],
+     "grants": [
+      "flag:pei_family_ledger"
+     ],
+     "hint": "儿子写公文，落笔和父亲一模一样"
+    },
+    {
+     "id": "q13_3_d",
+     "text": "去内官监见沈鹤龄",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_heling"
+     },
+     "requires": [
+      "flag:pei_family_ledger"
+     ],
+     "grants": [
+      "flag:met_shen"
+     ],
+     "hint": "他不问你查到了什么，只问你吃没吃饭"
+    }
+   ]
+  },
+  {
+   "id": "q13_4",
+   "type": "main",
+   "chapter": 13,
+   "title": "四条路",
+   "giver": "han_yan",
+   "summary": "真相、冤案、交易，还有一条不在卷宗里的。",
+   "steps": [
+    {
+     "id": "q13_4_a",
+     "text": "把能成立的说法一条条列出来",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_four_paths"
+     },
+     "requires": [
+      "flag:pei_controls",
+      "flag:seven_laid"
+     ],
+     "grants": [
+      "flag:accuse_ready",
+      "flag:path_truth",
+      "flag:path_wrong",
+      "flag:path_deal"
+     ],
+     "hint": "证据链决定你能说几条，人心决定别人信几条"
+    },
+    {
+     "id": "q13_4_b",
+     "text": "把七码给韩砚看，问他敢不敢作证",
+     "at": {
+      "kind": "npc",
+      "npc": "han_yan"
+     },
+     "requires": [
+      "flag:accuse_ready",
+      "trust:han_yan>=50"
+     ],
+     "grants": [
+      "flag:han_yan_witness",
+      "trust:han_yan+10"
+     ]
+    },
+    {
+     "id": "q13_4_c",
+     "text": "去值房看孟淮的刀",
+     "at": {
+      "kind": "npc",
+      "npc": "meng_huai"
+     },
+     "requires": [
+      "flag:accuse_ready"
+     ],
+     "grants": [
+      "flag:meng_blade",
+      "trust:meng_huai-5"
+     ],
+     "hint": "刀鞘上有新磨的痕，磨得太用力"
+    },
+    {
+     "id": "q13_4_d",
+     "text": "想到第四条路：不指控，把活人和账一起带出宫",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_fourth_path"
+     },
+     "requires": [
+      "flag:a_heng_saved",
+      "flag:cui_is_hand"
+     ],
+     "grants": [
+      "flag:path_hidden"
+     ],
+     "hint": "只有死人的案子才需要凶手。活人的案子只需要有人肯说"
+    }
+   ]
+  },
+  {
+   "id": "q14_1",
+   "type": "main",
+   "chapter": 14,
+   "title": "城楼设席",
+   "giver": "pei_jingheng",
+   "summary": "午门城楼，一张案，七份记录，六个人。",
+   "steps": [
+    {
+     "id": "q14_1_a",
+     "text": "上午门城楼，摆好案与镇纸",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:accuse_ready",
+      "flag:code7_get"
+     ],
+     "grants": [
+      "flag:court_open"
+     ]
+    },
+    {
+     "id": "q14_1_b",
+     "text": "传唤六名证人",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:court_open"
+     ],
+     "grants": [
+      "flag:witnesses_in"
+     ],
+     "hint": "禁军、内官监、尚宫局、太医院，一个都不能少"
+    },
+    {
+     "id": "q14_1_c",
+     "text": "让顾昀守住门洞，不许人进出",
+     "at": {
+      "kind": "npc",
+      "npc": "gu_yun"
+     },
+     "requires": [
+      "flag:witnesses_in"
+     ],
+     "grants": [
+      "flag:door_sealed",
+      "trust:gu_yun+10"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q14_2",
+   "type": "main",
+   "chapter": 14,
+   "title": "当面对质",
+   "giver": "han_yan",
+   "summary": "三个人的话，会在同一个时辰断开。",
+   "steps": [
+    {
+     "id": "q14_2_a",
+     "text": "问孟淮，那晚他的靴子为什么是湿的",
+     "at": {
+      "kind": "npc",
+      "npc": "meng_huai"
+     },
+     "requires": [
+      "flag:door_sealed"
+     ],
+     "grants": [
+      "flag:meng_pressed"
+     ],
+     "hint": "城墙顶没有积水，只有角楼有"
+    },
+    {
+     "id": "q14_2_b",
+     "text": "问崔慎，谁让他换走物证",
+     "at": {
+      "kind": "npc",
+      "npc": "cui_shen"
+     },
+     "requires": [
+      "flag:meng_pressed"
+     ],
+     "grants": [
+      "flag:cui_pressed"
+     ]
+    },
+    {
+     "id": "q14_2_c",
+     "text": "问沈鹤龄，月例银从哪一年开始",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_heling"
+     },
+     "requires": [
+      "flag:cui_pressed"
+     ],
+     "grants": [
+      "flag:shen_pressed"
+     ]
+    },
+    {
+     "id": "q14_2_d",
+     "text": "把三人的话对齐到亥时三刻",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_final"
+     },
+     "requires": [
+      "flag:shen_pressed",
+      "flag:jingyuan_testimony"
+     ],
+     "grants": [
+      "flag:chain_complete"
+     ],
+     "hint": "一个人说漏的，另一个人替他补上，补错了"
+    }
+   ]
+  },
+  {
+   "id": "q14_3",
+   "type": "main",
+   "chapter": 14,
+   "title": "提交七码",
+   "giver": "pei_jingheng",
+   "summary": "把七份记录摊在风里，让所有人看见它们是一本账。",
+   "steps": [
+    {
+     "id": "q14_3_a",
+     "text": "把七码按册序摊开",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:chain_complete"
+     ],
+     "grants": [
+      "flag:codes_shown"
+     ]
+    },
+    {
+     "id": "q14_3_b",
+     "text": "合成完整证据链：旧案、月例、雨夜",
+     "at": {
+      "kind": "deduce",
+      "deduce": "d_chain"
+     },
+     "requires": [
+      "flag:codes_shown",
+      "flag:seven_laid"
+     ],
+     "grants": [
+      "flag:codes_all"
+     ],
+     "hint": "三条线在同一笔银子处交汇"
+    },
+    {
+     "id": "q14_3_c",
+     "text": "请监察使自己说，那晚他在哪里",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingheng"
+     },
+     "requires": [
+      "flag:codes_all",
+      "flag:pei_absent"
+     ],
+     "grants": [
+      "flag:pei_cornered"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q14_truth_1",
+   "type": "main",
+   "chapter": 14,
+   "title": "结局·真相大白",
+   "giver": "pei_jingheng",
+   "summary": "指认主使与动手的人，让七码在众人面前合上。",
+   "steps": [
+    {
+     "id": "q14_truth_1_a",
+     "text": "当众念出七码对应的七条支线",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:codes_all",
+      "deduce:d_chain",
+      "flag:path_truth"
+     ],
+     "grants": [
+      "flag:truth_speech"
+     ],
+     "hint": "念到第三条时，会有人开始咳嗽"
+    },
+    {
+     "id": "q14_truth_1_b",
+     "text": "指认裴景衡主使、孟淮动手",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingheng"
+     },
+     "requires": [
+      "flag:truth_speech",
+      "flag:chain_complete"
+     ],
+     "grants": [
+      "flag:truth_accused"
+     ]
+    },
+    {
+     "id": "q14_truth_1_c",
+     "text": "让孟淮自己承认推了那一把",
+     "at": {
+      "kind": "npc",
+      "npc": "meng_huai"
+     },
+     "requires": [
+      "flag:truth_accused"
+     ],
+     "grants": [
+      "ending:truth",
+      "flag:end_truth"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q14_wrong_1",
+   "type": "main",
+   "chapter": 14,
+   "title": "结局·冤案",
+   "giver": "pei_jingheng",
+   "summary": "把伪造的巡逻簿当成铁证，交出一个名字。",
+   "steps": [
+    {
+     "id": "q14_wrong_1_a",
+     "text": "把伪造的巡逻簿当作铁证呈上",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:codes_shown",
+      "flag:patrol_faked",
+      "flag:path_wrong"
+     ],
+     "grants": [
+      "flag:wrong_evidence"
+     ],
+     "hint": "你明明知道那页墨是后填的"
+    },
+    {
+     "id": "q14_wrong_1_b",
+     "text": "指认韩砚",
+     "at": {
+      "kind": "npc",
+      "npc": "han_yan"
+     },
+     "requires": [
+      "flag:wrong_evidence"
+     ],
+     "grants": [
+      "ending:wrong",
+      "flag:end_wrong"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q14_deal_1",
+   "type": "main",
+   "chapter": 14,
+   "title": "结局·沉默交易",
+   "giver": "pei_jingheng",
+   "summary": "他要七码，也要你闭嘴。条件开得不低。",
+   "steps": [
+    {
+     "id": "q14_deal_1_a",
+     "text": "听监察使把条件说完",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingheng"
+     },
+     "requires": [
+      "flag:codes_all",
+      "flag:path_deal"
+     ],
+     "grants": [
+      "flag:deal_offered"
+     ],
+     "hint": "他说：宫里需要一个能办案的人"
+    },
+    {
+     "id": "q14_deal_1_b",
+     "text": "接受条件，把七码交出去",
+     "at": {
+      "kind": "npc",
+      "npc": "pei_jingheng"
+     },
+     "requires": [
+      "flag:deal_offered"
+     ],
+     "grants": [
+      "flag:deal_struck"
+     ]
+    },
+    {
+     "id": "q14_deal_1_c",
+     "text": "当众宣布结案，卷宗封存",
+     "at": {
+      "kind": "interior",
+      "interior": "wumen_tower"
+     },
+     "requires": [
+      "flag:deal_struck"
+     ],
+     "grants": [
+      "ending:deal",
+      "flag:end_deal"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "q14_hidden_1",
+   "type": "main",
+   "chapter": 14,
+   "title": "结局·活口",
+   "giver": "lu_yan",
+   "summary": "七码齐，阿蘅活着，尚宫局的人肯开口——才有一条路不在这座城里。",
+   "steps": [
+    {
+     "id": "q14_hidden_1_a",
+     "text": "把陆延带上城楼，让他自己说",
+     "at": {
+      "kind": "npc",
+      "npc": "lu_yan"
+     },
+     "requires": [
+      "flag:codes_all",
+      "flag:a_heng_saved",
+      "deduce:d_chain",
+      "flag:path_hidden"
+     ],
+     "grants": [
+      "flag:lu_yan_public"
+     ],
+     "hint": "他十五年没在人前说过话"
+    },
+    {
+     "id": "q14_hidden_1_b",
+     "text": "让阿蘅指认那晚最后见她的人",
+     "at": {
+      "kind": "npc",
+      "npc": "a_heng"
+     },
+     "requires": [
+      "flag:lu_yan_public",
+      "flag:a_heng_saved",
+      "trust:a_heng>=55"
+     ],
+     "grants": [
+      "flag:aheng_public"
+     ]
+    },
+    {
+     "id": "q14_hidden_1_c",
+     "text": "让沈砚秋交出月例账",
+     "at": {
+      "kind": "npc",
+      "npc": "shen_yanqiu"
+     },
+     "requires": [
+      "flag:aheng_public",
+      "trust:shen_yanqiu>=60",
+      "flag:code6_get"
+     ],
+     "grants": [
+      "ending:hidden",
+      "flag:end_hidden"
+     ],
+     "hint": "她把账本缝在袖里，一直在等有人问"
+    }
+   ]
+  }
+ ]
+}

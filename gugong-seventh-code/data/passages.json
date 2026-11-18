@@ -1,0 +1,483 @@
+{
+ "spawn": "wumen_out",
+ "passages": [
+  {
+   "id": "ramp_santai_e",
+   "type": "ramp",
+   "rect": [
+    64,
+    -7,
+    80,
+    7
+   ],
+   "h0": 0.0,
+   "h1": 8.13,
+   "axis": "x",
+   "prop": "stone_stairs",
+   "note": "三台东侧补梯"
+  },
+  {
+   "id": "ramp_santai_w",
+   "type": "ramp",
+   "rect": [
+    -80,
+    -7,
+    -64,
+    7
+   ],
+   "h0": 0.0,
+   "h1": 8.13,
+   "axis": "x",
+   "prop": "stone_stairs",
+   "note": "三台西侧补梯"
+  },
+  {
+   "id": "ramp_santai_n",
+   "type": "ramp",
+   "rect": [
+    -7,
+    116,
+    7,
+    132
+   ],
+   "h0": 8.13,
+   "h1": 0.0,
+   "axis": "y",
+   "prop": "stone_stairs",
+   "note": "三台北侧下后庭"
+  },
+  {
+   "id": "ramp_santai_s",
+   "type": "ramp",
+   "rect": [
+    -9,
+    -140,
+    9,
+    -112
+   ],
+   "h0": 0.0,
+   "h1": 8.13,
+   "axis": "y",
+   "prop": "stone_stairs",
+   "note": "三台南面缓坡"
+  },
+  {
+   "id": "ramp_neiting_e",
+   "type": "ramp",
+   "rect": [
+    28,
+    262,
+    44,
+    278
+   ],
+   "h0": 0.0,
+   "h1": 3.0,
+   "axis": "x",
+   "prop": "stone_stairs",
+   "note": "内廷台基东梯"
+  },
+  {
+   "id": "ramp_neiting_w",
+   "type": "ramp",
+   "rect": [
+    -44,
+    262,
+    -28,
+    278
+   ],
+   "h0": 0.0,
+   "h1": 3.0,
+   "axis": "x",
+   "prop": "stone_stairs",
+   "note": "内廷台基西梯"
+  },
+  {
+   "id": "ramp_neiting_s",
+   "type": "ramp",
+   "rect": [
+    -8,
+    196,
+    8,
+    214
+   ],
+   "h0": 0.0,
+   "h1": 3.0,
+   "axis": "y",
+   "prop": "stone_stairs",
+   "note": "乾清门内上台"
+  },
+  {
+   "id": "ramp_wall_s_e",
+   "type": "ramp",
+   "rect": [
+    60,
+    -418,
+    74,
+    -398
+   ],
+   "h0": 0.0,
+   "h1": 9.9,
+   "axis": "y",
+   "prop": "wood_ladder",
+   "note": "南城墙东登城梯"
+  },
+  {
+   "id": "ramp_wall_s_w",
+   "type": "ramp",
+   "rect": [
+    -74,
+    -418,
+    -60,
+    -398
+   ],
+   "h0": 0.0,
+   "h1": 9.9,
+   "axis": "y",
+   "prop": "wood_ladder",
+   "note": "南城墙西登城梯"
+  },
+  {
+   "id": "ramp_wall_n_e",
+   "type": "ramp",
+   "rect": [
+    60,
+    542,
+    74,
+    562
+   ],
+   "h0": 0.0,
+   "h1": 9.9,
+   "axis": "y",
+   "prop": "wood_ladder",
+   "note": "北城墙东登城梯"
+  },
+  {
+   "id": "ramp_wall_n_w",
+   "type": "ramp",
+   "rect": [
+    -74,
+    542,
+    -60,
+    562
+   ],
+   "h0": 0.0,
+   "h1": 9.9,
+   "axis": "y",
+   "prop": "wood_ladder",
+   "note": "北城墙西登城梯"
+  },
+  {
+   "id": "portal_wumen",
+   "type": "portal",
+   "rect": [
+    -6,
+    -462,
+    6,
+    -392
+   ],
+   "h": 0.0,
+   "prop": "gate_tunnel",
+   "note": "午门正中门洞（贯通城台 66m）"
+  },
+  {
+   "id": "portal_shenwu",
+   "type": "portal",
+   "rect": [
+    -6,
+    538,
+    6,
+    566
+   ],
+   "h": 0.0,
+   "prop": "gate_tunnel",
+   "note": "神武门门洞"
+  },
+  {
+   "id": "portal_donghua",
+   "type": "portal",
+   "rect": [
+    358,
+    65,
+    396,
+    79
+   ],
+   "h": 0.0,
+   "prop": "gate_tunnel",
+   "note": "东华门门洞"
+  },
+  {
+   "id": "portal_xihua",
+   "type": "portal",
+   "rect": [
+    -396,
+    65,
+    -358,
+    79
+   ],
+   "h": 0.0,
+   "prop": "gate_tunnel",
+   "note": "西华门门洞"
+  },
+  {
+   "id": "portal_taihemen",
+   "type": "portal",
+   "rect": [
+    -6,
+    -224,
+    6,
+    -206
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "太和门门洞"
+  },
+  {
+   "id": "portal_qianqingmen",
+   "type": "portal",
+   "rect": [
+    -6,
+    184,
+    6,
+    202
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "乾清门门洞"
+  },
+  {
+   "id": "portal_w6_ccg",
+   "type": "portal",
+   "rect": [
+    -180.0,
+    236.0,
+    -166.0,
+    244.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_CCG 南院门"
+  },
+  {
+   "id": "portal_w6_cqg",
+   "type": "portal",
+   "rect": [
+    107.995,
+    236.0,
+    121.995,
+    244.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_CQG 南院门"
+  },
+  {
+   "id": "portal_w6_cxg",
+   "type": "portal",
+   "rect": [
+    -121.995,
+    311.0,
+    -107.995,
+    319.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_CXG 南院门"
+  },
+  {
+   "id": "portal_w6_jrg",
+   "type": "portal",
+   "rect": [
+    107.995,
+    161.0,
+    121.995,
+    169.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_JRG 南院门"
+  },
+  {
+   "id": "portal_w6_jyg",
+   "type": "portal",
+   "rect": [
+    166.0,
+    311.0,
+    180.0,
+    319.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_JYG 南院门"
+  },
+  {
+   "id": "portal_w6_tjg",
+   "type": "portal",
+   "rect": [
+    -180.0,
+    161.0,
+    -166.0,
+    169.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_TJG 南院门"
+  },
+  {
+   "id": "portal_w6_xfg",
+   "type": "portal",
+   "rect": [
+    -180.0,
+    311.0,
+    -166.0,
+    319.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_XFG 南院门"
+  },
+  {
+   "id": "portal_w6_yhg",
+   "type": "portal",
+   "rect": [
+    166.0,
+    236.0,
+    180.0,
+    244.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_YHG 南院门"
+  },
+  {
+   "id": "portal_w6_ykg",
+   "type": "portal",
+   "rect": [
+    -121.995,
+    236.0,
+    -107.995,
+    244.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_YKG 南院门"
+  },
+  {
+   "id": "portal_w6_ysg",
+   "type": "portal",
+   "rect": [
+    -121.995,
+    161.0,
+    -107.995,
+    169.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_YSG 南院门"
+  },
+  {
+   "id": "portal_w6_yxg",
+   "type": "portal",
+   "rect": [
+    166.0,
+    161.0,
+    180.0,
+    169.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_YXG 南院门"
+  },
+  {
+   "id": "portal_w6_zcg",
+   "type": "portal",
+   "rect": [
+    107.995,
+    311.0,
+    121.995,
+    319.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "W6_ZCG 南院门"
+  },
+  {
+   "id": "portal_wb_cng",
+   "type": "portal",
+   "rect": [
+    -262.0,
+    313.0,
+    -248.0,
+    321.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_CNG 南院门"
+  },
+  {
+   "id": "portal_wb_fxd",
+   "type": "portal",
+   "rect": [
+    142.995,
+    56.0,
+    156.995,
+    64.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_FXD 南院门"
+  },
+  {
+   "id": "portal_wb_nsg",
+   "type": "portal",
+   "rect": [
+    247.995,
+    356.0,
+    261.995,
+    364.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_NSG 南院门"
+  },
+  {
+   "id": "portal_wb_whg",
+   "type": "portal",
+   "rect": [
+    223.0,
+    -209.0,
+    237.0,
+    -201.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_WHG 南院门"
+  },
+  {
+   "id": "portal_wb_wyg",
+   "type": "portal",
+   "rect": [
+    -237.0,
+    -209.0,
+    -223.0,
+    -201.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_WYG 南院门"
+  },
+  {
+   "id": "portal_wb_yxd",
+   "type": "portal",
+   "rect": [
+    -156.995,
+    56.0,
+    -142.995,
+    64.0
+   ],
+   "h": 0.0,
+   "prop": "wood_gate",
+   "note": "WB_YXD 南院门"
+  }
+ ],
+ "note": "ramp=补的台阶/梯（引擎按矩形线性插值高度），portal=门洞/院门（强制可走）"
+}

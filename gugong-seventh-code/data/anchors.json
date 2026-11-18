@@ -1,0 +1,730 @@
+{
+ "wumen_in": {
+  "id": "wumen_in",
+  "name": "午门门内广场",
+  "pos": [
+   0.0,
+   -380.0,
+   0.0
+  ],
+  "target": [
+   0,
+   -380
+  ],
+  "offset": 0.0
+ },
+ "wumen_out": {
+  "id": "wumen_out",
+  "name": "午门外",
+  "pos": [
+   -3.4,
+   -430.1,
+   0.0
+  ],
+  "target": [
+   0,
+   -440
+  ],
+  "offset": 10.5
+ },
+ "taihemen": {
+  "id": "taihemen",
+  "name": "太和门",
+  "pos": [
+   0.0,
+   -215.0,
+   0.06
+  ],
+  "target": [
+   0,
+   -215
+  ],
+  "offset": 0.0
+ },
+ "taihemen_plaza": {
+  "id": "taihemen_plaza",
+  "name": "太和门广场",
+  "pos": [
+   0.0,
+   -300.0,
+   0.0
+  ],
+  "target": [
+   0,
+   -300
+  ],
+  "offset": 0.0
+ },
+ "jinshui": {
+  "id": "jinshui",
+  "name": "内金水桥",
+  "pos": [
+   -0.8,
+   -161.3,
+   1.44
+  ],
+  "target": [
+   0,
+   -160
+  ],
+  "offset": 1.5
+ },
+ "taihedian_yuetai": {
+  "id": "taihedian_yuetai",
+  "name": "太和殿月台",
+  "pos": [
+   0.0,
+   -22.0,
+   8.13
+  ],
+  "target": [
+   0,
+   -22
+  ],
+  "offset": 0.0
+ },
+ "taihedian_front": {
+  "id": "taihedian_front",
+  "name": "太和殿前广场",
+  "pos": [
+   0.0,
+   -110.0,
+   8.13
+  ],
+  "target": [
+   0,
+   -110
+  ],
+  "offset": 0.0
+ },
+ "zhonghedian": {
+  "id": "zhonghedian",
+  "name": "中和殿",
+  "pos": [
+   4.5,
+   45.3,
+   8.13
+  ],
+  "target": [
+   0,
+   58
+  ],
+  "offset": 13.5
+ },
+ "baohedian": {
+  "id": "baohedian",
+  "name": "保和殿",
+  "pos": [
+   0.0,
+   112.0,
+   5.42
+  ],
+  "target": [
+   0,
+   112
+  ],
+  "offset": 0.0
+ },
+ "santai_east": {
+  "id": "santai_east",
+  "name": "三台东侧",
+  "pos": [
+   72.0,
+   0.0,
+   0.0
+  ],
+  "target": [
+   72,
+   0
+  ],
+  "offset": 0.0
+ },
+ "santai_west": {
+  "id": "santai_west",
+  "name": "三台西侧",
+  "pos": [
+   -72.0,
+   0.0,
+   0.0
+  ],
+  "target": [
+   -72,
+   0
+  ],
+  "offset": 0.0
+ },
+ "qianqingmen": {
+  "id": "qianqingmen",
+  "name": "乾清门",
+  "pos": [
+   0.0,
+   190.0,
+   0.0
+  ],
+  "target": [
+   0,
+   190
+  ],
+  "offset": 0.0
+ },
+ "qianqinggong": {
+  "id": "qianqinggong",
+  "name": "乾清宫",
+  "pos": [
+   0.0,
+   250.0,
+   3.0
+  ],
+  "target": [
+   0,
+   250
+  ],
+  "offset": 0.0
+ },
+ "jiaotaidian": {
+  "id": "jiaotaidian",
+  "name": "交泰殿",
+  "pos": [
+   11.2,
+   270.6,
+   3.0
+  ],
+  "target": [
+   0,
+   275
+  ],
+  "offset": 12.0
+ },
+ "kunninggong": {
+  "id": "kunninggong",
+  "name": "坤宁宫",
+  "pos": [
+   0.0,
+   325.0,
+   3.0
+  ],
+  "target": [
+   0,
+   325
+  ],
+  "offset": 0.0
+ },
+ "yuhuayuan": {
+  "id": "yuhuayuan",
+  "name": "御花园",
+  "pos": [
+   3.2,
+   405.1,
+   0.0
+  ],
+  "target": [
+   0,
+   400
+  ],
+  "offset": 6.0
+ },
+ "qinandian": {
+  "id": "qinandian",
+  "name": "钦安殿",
+  "pos": [
+   13.2,
+   389.0,
+   0.0
+  ],
+  "target": [
+   0,
+   392
+  ],
+  "offset": 13.5
+ },
+ "wanchunting": {
+  "id": "wanchunting",
+  "name": "万春亭",
+  "pos": [
+   -17.1,
+   370.5,
+   0.0
+  ],
+  "target": [
+   -26,
+   372
+  ],
+  "offset": 9.0
+ },
+ "qianqiuting": {
+  "id": "qianqiuting",
+  "name": "千秋亭",
+  "pos": [
+   24.9,
+   380.9,
+   0.0
+  ],
+  "target": [
+   26,
+   372
+  ],
+  "offset": 9.0
+ },
+ "duixiushan": {
+  "id": "duixiushan",
+  "name": "堆秀山",
+  "pos": [
+   49.5,
+   440.4,
+   0.0
+  ],
+  "target": [
+   48,
+   443
+  ],
+  "offset": 3.0
+ },
+ "shenwumen": {
+  "id": "shenwumen",
+  "name": "神武门",
+  "pos": [
+   0.0,
+   520.0,
+   0.0
+  ],
+  "target": [
+   0,
+   520
+  ],
+  "offset": 0.0
+ },
+ "tower_ne": {
+  "id": "tower_ne",
+  "name": "东北角楼",
+  "pos": [
+   365.0,
+   540.0,
+   0.0
+  ],
+  "target": [
+   365,
+   540
+  ],
+  "offset": 0.0
+ },
+ "tower_nw": {
+  "id": "tower_nw",
+  "name": "西北角楼",
+  "pos": [
+   -365.0,
+   540.0,
+   0.0
+  ],
+  "target": [
+   -365,
+   540
+  ],
+  "offset": 0.0
+ },
+ "tower_se": {
+  "id": "tower_se",
+  "name": "东南角楼",
+  "pos": [
+   365.0,
+   -398.0,
+   0.0
+  ],
+  "target": [
+   365,
+   -398
+  ],
+  "offset": 0.0
+ },
+ "tower_sw": {
+  "id": "tower_sw",
+  "name": "西南角楼",
+  "pos": [
+   -365.0,
+   -398.0,
+   0.0
+  ],
+  "target": [
+   -365,
+   -398
+  ],
+  "offset": 0.0
+ },
+ "wall_south_top": {
+  "id": "wall_south_top",
+  "name": "南城墙",
+  "pos": [
+   60.0,
+   -402.0,
+   0.0
+  ],
+  "target": [
+   60,
+   -402
+  ],
+  "offset": 0.0
+ },
+ "corr_east": {
+  "id": "corr_east",
+  "name": "东长街",
+  "pos": [
+   98.0,
+   -80.0,
+   0.02
+  ],
+  "target": [
+   95,
+   -80
+  ],
+  "offset": 3.0
+ },
+ "corr_west": {
+  "id": "corr_west",
+  "name": "西长街",
+  "pos": [
+   -99.2,
+   -78.5,
+   0.02
+  ],
+  "target": [
+   -95,
+   -80
+  ],
+  "offset": 4.5
+ },
+ "huamen_e": {
+  "id": "huamen_e",
+  "name": "东华门内",
+  "pos": [
+   350.0,
+   20.0,
+   0.0
+  ],
+  "target": [
+   350,
+   20
+  ],
+  "offset": 0.0
+ },
+ "huamen_w": {
+  "id": "huamen_w",
+  "name": "西华门内",
+  "pos": [
+   -350.0,
+   20.0,
+   0.0
+  ],
+  "target": [
+   -350,
+   20
+  ],
+  "offset": 0.0
+ },
+ "garden_east": {
+  "id": "garden_east",
+  "name": "御花园东路",
+  "pos": [
+   73.0,
+   400.0,
+   0.0
+  ],
+  "target": [
+   70,
+   400
+  ],
+  "offset": 3.0
+ },
+ "garden_west": {
+  "id": "garden_west",
+  "name": "御花园西路",
+  "pos": [
+   -67.0,
+   400.0,
+   0.0
+  ],
+  "target": [
+   -70,
+   400
+  ],
+  "offset": 3.0
+ },
+ "neiting_east_street": {
+  "id": "neiting_east_street",
+  "name": "内廷东街",
+  "pos": [
+   55.8,
+   268.5,
+   0.0
+  ],
+  "target": [
+   60,
+   270
+  ],
+  "offset": 4.5
+ },
+ "neiting_west_street": {
+  "id": "neiting_west_street",
+  "name": "内廷西街",
+  "pos": [
+   -55.8,
+   268.5,
+   0.0
+  ],
+  "target": [
+   -60,
+   270
+  ],
+  "offset": 4.5
+ },
+ "w6_ccg": {
+  "id": "w6_ccg",
+  "name": "长春宫",
+  "pos": [
+   -172.2,
+   248.7,
+   0.0
+  ],
+  "target": [
+   -173.0,
+   247.385
+  ],
+  "offset": 1.5
+ },
+ "w6_cqg": {
+  "id": "w6_cqg",
+  "name": "承乾宫",
+  "pos": [
+   115.7,
+   248.7,
+   0.0
+  ],
+  "target": [
+   114.995,
+   247.385
+  ],
+  "offset": 1.5
+ },
+ "w6_cxg": {
+  "id": "w6_cxg",
+  "name": "储秀宫",
+  "pos": [
+   -114.2,
+   323.7,
+   0.0
+  ],
+  "target": [
+   -114.995,
+   322.385
+  ],
+  "offset": 1.5
+ },
+ "w6_jrg": {
+  "id": "w6_jrg",
+  "name": "景仁宫",
+  "pos": [
+   115.7,
+   173.7,
+   0.0
+  ],
+  "target": [
+   114.995,
+   172.385
+  ],
+  "offset": 1.5
+ },
+ "w6_jyg": {
+  "id": "w6_jyg",
+  "name": "景阳宫",
+  "pos": [
+   173.8,
+   323.7,
+   0.0
+  ],
+  "target": [
+   173.0,
+   322.385
+  ],
+  "offset": 1.5
+ },
+ "w6_tjg": {
+  "id": "w6_tjg",
+  "name": "太极殿",
+  "pos": [
+   -172.2,
+   173.7,
+   0.0
+  ],
+  "target": [
+   -173.0,
+   172.385
+  ],
+  "offset": 1.5
+ },
+ "w6_xfg": {
+  "id": "w6_xfg",
+  "name": "咸福宫",
+  "pos": [
+   -172.2,
+   323.7,
+   0.0
+  ],
+  "target": [
+   -173.0,
+   322.385
+  ],
+  "offset": 1.5
+ },
+ "w6_yhg": {
+  "id": "w6_yhg",
+  "name": "永和宫",
+  "pos": [
+   173.8,
+   248.7,
+   0.0
+  ],
+  "target": [
+   173.0,
+   247.385
+  ],
+  "offset": 1.5
+ },
+ "w6_ykg": {
+  "id": "w6_ykg",
+  "name": "翊坤宫",
+  "pos": [
+   -114.2,
+   248.7,
+   0.0
+  ],
+  "target": [
+   -114.995,
+   247.385
+  ],
+  "offset": 1.5
+ },
+ "w6_ysg": {
+  "id": "w6_ysg",
+  "name": "永寿宫",
+  "pos": [
+   -114.2,
+   173.7,
+   0.0
+  ],
+  "target": [
+   -114.995,
+   172.385
+  ],
+  "offset": 1.5
+ },
+ "w6_yxg": {
+  "id": "w6_yxg",
+  "name": "延禧宫",
+  "pos": [
+   173.8,
+   173.7,
+   0.0
+  ],
+  "target": [
+   173.0,
+   172.385
+  ],
+  "offset": 1.5
+ },
+ "w6_zcg": {
+  "id": "w6_zcg",
+  "name": "钟粹宫",
+  "pos": [
+   115.7,
+   323.7,
+   0.0
+  ],
+  "target": [
+   114.995,
+   322.385
+  ],
+  "offset": 1.5
+ },
+ "wb_cng": {
+  "id": "wb_cng",
+  "name": "慈宁宫",
+  "pos": [
+   -255.0,
+   340.4,
+   0.0
+  ],
+  "target": [
+   -255.0,
+   340.385
+  ],
+  "offset": 0.0
+ },
+ "wb_fxd": {
+  "id": "wb_fxd",
+  "name": "奉先殿",
+  "pos": [
+   151.8,
+   69.1,
+   0.0
+  ],
+  "target": [
+   149.995,
+   63.385000000000005
+  ],
+  "offset": 6.0
+ },
+ "wb_nsg": {
+  "id": "wb_nsg",
+  "name": "宁寿宫",
+  "pos": [
+   255.0,
+   383.4,
+   0.0
+  ],
+  "target": [
+   254.995,
+   383.385
+  ],
+  "offset": 0.0
+ },
+ "wb_whg": {
+  "id": "wb_whg",
+  "name": "文华殿",
+  "pos": [
+   230.0,
+   -191.6,
+   0.0
+  ],
+  "target": [
+   230.0,
+   -191.61
+  ],
+  "offset": 0.0
+ },
+ "wb_wyg": {
+  "id": "wb_wyg",
+  "name": "武英殿",
+  "pos": [
+   -230.0,
+   -191.6,
+   0.0
+  ],
+  "target": [
+   -230.0,
+   -191.61
+  ],
+  "offset": 0.0
+ },
+ "wb_yxd": {
+  "id": "wb_yxd",
+  "name": "咸安宫",
+  "pos": [
+   -148.1,
+   69.1,
+   0.0
+  ],
+  "target": [
+   -149.995,
+   63.385000000000005
+  ],
+  "offset": 6.0
+ }
+}
