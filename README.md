@@ -6,6 +6,7 @@
 
 | 作品 | 在线 | 说明 |
 |---|---|---|
+| **尺规 · 三维作品集** | [打开](https://gacn.github.io/valley-town/works/) | 郭奥成的作品集：8 个 Blender / Three.js 项目，含规模数字与当前状态 |
 | 山谷小镇 Valley Town | [打开](https://gacn.github.io/valley-town/) | 程序生成的山谷小镇，可走可开车可进屋 |
 | 宫阙疑云：第七码 | [打开](https://gacn.github.io/valley-town/gugong-seventh-code/) | 用真实尺寸紫禁城白模做的第一人称悬疑推理游戏（14 章 / 4 结局）。白模生成脚本与渲染预览在 [gugong-seventh-code/model-source](gugong-seventh-code/model-source/) |
 

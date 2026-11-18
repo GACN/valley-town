@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0b0d">
+<title>尺规 · 郭奥成三维作品集</title>
+<meta name="description" content="郭奥成的三维作品：紫禁城白模与浏览器游戏、哈利法塔参数化建模、室内漫游、角色短片、宇树 R1 动画。Blender + Three.js + 参数化脚本。">
+<style>
+:root{
+  --bg:#0a0b0d; --bg2:#0f1114; --ink:#e9e3d5; --ink2:#a49b8a; --dim:#6b6558;
+  --gold:#c9a227; --red:#a8332a; --line:rgba(200,180,140,.16);
+  --serif:"Noto Serif SC","Songti SC","Source Han Serif SC",Georgia,serif;
+  --sans:-apple-system,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+.eyebrow{font-size:11px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase}
+.hr{height:1px;background:var(--line);margin:0}
+
+/* 顶栏 */
+header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+  background:linear-gradient(180deg,rgba(10,11,13,.92),rgba(10,11,13,.55));border-bottom:1px solid transparent;
+  transition:border-color .3s,background .3s}
+header.solid{border-bottom-color:var(--line);background:rgba(10,11,13,.94)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-family:var(--serif);font-size:19px;letter-spacing:.30em;font-weight:600}
+.brand span{font-size:10.5px;letter-spacing:.2em;color:var(--dim)}
+.navlinks{display:flex;gap:22px;font-size:12.5px;color:var(--ink2);letter-spacing:.1em}
+.navlinks a:hover{color:var(--gold)}
+@media(max-width:720px){ .brand span{display:none} .navlinks{gap:14px;font-size:12px} }
+
+/* 封面 */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;overflow:hidden}
+.hero .plan{position:absolute;inset:0;background:url("assets/gugong/4.jpg") center/cover no-repeat;
+  opacity:.11;filter:grayscale(1) contrast(1.35);mix-blend-mode:screen;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 10%,transparent 30%,rgba(10,11,13,.85) 78%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-family:var(--serif);font-size:clamp(46px,9vw,104px);line-height:1.02;letter-spacing:.16em;
+  margin:22px 0 0;font-weight:600}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .sub{margin-top:18px;font-size:clamp(13px,1.6vw,15.5px);color:var(--ink2);letter-spacing:.14em}
+.hero .lede{margin-top:26px;max-width:600px;font-size:14.5px;line-height:2;color:#cdc4b2}
+.stats{margin-top:42px;padding-top:20px;border-top:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat b{display:block;font-family:var(--serif);font-size:26px;letter-spacing:.04em;color:var(--ink)}
+.stat span{font-size:10.5px;letter-spacing:.18em;color:var(--dim)}
+.stat+.stat{border-left:1px solid var(--line);padding-left:16px}
+.live{float:right;font-size:9.5px;letter-spacing:.16em;color:#0a0b0d;background:var(--gold);padding:1px 6px;border-radius:2px}
+.scrollhint{position:absolute;left:26px;bottom:24px;font-size:10.5px;letter-spacing:.3em;color:var(--dim);z-index:2}
+
+/* 作品 */
+section{padding:96px 0}
+.sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.sechead .num{font-family:var(--serif);font-size:13px;color:var(--gold);letter-spacing:.2em}
+.sechead h2{font-family:var(--serif);font-size:clamp(22px,3vw,30px);letter-spacing:.2em;margin:0;font-weight:600}
+.sechead .en{font-size:11px;letter-spacing:.3em;color:var(--dim);margin-left:auto}
+.secdesc{color:var(--ink2);font-size:13.5px;margin:0 0 40px;max-width:640px}
+
+.work{border-top:1px solid var(--line);padding:44px 0}
+.work:last-child{border-bottom:1px solid var(--line)}
+.worktop{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.worktop .idx{font-family:var(--serif);font-size:12px;color:var(--gold);letter-spacing:.18em}
+.worktop h3{font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);letter-spacing:.1em;margin:0;font-weight:600}
+.worktop .year{margin-left:auto;font-size:11px;color:var(--dim);letter-spacing:.16em}
+.worksub{color:var(--gold);font-size:12px;letter-spacing:.16em;margin:0 0 18px}
+.workbody{display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:start}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gallery .lead{grid-column:1/-1}
+figure{margin:0;position:relative;overflow:hidden;background:#111}
+figure img{width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(.9) brightness(.98);
+  transition:transform .8s cubic-bezier(.22,.61,.36,1),filter .4s}
+figure:hover img{transform:scale(1.035);filter:contrast(1.1) saturate(1)}
+figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 14px 10px;font-size:10.5px;
+  letter-spacing:.12em;color:#d8cfbd;background:linear-gradient(transparent,rgba(6,7,9,.85))}
+.gallery .lead img{aspect-ratio:16/9}
+.gallery figure:not(.lead) img{aspect-ratio:4/3}
+.worktext{font-size:13.6px;color:#cfc6b4}
+.worktext p{margin:0 0 14px}
+.specs{list-style:none;padding:0;margin:0 0 18px}
+.specs li{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed rgba(200,180,140,.12);font-size:12.5px}
+.specs li span:first-child{width:82px;flex:none;color:var(--dim);letter-spacing:.1em}
+.specs li span:last-child{color:#ded5c2}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
+.tag{font-size:10.5px;letter-spacing:.1em;color:#bdb3a0;border:1px solid var(--line);padding:3px 9px;border-radius:2px}
+.links{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px}
+.links a{color:var(--gold);border-bottom:1px solid rgba(201,162,39,.35);padding-bottom:1px}
+.links a:hover{border-color:var(--gold)}
+@media(max-width:860px){
+  .workbody{grid-template-columns:1fr;gap:22px}
+  section{padding:64px 0}
+  .work{padding:34px 0}
+}
+
+/* 数据墙 */
+.datawall{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line)}
+.cell{background:var(--bg2);padding:22px 20px}
+.cell b{display:block;font-family:var(--serif);font-size:22px;letter-spacing:.04em}
+.cell span{font-size:11px;letter-spacing:.2em;color:var(--dim)}
+
+/* 过程 */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:8px}
+.step{background:var(--bg2);padding:26px 22px}
+.step i{font-family:var(--serif);font-style:normal;font-size:12px;color:var(--gold);letter-spacing:.2em}
+.step h4{font-family:var(--serif);font-size:16.5px;letter-spacing:.12em;margin:10px 0 8px;font-weight:600}
+.step p{font-size:12.5px;color:var(--ink2);margin:0;line-height:1.85}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.about p{font-size:13.6px;color:#cfc6b4;margin:0 0 14px}
+.about .kv{list-style:none;padding:0;margin:0}
+.about .kv li{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(200,180,140,.12);font-size:12.5px}
+.about .kv span:first-child{width:74px;flex:none;color:var(--dim);letter-spacing:.1em}
+@media(max-width:860px){ .about{grid-template-columns:1fr;gap:26px} }
+
+footer{border-top:1px solid var(--line);padding:46px 0 60px;color:var(--dim);font-size:12px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:baseline}
+footer b{font-family:var(--serif);color:var(--ink);letter-spacing:.24em;font-weight:600}
+
+
+/* 封面两列 + 图版 */
+.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:end;width:100%}
+.plates{display:flex;flex-direction:column;gap:12px;width:100%}
+.plates2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.plate{display:block;border:1px solid var(--line);background:#111;overflow:hidden}
+.plate figure img{aspect-ratio:16/9}
+.plates2 .plate figure img{aspect-ratio:4/3}
+.plate figcaption{font-size:10.5px;letter-spacing:.1em}
+.plates .plate:first-child figure img{filter:contrast(1.28) brightness(.9) saturate(.9)}
+.plate:hover figcaption{color:var(--gold)}
+@media(max-width:980px){
+  .heroGrid{grid-template-columns:1fr;gap:30px}
+  .plates{order:2}
+  .hero{min-height:auto;padding-top:96px}
+  .hero h1{font-size:clamp(44px,13vw,72px)}
+}
+/* 导航当前项 */
+.navlinks a.on{color:var(--gold)}
+.navlinks a.on::after{content:"";display:block;height:1px;background:var(--gold);margin-top:2px}
+/* 滚动提示加强 */
+.scrollhint{display:flex;align-items:center;gap:8px}
+.scrollhint::after{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--dim),transparent);
+  animation:pull 2.4s infinite ease-in-out}
+@keyframes pull{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(8px);opacity:1}}
+@media(max-width:720px){ .scrollhint{display:none} }
+
+/* 灯箱 */
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(6,7,9,.96);display:none;align-items:center;
+  justify-content:center;padding:4vmin}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lightbox .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:11.5px;color:var(--ink2);letter-spacing:.1em}
+.lightbox .x{position:absolute;top:14px;right:20px;font-size:22px;color:var(--ink2);cursor:pointer}
+
+/* 渐显 */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* 手机端：压缩文字、数据 2x2、图版提前 */
+@media(max-width:720px){
+  .hero{padding:88px 0 40px;min-height:auto}
+  .hero h1{letter-spacing:.12em;margin-top:16px}
+  .hero .lede{font-size:13.5px;line-height:1.95;margin-top:18px}
+  .hero .lede br{display:none}
+  .hero .sub{font-size:12px;letter-spacing:.1em;margin-top:14px}
+  .hero .stats{grid-template-columns:1fr 1fr;margin-top:26px;padding-top:16px;row-gap:14px}
+  .stat+.stat{border-left:none;padding-left:0}
+  .stat:nth-child(even){border-left:1px solid var(--line);padding-left:14px}
+  .stat b{font-size:21px}
+  .stat span{font-size:10px;letter-spacing:.12em}
+  .plates{margin-top:6px}
+  .plates .plate:first-child figure img{aspect-ratio:4/3}
+  .worksub{font-size:11px}
+  .worktop h3{font-size:19px}
+  .worktop .year{font-size:10px}
+  .specs li span:first-child{width:64px;font-size:12px}
+  .specs li span:last-child{font-size:12px}
+  .gallery{gap:6px}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <div class="brand"><b>尺规</b><span>三维作品集 / 郭奥成</span></div>
+    <div class="navlinks">
+      <a href="#works">作品</a><a href="#data">数据</a><a href="#process">做法</a><a href="#about">关于</a>
+    </div>
+  </div>
+</header>
+
+<!-- 封面 -->
+<section class="hero">
+  <div class="plan"></div>
+  <div class="wrap heroGrid">
+   <div class="heroText">
+    <div class="eyebrow">Blender · Three.js · 参数化建模</div>
+    <h1>尺<em>规</em></h1>
+    <div class="sub">郭奥成（小郭）· 三维作品集　／　2026</div>
+    <p class="lede">
+      用脚本把建筑量出来，用引擎把它走进去。<br>
+      八个项目：一座 961 × 753 米的紫禁城、一栋 828 米的哈利法塔、<br>
+      一套从租房截图反推出来的住宅、一个会跳江南 Style 的机器人，<br>
+      以及一个能在手机浏览器里走完 14 章的推理游戏。
+    </p>
+    <div class="stats">
+      <div class="stat"><b>08</b><span>项目</span></div>
+      <div class="stat"><b>49.8 万</b><span>紫禁城顶点</span></div>
+      <div class="stat"><b>828 m</b><span>最高建模对象</span></div>
+      <div class="stat"><b>14 章</b><span>可玩关卡</span></div>
+    </div>
+   </div>
+   <div class="plates">
+     <a class="plate" href="#works"><figure data-full="assets/gugong/1c.jpg">
+       <img src="assets/gugong/1c.jpg" alt="紫禁城白模">
+       <figcaption>宫阙疑云 · 紫禁城 961×753 m<span class="live">可在线玩</span></figcaption></figure></a>
+     <div class="plates2">
+       <a class="plate" href="#works"><figure data-full="assets/burj/2.jpg">
+         <img src="assets/burj/2.jpg" alt="哈利法塔"><figcaption>哈利法塔 · 828 m</figcaption></figure></a>
+       <a class="plate" href="#works"><figure data-full="assets/r1/poster.jpg">
+         <img src="assets/r1/poster.jpg" alt="宇树 R1"><figcaption>宇树 R1 · 600 帧</figcaption></figure></a>
+     </div>
+   </div>
+  </div>
+  <div class="scrollhint">向下 · 08 件作品</div>
+</section>
+
+<!-- 作品 -->
+<section id="works">
+  <div class="wrap">
+    <div class="sechead"><span class="num">01</span><h2>作品</h2><span class="en">Selected Works</span></div>
+    <p class="secdesc">按完成时间倒序。每一项都给出可核查的规模数字与当前状态——白模就是白模，未渲完就写未渲完。</p>
+
+    <!-- 01 宫阙疑云 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">01</span><h3>宫阙疑云：第七码</h3><span class="year">2026.11</span></div>
+      <p class="worksub">紫禁城白模 × 第一人称悬疑推理游戏</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/gugong/1.jpg"><img src="assets/gugong/1.jpg" alt="紫禁城白模 鸟瞰" loading="lazy">
+            <figcaption>白模 · 全城鸟瞰 · 961 × 753 m</figcaption></figure>
+          <figure data-full="assets/gugong/2.jpg"><img src="assets/gugong/2.jpg" alt="太和殿正立面" loading="lazy">
+            <figcaption>中轴 · 太和门至太和殿</figcaption></figure>
+          <figure data-full="assets/gugong/4.jpg"><img src="assets/gugong/4.jpg" alt="总平面" loading="lazy">
+            <figcaption>总平面 · 程序化生成</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>把已有的故宫白模直接搬进浏览器：按语义分区导出 11 个 GLB，用射线采样烘出 1.5 m 精度的可行走网格，再在上面做一个 14 章、4 结局的推理游戏。</p>
+          <p>模型是纯外壳——门洞没开洞、殿内没楼板，所以补了 35 条授权通道（台阶、登城梯、城门门洞、18 组宫院门）和 14 个程序化室内场景。这不是修图，是把不能走的地方变成能走。</p>
+          <ul class="specs">
+            <li><span>规模</span><span>961 × 753 m ｜ 4180 构件 ｜ 49.8 万顶点 ｜ 11 个分区 GLB</span></li>
+            <li><span>走格</span><span>1.5 m 精度高度场 + 阻挡图；52 个锚点全部可站，98.2% 连通</span></li>
+            <li><span>内容</span><span>14 章 ｜ 98 任务 ｜ 130 线索 ｜ 22 NPC ｜ 420 对话节点 ｜ 4 结局</span></li>
+            <li><span>技术</span><span>Blender 4.0 CPU（容器）· Python 参数化 · Three.js r180 · WebAudio 合成音效</span></li>
+            <li><span>状态</span><span>可玩，已上线；真机像素与帧率待测</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">Three.js</span><span class="tag">参数化</span><span class="tag">游戏</span><span class="tag">手机端</span></div>
+          <div class="links">
+            <a href="https://gacn.github.io/valley-town/gugong-seventh-code/" target="_blank" rel="noopener">在线玩 ↗</a>
+            <a href="https://gacn.github.io/valley-town/gugong-seventh-code/model-source/" target="_blank" rel="noopener">白模与管线说明 ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 哈利法塔 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">02</span><h3>哈利法塔 · 迪拜市中心</h3><span class="year">2026.11</span></div>
+      <p class="worksub">参数化建模 · 不是下载的模型</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/burj/3.jpg"><img src="assets/burj/3.jpg" alt="哈利法塔渲染" loading="lazy">
+            <figcaption>塔身与周边市区 · 云端测试帧</figcaption></figure>
+          <figure data-full="assets/burj/1.jpg"><img src="assets/burj/1.jpg" alt="塔身细部" loading="lazy">
+            <figcaption>退台与竖向铝鳍</figcaption></figure>
+          <figure data-full="assets/burj/2.jpg"><img src="assets/burj/2.jpg" alt="街景低角度" loading="lazy">
+            <figcaption>街景低角度</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>三翼 Y 形平面（Hymenocallis 花形），每翼独立退台、三翼错开 16 m / 32 m，形成 27 级螺旋退台。幕墙按真实板幅 1.37 × 3.90 m 分格，玻璃、竖梃、层间带分开建。</p>
+          <ul class="specs">
+            <li><span>高度</span><span>混凝土 585.4 m（156 层）+ 钢尖塔 242.5 m = 828 m；天线顶 829.8 m</span></li>
+            <li><span>做法</span><span>手机端 Blender 本体建模 + 云 GPU 渲染包（autodl）</span></li>
+            <li><span>状态</span><span>几何完成；材质与光照在调，渲染偏灰不代表最终效果</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">参数化</span><span class="tag">超高层</span><span class="tag">云渲染</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 未来城市 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">03</span><h3>未来科技城市</h3><span class="year">2026.11</span></div>
+      <p class="worksub">城市白模 + 70 秒运镜</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/city/poster.jpg"><img src="assets/city/poster.jpg" alt="未来城市白模" loading="lazy">
+            <figcaption>白模 · 环形城市与中心塔</figcaption></figure>
+          <figure data-full="assets/city/1.jpg"><img src="assets/city/1.jpg" alt="城市体块" loading="lazy">
+            <figcaption>体块关系</figcaption></figure>
+          <figure data-full="assets/city/2.jpg"><img src="assets/city/2.jpg" alt="雾中高塔" loading="lazy">
+            <figcaption>雾中主塔</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>一整套从白模到运镜的预演：城市体块、10 秒白膜预演（960×540 / 24fps / 240 帧）、70 秒成片运镜、逐帧实测数据与分镜表。</p>
+          <p>EEVEE 版本在雾、玻璃、天光三者之一上崩过，所以先把 Workbench 白膜链路跑通——能出片比参数好看重要。</p>
+          <ul class="specs">
+            <li><span>产物</span><span>白膜预演 240 帧 ｜ 70 秒运镜成片 ｜ 分镜表</span></li>
+            <li><span>状态</span><span>白膜链路可用；EEVEE 材质与天光待修</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">运镜</span><span class="tag">白模预演</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 室内漫游 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">04</span><h3>金牛花园 · 室内漫游</h3><span class="year">2026.11</span></div>
+      <p class="worksub">从七张租房截图反推出来的 1:1 住宅</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/home/1.jpg"><img src="assets/home/1.jpg" alt="室内剖轴测" loading="lazy">
+            <figcaption>剖轴测 · 一室一厅一卫</figcaption></figure>
+          <figure data-full="assets/home/3.jpg"><img src="assets/home/3.jpg" alt="卧室" loading="lazy">
+            <figcaption>主卧</figcaption></figure>
+          <figure data-full="assets/home/poster.jpg"><img src="assets/home/poster.jpg" alt="室内视角" loading="lazy">
+            <figcaption>漫游镜头</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>素材只有七张租房 App 截图，没有面积、楼层、朝向、户型图。平面是按七张实拍的内外关系反推的——这一点必须先说清楚，不是实测尺寸。</p>
+          <p>墙体、门窗洞口参数化（改 <code>scripts/plan.py</code> 一处即可），家具按 1:1 常规尺寸摆，60 秒 8 镜运镜逐帧 LINEAR 烘进 .blend，并做了穿墙与主体出画校验。</p>
+          <ul class="specs">
+            <li><span>校验</span><span>相机穿墙 / 主体出画 0 ERROR（CSV 报告在项目内）</span></li>
+            <li><span>状态</span><span>已渲 638 帧 1080p；预览静帧 4 张（容器无 OIDN，未上降噪）</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">参数化</span><span class="tag">室内</span><span class="tag">运镜</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 角色短片 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">05</span><h3>小郭 · 动漫角色《经纬》</h3><span class="year">2026.11</span></div>
+      <p class="worksub">程序化角色 + 三场景 + 12 镜分镜</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/char/3.jpg"><img src="assets/char/3.jpg" alt="场景" loading="lazy">
+            <figcaption>场景三 · 档案库</figcaption></figure>
+          <figure data-full="assets/char/1.jpg"><img src="assets/char/1.jpg" alt="角色正面" loading="lazy">
+            <figcaption>角色正面</figcaption></figure>
+          <figure data-full="assets/char/2.jpg"><img src="assets/char/2.jpg" alt="角色三视图" loading="lazy">
+            <figcaption>三视图与设定</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>把自己做成一个动漫角色：程序化建模 + 赛璐珞着色，配三个场景、12 镜分镜与 60 秒脚本（概念、台词、AI 视频提示词包）。</p>
+          <ul class="specs">
+            <li><span>产物</span><span>角色 .blend ｜ 三场景 ｜ 分镜表 ｜ 单页概念页（图内嵌，离线可看）</span></li>
+            <li><span>状态</span><span>角色与场景完成；成片未渲</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">程序化角色</span><span class="tag">赛璐珞</span><span class="tag">分镜</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 宇树 R1 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">06</span><h3>宇树 R1 × 江南 Style</h3><span class="year">2026.11</span></div>
+      <p class="worksub">92 件零件 · 23 根骨骼 · 43 拍舞蹈</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/r1/poster.jpg"><img src="assets/r1/poster.jpg" alt="R1 预演" loading="lazy">
+            <figcaption>六机位预演帧</figcaption></figure>
+          <figure data-full="assets/r1/3.jpg"><img src="assets/r1/3.jpg" alt="模型三视图" loading="lazy">
+            <figcaption>模型 · 1212 × 317 × 168 mm</figcaption></figure>
+          <figure data-full="assets/r1/1.jpg"><img src="assets/r1/1.jpg" alt="动作分解" loading="lazy">
+            <figcaption>舞蹈动作分解</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>按宇树 R1 的真实尺寸搭 92 件零件，做 23 根骨骼（24 DOF）刚性绑定，把 43 拍、600 帧的江南 Style 逐帧烘进 .blend，再配六机位 20 秒运镜。</p>
+          <p>做了一堆听起来很笨但必要的校验：鞋底最低点 z = -0.000 m、手与胸部过近帧 0、全身体镜头逐帧 NDC 出画 0 帧。</p>
+          <ul class="specs">
+            <li><span>产物</span><span>20 秒预演 854×480 / 600 帧 ｜ 六机位标记绑相机</span></li>
+            <li><span>状态</span><span>预演完成；1080p 96spp 成片未渲（需桌面机或云 GPU）</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">绑定</span><span class="tag">动画</span><span class="tag">校验</span></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 山谷小镇 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">07</span><h3>山谷小镇 · Valley Town</h3><span class="year">2026.11</span></div>
+      <p class="worksub">程序化生成的网页 3D 小镇</p>
+      <div class="workbody">
+        <div class="gallery">
+          <figure class="lead" data-full="assets/town/1.jpg"><img src="assets/town/1.jpg" alt="小镇俯视" loading="lazy">
+            <figcaption>townmap · 布局体检用俯视图</figcaption></figure>
+        </div>
+        <div class="worktext">
+          <p>没有 Blender 文件的一条：地形高度函数、河与桥、12 栋可进屋的房子、620 棵 InstancedMesh 针叶树、4 座风车，全部在浏览器里生成；居民用的是本地打分器（不是时刻表，也不是调云端 LLM）。</p>
+          <ul class="specs">
+            <li><span>规模</span><span>12 栋可进入 ｜ 620 棵树 ｜ 400 draw call 以内</span></li>
+            <li><span>状态</span><span>在线可玩；60 秒运镜脚本在页内可预览</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Three.js</span><span class="tag">程序化</span><span class="tag">行为 AI</span></div>
+          <div class="links"><a href="https://gacn.github.io/valley-town/" target="_blank" rel="noopener">在线看 ↗</a></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 小郭早点 -->
+    <article class="work reveal">
+      <div class="worktop"><span class="idx">08</span><h3>小郭早点 · GUO'S BREAKFAST</h3><span class="year">2026.11</span></div>
+      <p class="worksub">Roblox R6 × PS2 渲染规则</p>
+      <div class="workbody">
+        <div class="gallery textonly">
+          <figure class="lead typo" style="background:#111">
+            <div style="aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;border:1px solid rgba(200,180,140,.14)">
+              <div style="font-family:var(--serif);font-size:34px;letter-spacing:.3em;color:#8d8678">GUO'S</div>
+              <div style="font-size:11px;letter-spacing:.42em;color:#5b5549">BREAKFAST · 28s · 1920×1080</div>
+            </div>
+            <figcaption>截图未归档 · 仅存成片与脚本</figcaption>
+          </figure>
+        </div>
+        <div class="worktext">
+          <p>16:9 / 1920×1080 / 24fps / 28 秒。用两个开源工程的语言写一条短片：Roblox R6 的块状身体比例与贴纸脸，加上 PS2 时代那套画面规则（低模硬边、单一天光、32–48 色量化贴图、哑光、微灰日光）。</p>
+          <p>两个上游工程都要求 Blender 5.2+，本机是 4.0.2，所以没跑它们的脚本，而是把它们<strong>硬规则</strong>搬进了自己的场景脚本，再用 Cycles 出片。</p>
+          <ul class="specs">
+            <li><span>产物</span><span>28 秒成片（无声版 / 配乐版）｜ 角色、置景、动画、音频四套脚本</span></li>
+            <li><span>状态</span><span>成片已出；本条为文字卡，截图未归档</span></li>
+          </ul>
+          <div class="tags"><span class="tag">Blender</span><span class="tag">Cycles</span><span class="tag">风格复刻</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- 数据 -->
+<section id="data">
+  <div class="wrap">
+    <div class="sechead"><span class="num">02</span><h2>尺与数</h2><span class="en">By the Numbers</span></div>
+    <p class="secdesc">这些都是能在工程里数出来的数，不是估计。</p>
+    <div class="datawall">
+      <div class="cell"><b>961 × 753 m</b><span>紫禁城城垣范围</span></div>
+      <div class="cell"><b>4180</b><span>故宫模型构件</span></div>
+      <div class="cell"><b>49.8 万</b><span>顶点（37.4 万面）</span></div>
+      <div class="cell"><b>828 m</b><span>哈利法塔总高</span></div>
+      <div class="cell"><b>92 件</b><span>R1 机器人零件</span></div>
+      <div class="cell"><b>600 帧</b><span>43 拍舞蹈</span></div>
+      <div class="cell"><b>130 条</b><span>游戏线索</span></div>
+      <div class="cell"><b>0 ERROR</b><span>室内漫游穿墙校验</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- 做法 -->
+<section id="process">
+  <div class="wrap">
+    <div class="sechead"><span class="num">03</span><h2>做法</h2><span class="en">How It's Built</span></div>
+    <p class="secdesc">所有场景都在一台 Android 手机的 droidspaces 容器里用 Blender 4.0 CPU 建出来，不靠云建模。流程固定成四步：</p>
+    <div class="steps">
+      <div class="step"><i>01</i><h4>参数化</h4><p>尺度先查证，再写进脚本。故宫用博物院公布数据（城垣 961×753 m、太和殿通高 35.05 m、三台 8.13 m），哈利法塔用真实幕墙板幅。改一个变量，整栋重算。</p></div>
+      <div class="step"><i>02</i><h4>白模与校验</h4><p>先要形体对。校验是脚本跑的：相机穿墙、主体出画、鞋底穿地、关节过近——出报告，不看感觉。</p></div>
+      <div class="step"><i>03</i><h4>分区与导出</h4><p>按语义切块、按材质合并，导出 GLB。紫禁城 4180 个构件最后收成 11 个文件、每区 6 个材质，手机才带得动。</p></div>
+      <div class="step"><i>04</i><h4>进浏览器</h4><p>Three.js 里做碰撞、流式加载、昼夜与天气。碰撞不用物理引擎，用 Blender 里射线采样烘出来的高度场——便宜、稳，手机能跑。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
+<!-- 关于 -->
+<section id="about">
+  <div class="wrap">
+    <div class="sechead"><span class="num">04</span><h2>关于</h2><span class="en">About</span></div>
+    <div class="about">
+      <div>
+        <p>郭奥成，叫我小郭。安徽工程大学纺织工程 2019 级，毕业时用 YOLOv8 做过织物瑕疵检测并部署在 Roboflow；在纺织厂待过，现在在中梦集团品宣部做剪辑与视觉。</p>
+        <p>建模是自学的，路径比较野：先做视频，发现缺场景就自己搭，搭完发现不能走，就开始写碰撞和导出管线。所以这里的项目大多带着「能不能用」的尾巴——能不能走进屋、能不能在手机上跑、能不能出片。</p>
+        <p>我不太喜欢把白模说成成品。这个页面里每一项都标了当前状态，未渲完的就写未渲完。</p>
+      </div>
+      <div>
+        <ul class="kv">
+          <li><span>工具</span><span>Blender 4.0（Python 参数化）· Three.js · FFmpeg · Python/Pillow · AI 图/视频管线</span></li>
+          <li><span>环境</span><span>Android + droidspaces 容器（8 核 CPU，无独显）· 云 GPU 用于重渲染</span></li>
+          <li><span>方向</span><span>建筑与城市白模、室内漫游、角色与机械绑定、可交互场景</span></li>
+          <li><span>邮箱</span><span>gacgac321@gmail.com</span></li>
+          <li><span>GitHub</span><span>github.com/GACN</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>尺规</b>
+    <div>郭奥成 · 三维作品集 ｜ 2026 ｜ 场景均为自制，未使用下载模型</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb">
+  <span class="x" id="lbx">✕</span>
+  <img id="lbimg" alt="">
+  <div class="cap" id="lbcap"></div>
+</div>
+
+<script>
+// 顶栏状态
+const hdr = document.getElementById('hdr');
+addEventListener('scroll', () => hdr.classList.toggle('solid', scrollY > 30), { passive: true });
+
+// 导航当前项
+const secs = [...document.querySelectorAll('section[id]')];
+const navA = [...document.querySelectorAll('.navlinks a')];
+const spy = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    navA.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+secs.forEach(s => spy.observe(s));
+
+// 滚动渐显
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// 灯箱
+const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg'), lbcap = document.getElementById('lbcap');
+document.querySelectorAll('figure').forEach(f => {
+  f.style.cursor = 'zoom-in';
+  f.addEventListener('click', () => {
+    const src = f.dataset.full || f.querySelector('img').src;
+    lbimg.src = src;
+    lbcap.textContent = (f.querySelector('figcaption') || {}).textContent || '';
+    lb.classList.add('on');
+  });
+});
+const close = () => { lb.classList.remove('on'); lbimg.src = ''; };
+document.getElementById('lbx').addEventListener('click', close);
+lb.addEventListener('click', e => { if (e.target === lb) close(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+</script>
+</body>
+</html>
